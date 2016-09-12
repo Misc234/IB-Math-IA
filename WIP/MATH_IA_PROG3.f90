@@ -199,8 +199,6 @@ PROGRAM MAIN
      IF(NN(J).NE.0) SP = SP + P(J)
 41   CONTINUE
 
-!WRITE(*,*) SP
-
      DO 42 I = 1,N                                    !Excluding propabilites which did not give one single
      IF(NN(I).NE.0) P(I) = P(I)/SP                    !change of sign
      IF(NN(I).EQ.0) P(I) = 0.0
