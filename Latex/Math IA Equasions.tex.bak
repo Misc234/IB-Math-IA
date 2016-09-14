@@ -35,11 +35,11 @@
 
 \begin{document}
 \begin{equation}
-	\int \limits_{W_j} c_{j}dc_{1}dc_{2} \ldots dc_{m} 
+	\int \limits_{W_j} c_{j} \di c_{1} \di c_{2} \ldots  \di c_{m} 
 	= \dfrac{1}{\prod\limits_{s=1}^{m}h_{s}}
-	\left( \  \int\limits_{b(j,l)}^{a(j,l)} c_{j} dc_{j}\right) 
+	\left( \  \int\limits_{b(j,l)}^{a(j,l)} c_{j}  \di c_{j}\right) 
 	\prod_{\substack{s=1\\ (s\ne j)}}^m \ 
-	\int\limits_{a(s,l)}^{b(s,l)} \! dc_{s} 
+	\int\limits_{a(s,l)}^{b(s,l)} \!  \di c_{s} 
 	= c_{j}^{(l)} 
 \label{eq_vector1}
 \end{equation}
