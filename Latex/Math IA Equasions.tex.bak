@@ -1,0 +1,25 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+
+\pagestyle{fancy}
+\numberwithin{equation}{subsection}
+
+\DeclareMathOperator{\di}{d\!}
+
+\begin{document}
+\begin{equation}
+\int \limits_{W_j} c_{j}dc_{1}dc_{2} \ldots dc_{m} = \dfrac{1}{\prod\limits_{s=1}^{m}h_{s}}\left( \int\limits_{b(j,l)}^{a(j,l)} c_{j} dc_{j}\right) {\prod\limits_{s=1}^{m}}_{(s \neq j)} \int\limits_{a(s,l)}^{b(s,l)} dc_{s} = c_{j}^{(l)} \label{eq_vector1}
+\end{equation}
+
+Label: \eqref{eq_vector1}
+
+
+\end{document}

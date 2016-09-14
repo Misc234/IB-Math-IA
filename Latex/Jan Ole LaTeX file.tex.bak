@@ -1,0 +1,380 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{natbib}
+\pagestyle{fancy}
+\usepackage{float}
+\numberwithin{equation}{subsection}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+\huge{Math IA} \\
+\line(1,0){400} \\ 
+\huge{Calculating the displacement-time function for a traveling mass without neglecting frictional forces}\\
+\line(1,0){400} \\
+[2cm]
+\large{Jan Ole Ernst}
+	
+\end{center}
+
+\end{titlepage}
+\pagenumbering{0}
+\tableofcontents
+
+
+\pagenumbering{arabic}
+\section{Introduction}
+
+
+In the past I have always been taught in school, particularly in physics, about the path displaced masses are bound to take, when subjected to external forces. In most scenarios, my fellow students and me were told to neglect external forces (air resistance, friction etc.), because these distortions to the displacement of objects are not easily calculated. The formulae used in school to describe the change in displacement with respect to time were inaccurate and were not in accordance with what happens in the real world, where friction has a substantial influence. 
+	\\ \\
+Furthermore, I was exposed to displacement time graphs in my physics class:  \begin{figure}[h]
+		\begin{center}
+		\setlength\fboxsep{0pt}
+		\setlength\fboxrule{0.5pt}
+		\caption{Physics paper 1 IB exam question \cite[p.1]{paper1}}
+		\end{center}
+	\label{physics}
+\end{figure}
+
+ where frictional forces (air resistance in this case) were not negligible and I sincerely wondered about the mathematics involved in deriving such functions, that show the non-linear variation of an object’s displacement with respect to time. Thus, the aim of my investigation is to determine a formula for the displacement-time function $x(t)$, where $x$ is the displacement and $t$ the time, which describes the path of a mass without neglecting frictional forces. As I'm planning to study physics in the future I felt that the topic of this investigation was an adequate challenge and is also related to my future aspirations. \\ \\
+Upon researching about frictional forces, it occurred to me that frictional forces acting on traveling objects are not constant, they vary proportionally to quantities like the velocity of the mass and density of the medium through which an object travels, when talking about drag forces \cite[p.130]{fundamentals}. Therefore, to be able to accurately model the variation of displacement with time, I came across a branch of mathematics called differential equations. I hypothesize that the displacement-time function of a traveling mass under the effect of friction is a non-linear, exponential function.\\ \\
+ In this investigation I will first define the concept of differential equations and their properties. Then, I will proceed to explaining methods of solving differential equations. Thirdly, I will contextualize the physical scenario by explaining the equations used to describe the effect of resistive forces in physics.  Finally, I will apply the concept of differential equations to determine the displacement-time function of a mass when considering the effect of frictional forces, by solving a second-order differential equation.
+
+\newpage
+
+
+\section{Mathematical Background}
+Differential Equations are relations in mathematics, where a function and its derivative(s) are formalized in an equation.  In an ordinary differential equation, one denotes a variable $x$ $-$ the independent variable, the function(s) with respect to this variable, $y$ $-$ the dependent variable, and the derivative(s) of this function with respect to the independent variable. Differential equations are classified by their order, where the order refers to the highest derivate in the equation. For example, this is an example of a first order differential equation:
+\begin{equation*}
+	2\frac{dy}{dx}+5=0
+\end{equation*}
+ Implicitly, the general formula of a differential equation of nth-degree is described as follows \cite[p.552]{bronstein} :
+ \begin{equation}\label{nth}
+ 	a_0\frac{d^ny}{dx^n}+a_1\frac{d^{n-1}y}{dx^{n-1}}+a_2\frac{d^{n-2}y}{dx^{n-2}}+... + a_ny= f(x)
+ \end{equation}
+ If the equation is rearranged with the highest order derivative as the subject, it is an explicit differential equation \cite[p.552]{bronstein}. A linear differential equation of first order is defined as follows: 
+ \begin{equation}\label{LDE}
+ 	\frac{dy}{dx} + f(x)*y = g(x)
+ \end{equation}
+ where $g(x)$ is the forcing function(in a system it is a function of time not of any other variables), if $g(x) = 0$ then this linear differential equation is homogenous, otherwise it is to be considered inhomogenous \cite[p.370]{papula}.\label{homogenous}
+ A homogenous differential equation of order n is defined in \eqref{nth}, where $f(x)=0$.\\ \\
+ Common applications of differential equations are in fields like physics as is done in this investigation, or in engineering, chemistry, biology and economics \cite{wikidifferential}. Historically, differential equations date back to the 17th century after Leibniz and Newton devised calculus: " ‘Differential equations’ began with Leibniz, the Bernoulli brothers and others from the 1680s, not long after Newton’s ‘fluxional equations’ in the 1670s. Applications were made largely to geometry and mechanics..." \cite[p.1]{history}. Such equations can be solved for the original function, $f(x)$ naturally by integrating, as integration is the process of "anti-differentiation". However, this is not particularly straight-forward and requires algebraic manipulations, which capacitates the use of integration for solving a given differential equation.
+
+
+
+\subsection{Solving first order differential equations}
+I will now outline 2 methods of solving first-order differential equations(separating the variables and variation of constants) and one method to solve second-order differential equation(reduction of order). Other methods (such as substitution) will be omitted because they are not needed in this investigation.
+\subsubsection{Seperating the variables}
+When given an ordinary differential equation of the following type:
+\begin{equation}
+	\frac{dy}{dx} = f(x) * g(y)
+\end{equation}
+where the derivative of a function is equal to a product of the respective function $f(x)$ and its variable $g(x)$, one goes about solving the differential equation as follows \cite[p.359]{papula}:
+\begin{enumerate}
+	\item Separating the variables by grouping the independent variable and dependent variable (the function) with their respective derivatives on either side of the equation,
+	\item Integrating on both sides of the equation,
+	\item Resolving the solution as an implicit equation, rearranged with y, or any other respective function used originally as the subject. 
+\end{enumerate}
+	This method can be explained by solving the following example:
+	\begin{gather*}
+	 y*cot(x)\frac{dy}{dx} = (4+y^2)* csc^2(x)\\
+	 \frac{dy*y}{(4+y^2)}= \frac{dx*csc^2(x)}{cot(x)}\\
+	 \int \frac{y}{(4+y^2)}dy = \int \frac{csc^2(x)}{cot(x)}dx\\
+	 \textit{Integrating the LHS by using the substitution $u = y^2 +4$ and $dy = \frac{du}{2y} $}\\
+	 \int \frac{y}{(u)}dy = \int \frac{1+cot^2(x)}{cot(x)}dx\\ 
+	 \frac{1}{2}\int \frac{1}{(u)}du = \int tan(x)+ cot(x)dx\\
+	 \frac{1}{2}ln\mid y^2+4\mid + C_1 =\int \frac{sin(x)}{cos(x)} dx + \int \frac{cos(x)}{sin(x)}dx\\
+	  \textit{Integrating $tan(x)$ by using the substitution $u=cos(x)$, thus $dx=\frac{du}{-sin(x)}$}\\
+	  \textit{Integrating $cot(x)$ by using the substitution $s=sinx$, thus $dx = \frac{ds}{cos(x)}$}\\
+	  \frac{1}{2}ln \mid y^2+4 \mid + C_1 = \int \frac{sin(x)}{u} \frac{du}{-sin(x)} + \int \frac{cos(x)}{s}\frac{ds}{cos(x)}\\
+	    \frac{1}{2}ln\mid y^2+4\mid + C_1 = -ln\mid u\mid  + ln \mid s \mid + C_2\\
+	    \frac{1}{2}ln\mid y^2+4\mid + C_1 = ln\left|\frac{sin(x)}{cos(x)}\right| + C_2 \\ 
+	    	    ln\mid y^2+4\mid = 2ln \left| \frac{sin(x)}{cos(x)}\right| + C_2 - C_1 \\ 
+	    y^2+4= \pm tan^2(x) * e^{C_2 - C_1}\\
+	     \textit{$e^{C_2 - C_1}$ can be combined to a single constant, $C$}\\
+	    y= \pm\sqrt{C*tan^2(x)- 4} \text{   (where C is a constant)}
+	    \end{gather*}\\
+	    It is not trivial to see that variables can be separated in all cases; thus I deem it necessary to prove it for a general first order differential equation with homogenous coefficients \cite[p.57]{pollard}.\\
+Assuming we have the following equation:
+\begin{equation}\label{theorem1}
+	P(x,y)*dx + Q(x,y)*dy= 0\\
+	\end{equation}
+	$P(x,y)$and $Q(x,y)$ are homogenous differential equations, as defined in \eqref{nth}, where $f(x)=0$. The equation as such is a first order differential equation with homogenous coefficients. The substitution of \eqref{theorem2} and \eqref{theorem3} which are used as auxiliary equations into the following \eqref{theorem1} will lead  to the proposition of a theorem in relation to the separability of variables, which needs to be proven \cite[p. 57]{pollard}.\\
+	\begin{align}
+				y=ux\label{theorem2}\\
+		dy = du*x+u*dx \label{theorem3}
+	\end{align}
+
+\textbf{Theorem:} \textit{If the coefficients in \eqref{theorem1}, are all homogenous differential equations of order n, then the substitution of this equation into \eqref{theorem2} and \eqref{theorem3} will lead to an equation where the variables are seperable \cite[p.57]{pollard}.} \\ \\
+In equation \eqref{theorem1}, $P(x,y)$ and $Q(x,y)$ are defined as homogenous, therefore, they can be rewritten as follows:
+\begin{align}
+	P(x,y) = x^n * f_1(u)\label{theorem4} \\
+	Q(x,y) = x^n * f_2(u)\label{theorem5}
+\end{align}
+Where $x^n$ refers to the nth derivative, as $P$ and $Q$ are differential equations of order n, given in the Theorem, thus their leading coefficient is of order n. Functions $f_1$ and $f_2$ take variables $x$ and $y$, as $u=\frac{y}{x}$ by Equation \eqref{theorem2}.\\ \\
+Substituting equations \eqref{theorem4}, \eqref{theorem5} and \eqref{theorem3} respectively into equation \eqref{theorem1} yields the following result:
+\begin{align}
+	\nonumber
+	x^nf_1(u)dx + x^nf_2(u)[du*x+u*dx] = 0\\
+	\nonumber
+	dx[x^nf_1(u)+x^nf_2(u)*u]+x^nf_2(u)du*x=0\\
+	\nonumber
+	dx[f_1(u)+f_2(u)*u]+f_2(u)du*x=0\\
+	\frac{dx}{x} + \frac{f_2(u)du}{f_1(u)+f_2(u)*u}=0\label{theorem6}\\ 
+\nonumber
+	 \text{Where } x\neq0 \text{ and } f_1(u)+f_2(u)*u\neq0
+	\end{align}
+	Equation \eqref{theorem6} has variables $x$ and $u$ seperated. This proves the theorem and confirms the seperatability of variables for all first order differential equations, by proving it for a general equation.\\ \\
+	Generally, when given a homogenous ordinary differential equation of the form \eqref{LDE} one can apply the method of separating the variables: \cite[p.371]{papula}	
+	\begin{align}
+	\nonumber
+	\frac{dy}{dx} + f(x)*y= 0\\
+		\nonumber
+		\frac{dy}{dx}=-f(x)*y\\
+		\nonumber
+		\frac{dy}{y}=-f(x)dx\\
+		\nonumber
+		\int \frac{dy}{y}=\int-f(x) dx\\
+		\nonumber
+		ln\mid y\mid = -\int f(x) dx\\
+		y = e^{- \int f(x) dx} \label{general}
+		\end{align}
+	Equation \eqref{general} gives the general solution for a homogenous first-order differential equation, purposefully omitting the constant one the LHS in this equation for simplicity.
+
+
+
+\subsubsection{Variation of constants}
+When given an inhomogenous, linear, first-order differential equation in the form defined in \eqref{LDE}, one solves the equation as follows \cite[p.1071]{stroud} :
+\begin{enumerate}
+	\item Integrating the affiliated homogenous differential equation $y_0$ by equating the inhomogenous equation to 0, using the technique separating the variables ($y_0 = e^{- \int f(x)dx})$,
+	\item The constant C is now rewritten as an unknown function C(x), to obtain an equation $y = C(x)*e^{- \int f(x)dx}$,
+	\item One differentiates $y$ and substitutes $y$ and $\frac{dy}{dx}$ into the original inhomogenous differential equation, one then solves this function for $C(x)$ through integration,
+	\item By substituting $C(x)$ into the equation for $y$ given in step 2, one has now successfully solved for $y$, the general solution to this differential equation  \cite[p.374]{papula}.
+\end{enumerate}
+I will show this method by looking at the following example:
+\begin{gather*}
+\frac{dy}{dx}+ \frac{y}{x}=sin(x)\\
+\textit{(Formulating the homogenous equation and integrating it)}\\
+\frac{dy}{dx}+\frac{y}{x}=0\\
+y_0 = e^{- \int \frac{dx}{x}}\\
+y_0 = \frac{1}{x} + C\\
+y = \frac{C(x)}{x}\\
+\frac{dy}{dx}= \frac{C\prime(x)*x-C(x)}{x^2} \textit{   (For simplicity of notation $C\prime(x) = \frac{dC(x)}{dx}$) }
+\end{gather*}
+\begin{gather*}
+\textit{Substituting back into the original equation:}\\
+\frac{C\prime(x)*x-C(x)}{x^2}+ \frac{C(x)}{x^2}= sin(x)\\
+C\prime(x)= sinx*x\\
+\int C \prime(x) = \int sinx*x dx\\
+\textit{(Integrating the RHS with integration by parts, $u = x$, $du = 1$, $dv= sinx$ and $v = -cosx$)}\\
+C(x) = x*-cos(x) - \int-cos(x)*1 dx\\
+C(x) = -x*cos(x) + sin(x) + C \textit{  (Where $C$ is a constant)}\\
+y=\frac{sinx-x*cos(x)+C}{x} \textit{   (Which is the solution to the differential equation)}
+\end{gather*}
+	
+
+
+%\subsubsection{Substitution}
+%If the variables cannot be adequately separated, then it is not possible to solve the differential equation by using any of the previous techniques, but one resorts to an auxiliary substitution (Stroud, p.164). 
+%Consider the following differential equation: $\frac{dy}{dx} =\frac{3x+6y}{2x}$ – separating the variables is not possible. By letting $y = vx$, $\frac{dy}{dx} = v + xdv$, the observant reader will identify the simplicity of the following substitution:
+%\begin{align*}
+%	v + xdv = \frac{3x+6y}{2x}\\
+%	 v + xdv = \frac{3x+6(vx)}{2x}\\
+%	 xdv = \frac{3x+6vx-2xv}{2x}\\
+%	 dv = \frac{3+4v}{2} \text{,which is easily solvable by integration for v.}
+%\end{align*}
+%One then resubstitutes $v=\frac{y}{x}$ and solves the differential equation by using technique \textit{2.1.1}.
+
+
+
+
+\subsection{Solving second order differential equations}
+A linear, second-order differential equation with constant coefficients can be solved by either reducing it to a first order differential equation under certain circumstances \cite{pauls}, or by treating it as a quadratic and using other approaches \cite[p.405]{papula}. Given a second-order differential equation in the form (where $y\prime\prime = \frac{d^2 y}{dx^2}$ and $y \prime = \frac{dy}{dx}$):
+\begin{align}
+	y\prime \prime(x) + a*y\prime(x) + b*y(x) = 0\label{generic2nd}
+\end{align}
+One can reduce this generic second-order differential equation  when given one of the solutions of the differential equation \cite[p.88]{teschl}.
+First I will show that when given a solution of the equation $y_1(x)$ then  $y_2(x) = C*y_1(x)$, ($C$ being a function of $x$, $C(x)$) where $y_2(x)$ is also a solution of the differential equation \cite[p.50]{coddington}. This can be proven by looking at the inhomogenous differential equation \eqref{generic2nd} \cite[p.394]{papula}:
+\begin{gather}
+	y_1\prime \prime(x) + a*y_1\prime (x)+ b*y_1(x) = 0 
+	\textit{ (Valid as $y_1(x)$ is a solution of the equation)} \label{generic2nd} \\
+	C*y_1\prime \prime(x) + a*C*y_1 \prime(x) + b*C*y_1(x) = 0\\
+	\nonumber
+	\textit{  (Assuming $C*y_1(x)$ is also a solution)}\\
+	C (\underbrace{y_1\prime \prime(x) + a*y_1\prime(x) + b*y_1(x)}_\text{$=0$} ) = 0 \label{explain2}
+	\end{gather}
+The validity of the assumption that $C*y_1(x)$ is a solution of the differential equation  \eqref{generic2nd} is confirmed by the above equations, as the substitution of \eqref{generic2nd} into \eqref{explain2} makes the $LHS = 0$. One then uses the assumption to solve the second-order differential equation by finding the first and second derivative of $y_2$ and substituting into the given differential equation, thus finding the value of $C(x)$ with variation of constants and then finding $y_2$, by substituting $C(x)$ into the equation $y_2= C(x)*y_1(x)$.  \\ \\ 
+One could solve and equation in the form given in \eqref{generic2nd} by treating it like a quadratic with two solutions ($y_1$ and $y_2$) as follows \cite[p.400]{papula}:
+\begin{enumerate}
+	\item Assuming the solutions are in the form $y=e^{\alpha x}$ ("without the question of motivation, lets us guess that a possible solution has the form $e^{\alpha x}$ ") \cite[p.212]{pollard}, one differentiates this obtaining $y\prime = \alpha * e^{\alpha x}$ and $y\prime \prime = \alpha^2 * e^{\alpha x}$,
+	\item Substituting into the given equation (in the form of \eqref{generic2nd})
+	\item Factorizing out $e^{\alpha x}$ and solving the remaining quadratic for $\alpha$, yielding $\alpha _1$ and $\alpha _2$ if the solutions are distinct. For simplicity we will only consider the cases where the solutions are real and distinct (assuming the discriminant is greater or equal to zero),
+	\item The generic solution can now be displayed in the form $y(x) = C_1 * y_1(x) + C_2 * y_2(x)$, where $C_1$ and $C_2$ are arbitrary constants and $y_1$ and $y_2$ are the solutions of the equation. Why is the generic solution displayed in this form though?
+\end{enumerate}
+Reiterating that $y_1$ and $y_2$ are solutions of the second-order differential equation, then:
+\begin{align}
+	y_1\prime \prime + a*y_1 \prime + b*y_1 = 0 \label{brace1}\\ 
+	y_2\prime \prime + a*y_2 \prime + b*y_2 = 0 \label{brace2}
+\end{align}
+Therefore, one can show that $y(x) = C_1 * y_1(x) + C_2 * y_2(x)$ is a solution to the generic second-order differential equation by substituting in \eqref{generic2nd} \cite[p.394]{papula}:
+\begin{align*}
+	[C_1 * y_1(x) + C_2 * y_2(x)]\prime \prime + a*[C_1 * y_1(x) + C_2 * y_2(x)]\prime + b*[C_1 * y_1(x) + C_2 * y_2(x)] = 0\\
+	C_1 * y_1\prime \prime(x) + C_2 * y_2\prime \prime(x) + a*C_1 * y_1\prime(x) + a*C_2 * y_2\prime(x) + b*C_1 * y_1(x) + b*C_2 * y_2(x)= 0\\
+	C_1(\underbrace{y_1\prime \prime + a*y_1 \prime + b*y_1} _\text{$=0$ by \eqref{brace1}}) + C_2(\underbrace{y_2 \prime \prime + a*y_2 \prime + b*y_2}_\text{$=0$ by \eqref{brace2}}) = 0
+\end{align*}
+
+Through Variation of Constants one could also show that when the discriminant is $=0$ and when there is only one solution to the quadratic, the general solution is given in the form $y= (C_1 + C_2*x)*e^{cx}$, where $c$ is also a constant \cite[p.402]{papula}.\\ \\
+I will show this method of solving second-order differential equations by treating them as quadratics by looking at the following example:
+\begin{gather*}
+y\prime\prime - 5y\prime +6y=0 \textit{   (Using $y=e^{\alpha*x}$ as a solution-approach)}\\
+\alpha^2e^{\alpha x} - 5\alpha e^{\alpha x} + 6 e^{\alpha x}=0\\
+e^{\alpha x}[\alpha^2-5\alpha + 6]=0\\
+(\alpha -2)(\alpha - 3) = 0\\
+\alpha = 2 \textit{  or  } \alpha=3\\
+\textit{The generic solution is:   }\\ 
+y = C_1*e^{2x}+ C_2*e^{3x} \textit{  (where $C_1$ and $C_2$ are arbitrary constants)}
+\end{gather*}
+
+	\newpage
+\section{Physics Background}
+Friction is one of the fundamental forces in physics, and the magnitude of all physical forces are based on Newton's second law: $F= mass * acceleration$. In physics most scenarios are described by transformations of potential (stored) energy to kinetic (motional) energy, which is a bodies energy in the direction it travels in, proportional to its velocity squared. However, things look vastly different in the real world. Frictional forces distort the motion of bodies by converting a bodies kinetic energy to heat, thus seemingly dissipating potential energy that is not converted purely into kinetic energy \cite[p.40]{gerthsen}. In physics there are many different types of frictional forces opposing the motion of bodies, thus acting oppositely in relation to the direction of motion of a body. I will outline 3 \cite[p.40]{gerthsen}:\\
+ \textit{Newton-friction} considers coefficients of friction and reaction forces to calculate the resistance of sliding bodies. \textit{Stokes-friction}, modeling the resistance on spherical bodies traveling through water, proportional to velocity. \textit{Couloumb-friction} is proportional to velocity squared and considers properties like density and surface area, to calculate the resistance of large objects falling through fluids like air \cite[p.41]{gerthsen}.\\ \\
+Couloumb-friction is independent of velocity, thus it is impossible to set up an equation involving derivatives of displacement. Newton-friction would compose an equation with a factor $v^2$ and solving this is beyond the scope of the investigation. However, as the purpose of this investigation is solving a differential equation, I will focus on "Stokes-friction" to set up a mathematical relation, which can be solved for the displacement time function of a traveling mass.
+Stokes-Friction, also known as viscous drag, occurs only when small bodies move through a fluid with speeds that are relatively low \cite{wikidrag}. The viscous drag force is proportional to the velocity of an object and is given by the equation: \begin{equation}
+		F_{S} =6\pi \eta  r v \label{stokes}
+	\end{equation}
+	($\eta$ stands for viscosity, which is a fluid's resistance to motion, $r$ is the radius of the object and $v$ is its velocity) \cite[p.41]{gerthsen}.\\ \\
+A small body traveling through a fluid at a relatively low velocity experiences two forces:
+\begin{enumerate}[label=\Roman*]
+	\item Viscous drag force (acting opposite to displacement) proportional to velocity
+	\item Downward force due to gravity (acting in the direction of displacement) proportional to gravitational acceleration
+\end{enumerate}
+Combining these forces yields the following equation:\\
+\begin{equation}
+	m*a + b*v = F_0 
+\end{equation}
+Force II is mathematically defined by recalling Newton's second law of motion, $m$ is mass and $a$ is acceleration, Force I is defined by the viscous drag force, where $b$ combines all constants in the equation of Stokes Friction \eqref{stokes} and $v$ is the velocity. $F_0$ is then the resultant force. One can simplify further by expressing a and v in terms of displacement $x$ which is a function of $t$: $x(t)$:
+\begin{equation}
+	m\frac{d^2x}{dt^2}+ b\frac{dx}{dt} = F_0 \label{thedfeq}
+\end{equation}
+
+
+\newpage
+\section{Solving a differential equation for the displacement-time function of a traveling mass}
+\subsection{Solving with Reduction of order}
+I will now proceed to solving the  second-order differential equation defined in \eqref{thedfeq}, where $m$ is the mass, $b$ is the coefficient of viscous friction and $F_0$ is the resultant force. One substitutes $v = \frac{dx}{dt}$, thus $v\prime = \frac{d^2x}{dt^2}$ to reduce to a first order differential equation, as explained in section \textit{2.2}, although this time no solution is given, the equation is already in a form where it can be easily reduced:
+
+\begin{equation}
+		m\frac{d^2x}{dt^2}+ b\frac{dx}{dt} = F_0\label{givendif}
+\end{equation}
+\begin{gather*}
+	m*v\prime+b*v = F_0\\
+	\textit{Using Seperation of Variables to solve the affiliated homogenous differential equation}\\
+	v\prime + \frac{b}{m}*v = 0\\
+	\int \frac{dv}{v} = -\int \frac{b}{m}dt\\
+	ln\mid v \mid = \frac{-b}{m}t + C_1\\
+	v_0 = \pm e^{C_1} * e^{\frac{-b}{m}t}\\
+	v_0 =K * e^{\frac{-b}{m}t} \textit{  (Where $K$ is a constant and $K = \pm e^{C_1}$)}\\
+	v = K(t)*e^{\frac{-b}{m}t}\textit{   Now solving for $K(t)$ with Variation of Constants}\\ %maybe further explanation% 
+	\frac{dv}{dt}= K\prime(t)*e^{\frac{-b}{m}t}+ K(t)*\frac{-b}{m}*e^{\frac{-b}{m}t}\\
+	\textit{(Substituting $v$ and $\frac{dv}{dt}$ back into the original equation, $v\prime +\frac{b}{m}*v= \frac{F_0}{m}$)}\\
+	K\prime(t)*e^{\frac{-b}{m}t}+ K(t)*\frac{-b}{m}*e^{\frac{-b}{m}t}+ K(t)*\frac{b}{m}*e^{\frac{-b}{m}t} = \frac{F_0}{m}\\
+	K\prime(t)*e^{\frac{-b}{m}t} = \frac{F_0}{m}\\
+	\int K\prime(t) = \int \frac{F_0}{m}*e^{\frac{b}{m}t}\\
+	K(t) = \frac{F_0}{m}\int e^{\frac{b}{m}t} dt\\
+	K(t) = \frac{F_0}{m}*\frac{m}{b}*e^{\frac{b}{m}t} + C_1\\
+	K(t) = \frac{F_0}{b}*e^{\frac{b}{m}t}+ C_1\\
+	\textit{(Resubstituting $K(t)$ in the equation $v= K(t)*e^{\frac{-b}{m}t}$)}\\
+\end{gather*}
+\begin{align}
+\nonumber
+	v &= \left(\frac{F_0}{b}*e^{\frac{b}{m}t}+ C_1\right)*e^{\frac{-b}{m}t}\\
+	v &= \frac{F_0}{b}+ C_1e^{\frac{-b}{m}t} \textit{  This defines the general solution} \label{generalsolution} \\ %maybe ellaborate on arithmetic%
+\nonumber
+	\frac{dx}{dt}&= \frac{F_0}{b}+ C_1e^{\frac{-b}{m}t} \textit{  (as $v= \frac{dx}{dt}$)}\\
+\nonumber
+	\int \frac{dx}{dt}&= \int \frac{F_0}{b}+ C_1e^{\frac{-b}{m}t} dt\\
+	x &= \frac{F_0}{b}t - \frac{C_1*m}{b}*e^{\frac{-b}{m}t}+ C_2 \textit{   (Where $C_2$ is a constant)} \label{solution}
+\end{align}
+		The general solution of the inhomogeneous differential equation is equation (4.0.3).
+		\subsection{Evaluating the constants}
+		 If one assumes the function holds for $t\geq0$, as the object starts when t=0 and the starting conditions are (I) $x(0)=0$ and (II) $x\prime(0)=0$ one can solve for the constants, $C_1$ and $C_2$.
+	
+\begin{gather*}
+	\textit{Using assumption (I): } (0)= \frac{F_0}{b}*(0)-\frac{C_1*m}{b}*e^{\frac{-b}{m}(0)}+C_2\\
+	C_1*\frac{m}{b}= C_2\\
+	\textit{Using assumption (II): } x\prime= 
+	\frac{F_0}{b}+ C_1*e^{\frac{-b}{m}(0)}=0\\
+	\frac{F_0}{b}+ C_1 = 0\\
+	C_1 = \frac{-F_0}{b}\\
+	\textit{Combining these equations yields the following result for $C_2$:}\\
+	\frac{-F_0}{b}*\frac{m}{b} = C_2\\
+	C_2 = \frac{-F_0*m}{b^2}\\
+\end{gather*}
+This completes the result for $x$, where $x$ is the function $x(t)$ by combining the constants with (4.0.3) which can thus be written as:
+\begin{align}
+	\nonumber
+	x(t) = \frac{F_0}{b}t - \frac{-F_0}{b}*\frac{m}{b}*e^{\frac{-b}{m}t}+ \frac{-F_0*m}{b^2}\\
+	x(t) = \frac{F_0}{b^2} \left(bt+ e^{\frac{-b}{m}t}*m-m\right)  \textit{ (for $t\geq 0$).} \label{solution}
+\end{align}
+\subsection{Displaying the results graphically}Results can now be displayed graphically, by assuming we have a mass of 1kg and a drag factor of $1 kgs^1$, for simplicity, although in reality this is an unusually high drag factor for an object traveling at a relatively low velocity, such that equation \eqref{givendif} can be applied, in relation to the physics behind drag coefficients, alluded to in section \textit{$3$}.
+\begin{equation}
+	 \textit{Defining \eqref{solution} as follows  } x(t) = F_0 (t+ e^{-t}-1)\label{graphfunction}
+\end{equation}
+
+The equation of the shown displacement-time function is \eqref{graphfunction} for $t\geq0$, the scale on the y axes is defined in terms of $F_0$, thus $y=1=1*F_0$. It occurs that the graph of the solved equation has an oblique, linear asymptote, one can solve for this oblique asymptote by using limits.
+\begin{gather}
+\nonumber
+	\lim_{t\to\infty} x(t) = \frac{F_0}{b^2} \left(bt+ e^{\frac{-b}{m}\infty}*m-m\right)\\
+	\lim_{t\to\infty} x(t) = \frac{F_0}{b^2} \left(bt-m\right) \label{limit}\\
+\nonumber 
+	\textit{  (As $\left(e^{\frac{-b}{m}t}*m\right ) \to 0$ as $t \to\infty$ )}\\
+	\textit{The linear approximation in the figure ($b=m=1$) thus is: $\lim_{t\to\infty} x(t) = F_0 \left(t-1\right)$ } \label{graphlinear}
+\end{gather}
+ The $x$ intercept of \eqref{graphlinear} is $(1,0)$, in the general case when the constants are not defined as in \eqref{limit} it is solved for easily by equating \eqref{limit} to $0$:
+\begin{align}
+\nonumber
+	\frac{F_0}{b^2}(bt-m)=0\\
+\nonumber
+	(bt-m)=0\\
+	t= \frac{m}{b}	
+\end{align}
+By visibility, it seems as though for $t\geq3$, $x(t) \approx \lim_{t\to\infty} x(t)$. From that time interval onwards, the mass thus travels linearly and with constant, terminal velocity, its displacement time function is given by the oblique asymptote \eqref{graphlinear}. Thus the effect of frictional forces in distorting the linearity of motion becomes negligible after a certain time interval, depending on the constants used when evaluating \eqref{solution}. 
+\section{Conclusion and Reflection}
+In this exploration I have successfully calculated the displacement-time function of a small circular mass  when immersed in water and when subjected to Stokes-Friction at relatively low velocities. Thus, I have come somewhat closer to what happens in the real world, where as previously mentioned, the effect of frictional forces is anything but negligible. I also now know why we were told to neglect frictional forces in school, because modeling their impact is rather complex. However, the end result of the investigation is limited to objects encountering Stokes-Friction and more significantly the result assumes that the mass, $m$, the constant $b$, which combines the coefficients in \eqref{stokes} and the resultant force $F_0$ are all constant. \\ \\ It is a plausible assumption to make, however, the viscosity, mass or density of a body or fluid may well change with external influences like pressure or temperature. One has to assume that they are constant, otherwise one would have to solve a dynamical system with variable coefficients, which is beyond the scope of the investigation. Moreover, I modeled the displacement time function of an object traveling through water and assuming that it only encounters Stokes-Friction is another oversimplification. There are other unpredictable variable forces involved in fluid flow, like recirculation, eddies and randomness \cite{wikifluid} as turbulent swirls in a fluid create unpredictable conditions, characteristic for fluid dynamics which is a branch of physics where there still is much to discover. \\ \\
+Nevertheless I have satisfied the aim of my exploration by calculating a displacement time function of a traveling mass. The figure describes the displaced path of masses without neglecting frictional forces, whatever frictional forces one may be referring to, similarly to other models, due to the exponentially increasing function which tends to an oblique asymptote as $t \to\infty$. Although I have modeled Stokes-Friction, not air resistance, the answer to the question in Figure 1 is $a$, in accordance with the graph in Figure 2.\\ \\
+ Others can further develop the results of this investigation by including more variable frictional forces, or by considering variable coefficients of friction and solving a differential equation with dynamic coefficients. For example, one could model the path a mass (or a particle like a muon) takes when traveling trough air with "Newton-Friction" and one could include "Lorentz-transformations", which are transformations describing how the mass of an object is not constant but changes with time, as by Einsteins's special relativity an objects mass does not stay constant when subjected to variable speeds on a scale comparable to the speed of light \cite[p.60]{six}. I have learned that one may approximate and model reality with mathematics, however a definite and accurate description of reality with mathematics is still work in progress. 
+\newpage
+\section{Bibliography}
+\flushleft
+\bibliographystyle{plain}
+\bibliography{fundamentals}
+
+		
+%Halliday Resneck – Fundamentals of Physics\\
+%Gerthsen Physik\\
+%Papula II\\
+%Stroud Engineering Mathematics\\
+%Tennenbaum, Pollard Ordinary Differential Equations\\
+%Coddington, Earl A. An introduciton to Ordinary Differential Equations\\
+%Bronstein\\
+%Mathematisches Forschungsinstitut Oberwolfach\\
+%Wikipedia, Differential Equations\\
+%Pauls Online Math Notes . Reducing Differential Equations\\
+%Wikipedia, Drag\\
+%Wikipedia, Friction\\
+%Gerald Teschl Ordinary Differential Equations and Dynamical Systems Graduate Studies in Mathematics, Volume 140, Amer. Math. Soc., Providence, 2012.\\
+%Wikipedia, Fluid dynamics\\
+%Feynman, Richard Six Not so Easy Pieces\\
+
+
+
+	
+\end{document}
+
+

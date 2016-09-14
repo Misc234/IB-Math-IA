@@ -1,0 +1,13 @@
+\contentsline {section}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {2}Mathematical Background}{3}
+\contentsline {subsection}{\numberline {2.1}Solving first order differential equations}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Seperating the variables}{3}
+\contentsline {subsubsection}{\numberline {2.1.2}Variation of constants}{6}
+\contentsline {subsection}{\numberline {2.2}Solving second order differential equations}{7}
+\contentsline {section}{\numberline {3}Physics Background}{9}
+\contentsline {section}{\numberline {4}Solving a differential equation for the displacement-time function of a traveling mass}{10}
+\contentsline {subsection}{\numberline {4.1}Solving with Reduction of order}{10}
+\contentsline {subsection}{\numberline {4.2}Evaluating the constants}{11}
+\contentsline {subsection}{\numberline {4.3}Displaying the results graphically}{11}
+\contentsline {section}{\numberline {5}Conclusion and Reflection}{12}
+\contentsline {section}{\numberline {6}Bibliography}{14}
