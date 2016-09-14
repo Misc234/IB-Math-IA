@@ -12,14 +12,37 @@
 \pagestyle{fancy}
 \numberwithin{equation}{subsection}
 
+\makeatletter % used for using '&' to align subscripts
+\newcommand{\subalign}[1]{%
+  \vcenter{%
+    \Let@ \restore@math@cr \default@tag
+    \baselineskip\fontdimen10 \scriptfont\tw@
+    \advance\baselineskip\fontdimen12 \scriptfont\tw@
+    \lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+    \lineskiplimit\lineskip
+    \ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\crcr
+      #1\crcr
+    }%
+  }
+}
+\makeatother
+
+%DECLARE OPPERATORS
 \DeclareMathOperator{\di}{d\!}
+
+%DECLARE CHARACTERS
+
 
 \begin{document}
 \begin{equation}
-\int \limits_{W_j} c_{j}dc_{1}dc_{2} \ldots dc_{m} = \dfrac{1}{\prod\limits_{s=1}^{m}h_{s}}\left( \int\limits_{b(j,l)}^{a(j,l)} c_{j} dc_{j}\right) {\prod\limits_{s=1}^{m}}_{(s \neq j)} \int\limits_{a(s,l)}^{b(s,l)} dc_{s} = c_{j}^{(l)} \label{eq_vector1}
+	\int \limits_{W_j} c_{j}dc_{1}dc_{2} \ldots dc_{m} 
+	= \dfrac{1}{\prod\limits_{s=1}^{m}h_{s}}
+	\left( \  \int\limits_{b(j,l)}^{a(j,l)} c_{j} dc_{j}\right) 
+	\prod_{\substack{s=1\\ (s\ne j)}}^m \ 
+	\int\limits_{a(s,l)}^{b(s,l)} \! dc_{s} 
+	= c_{j}^{(l)} 
+\label{eq_vector1}
 \end{equation}
-
-Label: \eqref{eq_vector1}
 
 
 \end{document}
