@@ -2,12 +2,12 @@
 PROGRAM MAIN
 
 
-    INTEGER NN(20),NNR(200,100), NRAB(3)              !Initilization of permanent variables
+    INTEGER NN(40),NNR(201,101), NRAB(3)              !Initilization of permanent variables
                                                       !and settings for any given problem
-    DIMENSION X(20), Y(20), Y1(20), Y2(20), P(20)
-    DIMENSION WA(200,100), WB(200,100)
-    DIMENSION STR(108), STR1(20)
-    DIMENSION AAIST(3), AAMIN(3), AAMAX(3), BBIST(3), BBMIN(3), BBMAX(3)
+    DIMENSION X(40), Y(40), Y1(40), Y2(40), P(40)
+    DIMENSION WA(201,101), WB(201,101)
+    DIMENSION STR(108), STR1(30)
+    DIMENSION AAMIN(3), AAMAX(3), BBMIN(3), BBMAX(3)
 
 
     JPRINT = 1                                        !Boolian to write variant calculation
@@ -18,14 +18,18 @@ PROGRAM MAIN
 
     NDISTORT = 0                                      !Number of distorted values in any given variant
 
+    AIST = 2.0
+
+    BIST = 0.5
+
     NSTR = 108                                        !Length of array STR
 
-    C = 0.005                                         !The quantitive multiplier for exaduration of error
+    C = 0.5                                           !The quantitive multiplier for exaduration of error
 
-    M = 200                                           !The number of sub-regions in the horrizoltal
-    K = 100                                           !The number of sub-regions in the vertical
+    M = 201                                           !The number of sub-regions in the horrizoltal
+    K = 101                                           !The number of sub-regions in the vertical
 
-    N = 20                                            !Number of descrete data points
+    N = 40                                            !Number of descrete data points
 
     X0 = 0.0                                          !The value of the first X value
     HX = 0.05                                         !The value of the horrizoltal step between the X values
@@ -41,7 +45,11 @@ PROGRAM MAIN
     WRITE(*,*) ' '
     WRITE(*,*) '   INPUT VARIABLES*********************'
     WRITE(*,*) '    '
-    WRITE(*,*) '     JPRINT         = ', JPRINT
+    WRITE(*,*) '     AIST           = ', AIST
+    WRITE(*,*) '     BIST           = ', BIST
+    WRITE(*,*) '     JDISTORT       = ', JDISTORT
+    WRITE(*,*) '     NDISTORT       = ', NDISTORT
+    WRITE(*,*) '     CDISTORT       = ', CDISTORT
     WRITE(*,*) '     C              = ', C
     WRITE(*,*) '     N              = ', N
     WRITE(*,*) '     M              = ', M
@@ -86,12 +94,10 @@ PROGRAM MAIN
               -1.80 ,  -0.88 ,   0.47 ,  -0.51    &
                /
 
-    DATA AAIST / 2.0, 2.0, 2.0 /
-    DATA AAMIN / 1.0, 1.0, 1.0 /
-    DATA AAMAX / 3.0, 3.0, 3.0 /
-    DATA BBIST / 0.5, 0.5, 0.5 /
-    DATA BBMIN / 0.0, 0.0, 0.0 /
-    DATA BBMAX / 1.0, 1.0, 1.0 /
+    DATA AAMIN / 1.5, 1.5, 1.5 /
+    DATA AAMAX / 2.5, 2.5, 2.5 /
+    DATA BBMIN / 0.2, 0.2, 0.2 /
+    DATA BBMAX / 0.8, 0.8, 0.8 /
 
     IVAR = 0
 500 CONTINUE
@@ -102,7 +108,7 @@ PROGRAM MAIN
     WRITE(*,*)'         START VARIANT ',IVAR
 
     DO 13  I = 1,N                                    !Generate true values for data points (without)
-    Y(I) = AAIST(1) + BBIST(1) * X(I)
+    Y(I) = AIST + BIST * X(I)
 13  CONTINUE
 
     DO 2 I = 1,N
@@ -190,8 +196,17 @@ PROGRAM MAIN
     DO 34 J = 1,I - 1
     S = S/J
 34  CONTINUE
-    P(I) = S / 2**(N-1)
+    DO 47 I2 = 1,(N-1)
+    S = S / 2.0
+47  CONTINUE
+    P(I) = S
 31  CONTINUE
+
+    S = 0.0
+    DO 45 I = 1,N
+    S = S + P(I)
+45  CONTINUE
+    WRITE(*,*)'PROB SUM = ', S
 
      SP = 0.0                                         !Recalculate apriori probabilities to a posteriori ones
      DO 41 J = 1,N
@@ -202,6 +217,12 @@ PROGRAM MAIN
      IF(NN(I).NE.0) P(I) = P(I)/SP                    !change of sign
      IF(NN(I).EQ.0) P(I) = 0.0
 42   CONTINUE
+
+     S = 0.0
+     DO 46 I = 1,N
+     S = S + P(I)
+46   CONTINUE
+     WRITE(*,*)'PROB SUM 2 = ', S
 
 !MAIN BLOCK 1 - END
 !MAIN BLOCK 2 - START
@@ -250,9 +271,9 @@ PROGRAM MAIN
 51    CONTINUE
 
      DO 56 I = 1,N
-     IF(IVAR.EQ.1) DIST = DIST + ((AOPT + BOPT * X(I)) - (AAIST(1) + BBIST(1) * X(I)))**2
-     IF(IVAR.EQ.2) DIST = DIST + ((AOPT + BOPT * X(I)**2) - (AAIST(1) + BBIST(1) * X(I)**2))**2
-     IF(IVAR.EQ.3) DIST = DIST + ((AOPT + BOPT * EXP(X(I))) - (AAIST(1) + BBIST(1) * EXP(X(I))))**2
+     IF(IVAR.EQ.1) DIST = DIST + ((AOPT + BOPT * X(I)) - (Y(I)))**2
+     IF(IVAR.EQ.2) DIST = DIST + ((AOPT + BOPT * X(I)**2) - (Y(I)))**2
+     IF(IVAR.EQ.3) DIST = DIST + ((AOPT + BOPT * EXP(X(I))) - (Y(I)))**2
 56   CONTINUE
 
      DIST = DIST / N
@@ -285,14 +306,6 @@ PROGRAM MAIN
 
 
 !MAIN BLOCK 2 - END
-
-
-!WRITE(*,*) '     AIST           = ', AIST
-!WRITE(*,*) '     BIST           = ', BIST
-!WRITE(*,*) '     AMIN           = ', AMIN
-!WRITE(*,*) '     AMAX           = ', AMAX
-!WRITE(*,*) '     BMIN           = ', BMIN
-!WRITE(*,*) '     BMAX           = ', BMAX
 
 END PROGRAM MAIN
 
