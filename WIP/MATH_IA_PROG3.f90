@@ -14,13 +14,13 @@ PROGRAM MAIN
                                                       !(1 print, 0 don't print)
     JDISTORT = 0                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
-    CDISTORT = 5.0                                    !Distortion coeficient
+    CDISTORT = 1.0                                    !Distortion coeficient
 
-    NDISTORT = 3                                      !Number of distorted values in any given variant
+    NDISTORT = 0                                      !Number of distorted values in any given variant
 
     NSTR = 108                                        !Length of array STR
 
-    C = 0.05                                          !The quantitive multiplier for exaduration of error
+    C = 0.005                                         !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                           !The number of sub-regions in the vertical
@@ -42,7 +42,6 @@ PROGRAM MAIN
     WRITE(*,*) '   INPUT VARIABLES*********************'
     WRITE(*,*) '    '
     WRITE(*,*) '     JPRINT         = ', JPRINT
-    WRITE(*,*) '     NVAR           = ', NVAR
     WRITE(*,*) '     C              = ', C
     WRITE(*,*) '     N              = ', N
     WRITE(*,*) '     M              = ', M
@@ -220,7 +219,16 @@ PROGRAM MAIN
      A0 = WA(I1,J1)
      B0 = WB(I1,J1)
 
-     D = (A - A0)**2 + (B - B0)**2
+     D = 0.0
+     DO 55 I2 = 1,N
+     IF(IVAR.EQ.1) D = D + ((A + B * X(I2)) - (A0 + B0 * X(I2)))**2
+     IF(IVAR.EQ.2) D = D + ((A + B * X(I2)**2) - (A0 + B0 * X(I2)**2))**2
+     IF(IVAR.EQ.3) D = D + ((A + B * EXP(X(I2))) - (A0 + B0 * EXP(X(I2))))**2
+55   CONTINUE
+
+     D = D / N
+     D = SQRT(D)
+
      NR = NNR(I1,J1)
      PR = P(NR+1)
 
@@ -236,12 +244,19 @@ PROGRAM MAIN
      AOPT = A
      BOPT = B
 
-     DIST = (AOPT - AAIST(1))**2 + (BOPT - BBIST(1))**2
-
 100   CONTINUE
 
 52    CONTINUE
 51    CONTINUE
+
+     DO 56 I = 1,N
+     IF(IVAR.EQ.1) DIST = DIST + ((AOPT + BOPT * X(I)) - (AAIST(1) + BBIST(1) * X(I)))**2
+     IF(IVAR.EQ.2) DIST = DIST + ((AOPT + BOPT * X(I)**2) - (AAIST(1) + BBIST(1) * X(I)**2))**2
+     IF(IVAR.EQ.3) DIST = DIST + ((AOPT + BOPT * EXP(X(I))) - (AAIST(1) + BBIST(1) * EXP(X(I))))**2
+56   CONTINUE
+
+     DIST = DIST / N
+     DIST = SQRT(DIST)
 
       WRITE(*,*)'         DONE          ',IVAR
       WRITE(*,*)' '
