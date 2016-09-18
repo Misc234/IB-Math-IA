@@ -1,0 +1,66 @@
+% arara: lualatex
+
+\documentclass{article}
+\usepackage{unicode-math}
+\usepackage{mathtools}
+\setmathfont{XITS math}
+
+\begin{document}
+Accents above:
+\begin{itemize}
+\item \verb+\grave+ $\grave x\quad Z_{\grave x}\quad Z_{Z_{\grave x}}$
+\item \verb+\acute+ $\acute x\quad Z_{\acute x}\quad Z_{Z_{\acute x}}$
+\item \verb+\hat+ $\hat x\quad Z_{\hat x}\quad Z_{Z_{\hat x}}$
+\item \verb+\widehat+ $\widehat x\quad Z_{\widehat x}\quad Z_{Z_{\widehat x}}$
+\item \verb+\tilde+ $\tilde x\quad Z_{\tilde x}\quad Z_{Z_{\tilde x}}$
+\item \verb+\bar+ $\bar x\quad Z_{\bar x}\quad Z_{Z_{\bar x}}$
+\item \verb+\overbar+ $\overbar x\quad Z_{\overbar x}\quad Z_{Z_{\overbar x}}$
+\item \verb+\overline+ $\overline x\quad Z_{\overline x}\quad Z_{Z_{\overline x}}$
+\item \verb+\breve+ $\breve x\quad Z_{\breve x}\quad Z_{Z_{\breve x}}$
+\item \verb+\dot+ $\dot x\quad Z_{\dot x}\quad Z_{Z_{\dot x}}$
+\item \verb+\ddot+ $\ddot x\quad Z_{\ddot x}\quad Z_{Z_{\ddot x}}$
+\item \verb+\ovhook+ $\ovhook x\quad Z_{\ovhook x}\quad Z_{Z_{\ovhook x}}$
+\item \verb+\ocirc+ $\ocirc x\quad Z_{\ocirc x}\quad Z_{Z_{\ocirc x}}$
+\item \verb+\check+ $\check x\quad Z_{\check x}\quad Z_{Z_{\check x}}$
+\item \verb+\candra+ $\candra x\quad Z_{\candra x}\quad Z_{Z_{\candra x}}$
+\item \verb+\oturnedcomma+ $\oturnedcomma x\quad Z_{\oturnedcomma x}\quad Z_{Z_{\oturnedcomma x}}$
+\item \verb+\ocommatopright+ $\ocommatopright x\quad Z_{\ocommatopright x}\quad Z_{Z_{\ocommatopright x}}$
+\item \verb+\droang+ $\droang x\quad Z_{\droang x}\quad Z_{Z_{\droang x}}$
+\item \verb+\leftharpoonaccent+ $\leftharpoonaccent x\quad Z_{\leftharpoonaccent x}\quad Z_{Z_{\leftharpoonaccent x}}$
+\item \verb+\rightharpoonaccent+ $\rightharpoonaccent x\quad Z_{\rightharpoonaccent x}\quad Z_{Z_{\rightharpoonaccent x}}$
+\item \verb+\overleftarrow+ $\overleftarrow x\quad Z_{\overleftarrow x}\quad Z_{Z_{\overleftarrow x}}$
+\item \verb+\vec+ $\vec x\quad Z_{\vec x}\quad Z_{Z_{\vec x}}$
+\item \verb+\dddot+ $\dddot x\quad Z_{\dddot x}\quad Z_{Z_{\dddot x}}$
+\item \verb+\ddddot+ $\ddddot x\quad Z_{\ddddot x}\quad Z_{Z_{\ddddot x}}$
+\item \verb+\overleftrightarrow+ $\overleftrightarrow x\quad Z_{\overleftrightarrow x}\quad Z_{Z_{\overleftrightarrow x}}$
+\item \verb+\annuity+ $\annuity x\quad Z_{\annuity x}\quad Z_{Z_{\annuity x}}$
+\item \verb+\widebridgeabove+ $\widebridgeabove x\quad Z_{\widebridgeabove x}\quad Z_{Z_{\widebridgeabove x}}$
+\item \verb+\asteraccent+ $\asteraccent x\quad Z_{\asteraccent x}\quad Z_{Z_{\asteraccent x}}$
+\end{itemize}
+Accents below:
+\begin{itemize}
+%\item \verb+\wideutilde+ $\wideutilde x\quad Z_{\wideutilde x}\quad Z_{Z_{\wideutilde x}}$
+\item \verb+\underbar+ $\underbar x\quad Z_{\underbar x}\quad Z_{Z_{\underbar x}}$
+\item \verb+\underline+ $\underline x\quad Z_{\underline x}\quad Z_{Z_{\underline x}}$
+\item \verb+\threeunderdot+ $\threeunderdot x\quad Z_{\threeunderdot x}\quad Z_{Z_{\threeunderdot x}}$
+\item \verb+\underrightharpoondown+ $\underrightharpoondown x\quad Z_{\underrightharpoondown x}\quad Z_{Z_{\underrightharpoondown x}}$
+\item \verb+\underleftharpoondown+ $\underleftharpoondown x\quad Z_{\underleftharpoondown x}\quad Z_{Z_{\underleftharpoondown x}}$
+\item \verb+\underleftarrow+ $\underleftarrow x\quad Z_{\underleftarrow x}\quad Z_{Z_{\underleftarrow x}}$
+\item \verb+\underrightarrow+ $\underrightarrow x\quad Z_{\underrightarrow x}\quad Z_{Z_{\underrightarrow x}}$
+\item \verb+\underline+ $\underline x\quad Z_{\underline x}\quad Z_{Z_{\underline x}}$
+\end{itemize}
+Trailing signs (could be set as subscript or prescripts as well:
+\begin{itemize}
+\item \verb+^\prime+ $x^\prime\quad Z_{x^\prime}\quad Z_{Z_{x^\prime}}$
+\item \verb+^\dprime+ $x^\dprime\quad Z_{x^\dprime}\quad Z_{Z_{x^\dprime}}$
+\item \verb+^\trprime+ $x^\trprime\quad Z_{x^\trprime}\quad Z_{Z_{x^\trprime}}$
+\item \verb+^\qprime+ $x^\qprime\quad Z_{x^\qprime}\quad Z_{Z_{x^\qprime}}$
+\item \verb+^\backprime+ $x^\backprime\quad Z_{x^\backprime}\quad Z_{Z_{x^\backprime}}$
+\item \verb+^\backdprime+ $x^\backdprime\quad Z_{x^\backdprime}\quad Z_{Z_{x^\backdprime}}$
+\item \verb+^\backtrprime+ $x^\backtrprime\quad Z_{x^\backtrprime}\quad Z_{Z_{x^\backtrprime}}$
+\item \verb+^\hyphenbullet+ $x^\hyphenbullet\quad Z_{x^\hyphenbullet}\quad Z_{Z_{x^\hyphenbullet}}$
+\item \verb+^\ast+ $x^\ast\quad Z_{x^\ast}\quad Z_{Z_{x^\ast}}$
+\item \verb+^\vysmwhtcircle+ $x^\vysmwhtcircle\quad Z_{x^\vysmwhtcircle}\quad Z_{Z_{x^\vysmwhtcircle}}$
+\item \verb+^\vysmblkcircle+ $x^\vysmblkcircle\quad Z_{x^\vysmblkcircle}\quad Z_{Z_{x^\vysmblkcircle}}$
+\item \verb+^\llcorner+ $x^\llcorner\quad Z_{x^\llcorner}\quad Z_{Z_{x^\llcorner}}$
+\item \verb+^\ulcorner+ $x^\ulcorner\quad Z_{x^\ulcorner}\quad Z_{Z_{x^\ulcorner}}$

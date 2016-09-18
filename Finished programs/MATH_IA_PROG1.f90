@@ -15,7 +15,7 @@ PROGRAM MAIN
 
     NDISTORT = 3                                      !Number of distorted values in any given variant
 
-    NVAR = 1                                          !Number of variants of the calculation
+    NVAR = 5                                          !Number of variants of the calculation
     NSTR = 108                                        !Length of array STR
     AMIN = 1.0                                        !The minimum value for function parameter 'a'
     AMAX = 3.0                                        !The maximum value for function parameter 'a'
@@ -24,7 +24,7 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 0.05                                          !The quantitive multiplier for exaduration of error
+    C = 0.5                                          !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                            !The number of sub-regions in the vertical
@@ -79,6 +79,10 @@ PROGRAM MAIN
     AVGDISTLMM2 = 0.0
 
 !MAIN BLOCK 1 - START
+
+    I = N/2
+    I=2*I
+    IF(I.NE.N) GOTO 1000
 
     DO 10 I = 1,N                                     !Generating X values with the valid step
     X(I) = X0 + (I-1) * HX
@@ -214,34 +218,29 @@ PROGRAM MAIN
 !         write (*,*) NN(I)
 !24   CONTINUE
 
-     DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
-     S = 1.0                                          !using P(I) = (J cRn N-1) / 2^(N-1)
-     DO 32 J = 1,(N-1)
-     IF(J.LT.(N-I+1)) GOTO 33
-     S = S * J
-33   CONTINUE
-32   CONTINUE
-     DO 34 J = 1,I - 1
-       S = S/J
-34   CONTINUE
-     P(I) = S / 2**(N-1)
-31   CONTINUE
+    DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
+    IF(I.LE.(N/2)) GOTO 35                           !using P(I) = (J cRn N-1) / 2^(N-1)
+    IF(I.GT.(N/2)) P(I) = P(N - I + 1)
+    GOTO 31
+35  CONTINUE
+    S = 1.0
+    DO 32 J = 1,(N-1)
+    IF(J.LT.(N-I+1)) GOTO 33
+    S = S * J
+    !WRITE(*,*) 'S = S * J', S
+33  CONTINUE
+32  CONTINUE
+    DO 34 J = 1,I - 1
+    S = S/J
+    !WRITE(*,*) 'S = S / J', S
+34  CONTINUE
+    DO 47 I2 = 1,(N-1)
+    S = S / 2.0
+    !  WRITE(*,*) 'S = S / 2.0', S
+47  CONTINUE
+    P(I) = S
+31  CONTINUE
 
-!CHECK THE VALIDITY OF ARRAY P()
-!
-!     S = 0.0
-!     DO 35 I = 1,N
-!     S = S + P(I)
-!35   CONTINUE
-!
-!     WRITE(*,*) 'SUM ARRAY P'
-!     WRITE(*,*) S
-!     WRITE(*,*) 'VALUES OF ARRAY P'
-!     DO 40 I = 1,N
-!         S = P(I)
-!         WRITE(*,*) S
-!40   CONTINUE
-!END - ARRAY P() IS VALID
 
      SP = 0.0                                         !Recalculate apriori probabilities to a posteriori ones
      DO 41 J = 1,N
@@ -476,6 +475,10 @@ PROGRAM MAIN
 !MAIN BLOCK 2 - END
 
 700   CONTINUE
+
+
+1000 CONTINUE
+stop "N is not an even number, please re-enter N"
 
 END PROGRAM MAIN
 

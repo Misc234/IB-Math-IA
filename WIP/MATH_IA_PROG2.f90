@@ -2,14 +2,14 @@
 PROGRAM MAIN
 
 
-    INTEGER NN(20),NNR(100,100,100,100), NRAB(3)      !Initilization of permanent variables
+    INTEGER NN(40),NNR(100,100,100,100), NRAB(3)      !Initilization of permanent variables
                                                       !and settings for any given problem
     DIMENSION WC1(100,100,100,100)
     DIMENSION WC2(100,100,100,100)
     DIMENSION WC3(100,100,100,100)
     DIMENSION WC4(100,100,100,100)
 
-    DIMENSION Y(20), STR(108), STR1(20), Y1(20), Y2(20), P(20), X(20)
+    DIMENSION Y(40), STR(108), STR1(40), Y1(40), Y2(40), P(40), X(40)
 
     JPRINT   = 1                                      !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
@@ -19,7 +19,7 @@ PROGRAM MAIN
 
     NDISTORT = 3                                      !Number of distorted values in any given variant
 
-    NVAR = 3                                          !Number of variants of the calculation
+    NVAR = 2                                          !Number of variants of the calculation
     NSTR = 108                                        !Length of array STR
 
     C1MIN = 1.5                                       !The minimum value for function parameter 'C1'
@@ -36,9 +36,9 @@ PROGRAM MAIN
     C3IST = -0.8                                      !The true value for function parameter 'C3'
     C4IST = 3.0                                       !The true value for function parameter 'C4'
 
-    C = 0.05                                          !The quantitive multiplier for exaduration of error
+    C = 0.5                                           !The quantitive multiplier for exaduration of error
 
-    N = 20                                            !Number of descrete data points100
+    N = 40                                            !Number of descrete data points100
 
     M1 = 100                                          !The number of sub-regions in the horrizoltal for all 'M'
     M2 = 100
@@ -47,7 +47,7 @@ PROGRAM MAIN
     M5 = 100
 
     X0 = 0.0                                          !The value of the first X value
-    HX = 0.05                                         !The value of the horrizoltal step between the X values
+    HX = 0.025                                        !The value of the horrizoltal step between the X values
 
     WRITE(*,*) ' '                                    !Write input variables to console
     WRITE(*,*) ' '
@@ -103,6 +103,10 @@ PROGRAM MAIN
     AVGERW   = 0.0
 
 !MAIN BLOCK 1 - START
+
+    I = N/2
+    I=2*I
+    IF(I.NE.N) GOTO 1000
 
     DO 10 I = 1,N                                     !Generating X values with the valid step
     X(I) = X0 + (I-1) * HX
@@ -242,33 +246,28 @@ PROGRAM MAIN
 20  CONTINUE
 
 
-     DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
-     S = 1.0                                          !using P(I) = (J cRn N-1) / 2^(N-1)
-     DO 32 J = 1,(N-1)
-     IF(J.LT.(N-I+1)) GOTO 33
-     S = S * J
-33   CONTINUE
-32   CONTINUE
-     DO 34 J = 1,I - 1
-       S = S/J
-34   CONTINUE
-     P(I) = S / 2**(N-1)
-31   CONTINUE
-
-!CHECK THE VALIDITY OF ARRAY P()
-!
-!     S = 0.0
-!     DO 35 I = 1,N
-!     S = S + P(I)
-!35   CONTINUE
-!
-!     WRITE(*,*) 'SUM ARRAY P'
-!     WRITE(*,*) S
-!     WRITE(*,*) 'VALUES OF ARRAY P'
-!     DO 40 I = 1,N
-!         S = P(I)
-!         WRITE(*,*) S
-!40   CONTINUE
+    DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
+    IF(I.LE.(N/2)) GOTO 35                           !using P(I) = (J cRn N-1) / 2^(N-1)
+    IF(I.GT.(N/2)) P(I) = P(N - I + 1)
+    GOTO 31
+35  CONTINUE
+    S = 1.0
+    DO 32 J = 1,(N-1)
+    IF(J.LT.(N-I+1)) GOTO 33
+    S = S * J
+      !WRITE(*,*) 'S = S * J', S
+33  CONTINUE
+32  CONTINUE
+    DO 34 J = 1,I - 1
+    S = S/J
+      !WRITE(*,*) 'S = S / J', S
+34  CONTINUE
+    DO 47 I2 = 1,(N-1)
+    S = S / 2.0
+    !  WRITE(*,*) 'S = S / 2.0', S
+47  CONTINUE
+    P(I) = S
+31  CONTINUE
 !END - ARRAY P() IS VALID
 
      SP = 0.0                                         !Recalculate apriori probabilities to a posteriori ones
@@ -317,7 +316,13 @@ PROGRAM MAIN
 82   CONTINUE
 81   CONTINUE
 
-     DIST = ((C1OPT-C1IST)**2) + ((C2OPT-C2IST)**2) + ((C3OPT-C3IST)**2) + ((C4OPT-C4IST)**2)
+     DIST = 0.0
+     DO 56 I = 1,N
+     DIST = ((C1OPT + C2OPT * X(I) + C3OPT * (X(I))**2 + C4OPT * (X(I))**3) - Y(I))**2
+     56 CONTINUE
+     DIST = DIST / N
+     DIST = SQRT(DIST)
+
 
      ERWOPT = 0.0
 
@@ -332,13 +337,21 @@ PROGRAM MAIN
      C4 = WC4(I,J,K,L)
      NR = NNR(I,J,K,L)
      PR = P(NR+1)/(NN(NR+1))
-     D  = ((C1OPT-C1)**2) + ((C2OPT-C2)**2) + ((C3OPT-C3)**2) + ((C4OPT-C4)**2)
+     D = 0.0
+     DO 77 I5 = 1,N
+     D = D + (((C1OPT + C2OPT * X(I5) + C3OPT * (X(I5))**2 + C4OPT * (X(I5))**3)) &
+     - ((C1 + C2 * X(I5) + C3 * (X(I5))**2 + C4 * (X(I5))**3)))**2
+     77 CONTINUE
      ERWOPT = ERWOPT + PR * D
+
 
 184  CONTINUE
 183  CONTINUE
 182  CONTINUE
 181  CONTINUE
+
+ERWOPT = ERWOPT / N
+ERWOPT = SQRT(ERWOPT)
 
     !WRITE(*,*) '   CALCULATED OPTIMAL VALUES'
 
@@ -385,11 +398,6 @@ PROGRAM MAIN
 
     WRITE(*,*) '   AVERAGE VALUES**********************'
     WRITE(*,*) ' '
-    WRITE(*,*) '     AVGC1OPT       = ', AVGC1OPT
-    WRITE(*,*) '     AVGC2OPT       = ', AVGC2OPT
-    WRITE(*,*) '     AVGC3OPT       = ', AVGC3OPT
-    WRITE(*,*) '     AVGC4OTP       = ', AVGC4OPT
-    WRITE(*,*) ' '
     WRITE(*,*) '     AVGERW         = ', AVGERW
     WRITE(*,*) '     AVGDIST        = ', AVGDIST
     WRITE(*,*) ' '
@@ -402,5 +410,8 @@ PROGRAM MAIN
 !MAIN BLOCK 2 - END
 
 700   CONTINUE
+
+1000 CONTINUE
+stop "N is not an even number, please re-enter N"
 
 END PROGRAM MAIN

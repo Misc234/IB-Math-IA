@@ -61,6 +61,10 @@ PROGRAM MAIN
 
 !MAIN BLOCK 1 - START
 
+    I = N/2
+    I=2*I
+    IF(I.NE.N) GOTO 1000
+
     DO 10 I = 1,N                                     !Generating X values with the valid step
     X(I) = X0 + (I-1) * HX
 10  CONTINUE
@@ -182,25 +186,33 @@ PROGRAM MAIN
 21  CONTINUE
 20  CONTINUE
 
-  DO 999 I = 1,N
-    WRITE(*,*) NN(I)
-    999 CONTINUE
-
     DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
-    S = 1.0                                          !using P(I) = (J cRn N-1) / 2^(N-1)
+    IF(I.LE.(N/2)) GOTO 35                           !using P(I) = (J cRn N-1) / 2^(N-1)
+    IF(I.GT.(N/2)) P(I) = P(N - I + 1)
+    GOTO 31
+35  CONTINUE
+    S = 1.0
     DO 32 J = 1,(N-1)
     IF(J.LT.(N-I+1)) GOTO 33
     S = S * J
+!WRITE(*,*) 'S = S * J', S
 33  CONTINUE
 32  CONTINUE
     DO 34 J = 1,I - 1
     S = S/J
+    !WRITE(*,*) 'S = S / J', S
 34  CONTINUE
     DO 47 I2 = 1,(N-1)
     S = S / 2.0
+  !  WRITE(*,*) 'S = S / 2.0', S
 47  CONTINUE
     P(I) = S
 31  CONTINUE
+
+DO 555 I = 1,N
+WRITE(*,*) P(I)
+
+  555 CONTINUE
 
     S = 0.0
     DO 45 I = 1,N
@@ -306,6 +318,9 @@ PROGRAM MAIN
 
 
 !MAIN BLOCK 2 - END
+
+1000 CONTINUE
+stop "N is not an even number, please re-enter N"
 
 END PROGRAM MAIN
 
