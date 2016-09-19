@@ -245,6 +245,10 @@ PROGRAM MAIN
 21  CONTINUE
 20  CONTINUE
 
+    WRITE(*,*) 'NN'
+    DO 333 I = 1,N
+    WRITE(*,*) NN(I)
+333 CONTINUE
 
     DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
     IF(I.LE.(N/2)) GOTO 35                           !using P(I) = (J cRn N-1) / 2^(N-1)

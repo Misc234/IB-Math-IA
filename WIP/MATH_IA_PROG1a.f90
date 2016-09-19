@@ -9,7 +9,7 @@ PROGRAM MAIN
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 1                                      !If the error values may be distorted or not
+    JDISTORT = 0                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
     CDISTORT = 5.0                                    !Distortion coeficient
 
@@ -24,10 +24,10 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 0.2                                          !The quantitive multiplier for exaduration of error
+    C = 0.01                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
-    K = 100                                            !The number of sub-regions in the vertical
+    K = 100                                           !The number of sub-regions in the vertical
 
     N = 20                                            !Number of descrete data points
 
@@ -214,9 +214,9 @@ PROGRAM MAIN
 20  CONTINUE
 
 
-!     DO 24 I = 1,N
-!         write (*,*) NN(I)
-!24   CONTINUE
+     DO 24 I = 1,N
+         write (*,*) NN(I)
+24   CONTINUE
 
     DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
     IF(I.LE.(N/2)) GOTO 35                           !using P(I) = (J cRn N-1) / 2^(N-1)
@@ -241,24 +241,36 @@ PROGRAM MAIN
     P(I) = S
 31  CONTINUE
 
+WRITE(*,*)' '
+WRITE(*,*)'PROB APRIORI'
+DO 444 I = 1,N
+  S = P(I)
+WRITE (*,*) S
+444   CONTINUE
+
+
 
      SP = 0.0                                         !Recalculate apriori probabilities to a posteriori ones
      DO 41 J = 1,N
      IF(NN(J).NE.0) SP = SP + P(J)
 41   CONTINUE
 
-!WRITE(*,*) SP
+WRITE(*,*)' '
+WRITE(*,*)'SP:'
+WRITE(*,*) SP
+WRITE(*,*)' '
 
      DO 42 I = 1,N                                    !Excluding propabilites which did not give one single
      IF(NN(I).NE.0) P(I) = P(I)/SP                    !change of sign
      IF(NN(I).EQ.0) P(I) = 0.0
 42   CONTINUE
 
-
-!     DO 43 I = 1,N
-!       S = P(I)
-!     WRITE (*,*) S
-!43   CONTINUE
+WRITE(*,*)'PROB APOSTERIORI'
+DO 43 I = 1,N
+  S = P(I)
+WRITE (*,*) S
+43   CONTINUE
+WRITE(*,*)' '
 
 !MAIN BLOCK 1 - END
 !MAIN BLOCK 2 - START
@@ -281,6 +293,7 @@ PROGRAM MAIN
       D1 = ABS(A-A0) + ABS(B-B0)
       D2 = (A - A0)**2 + (B - B0)**2
       NR = NNR(I1,J1)
+      IF(NR.LE.7) GOTO 54
       PR = P(NR+1)
 
       DR1 = (D1 * PR)/(NN(NR+1))
