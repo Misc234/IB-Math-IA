@@ -15,28 +15,28 @@ PROGRAM MAIN
                                                       !(1 print, 0 don't print)
     JDISTORT = 0                                      !Boolian to enable error distortion
                                                       !(distortion by the value of CDISTORT)
-    CDISTORT = 5.0                                    !Distortion coeficient
+    CDISTORT = 20.0                                    !Distortion coeficient
 
     NDISTORT = 3                                      !Number of distorted values in any given variant
 
     NVAR = 2                                          !Number of variants of the calculation
     NSTR = 108                                        !Length of array STR
 
-    C1MIN = 1.5                                       !The minimum value for function parameter 'C1'
-    C1MAX = 2.5                                       !The maximum value for function parameter 'C1'
-    C2MIN = 0.0                                       !The minimum value for function parameter 'C2'
-    C2MAX = 1.0                                       !The maximum value for function parameter 'C2'
-    C3MIN = -1.5                                      !The minimum value for function parameter 'C3'
-    C3MAX = 0.0                                       !The maximum value for function parameter 'C3'
-    C4MIN = 2.5                                       !The minimum value for function parameter 'C4'
-    C4MAX = 3.5                                       !The maximum value for function parameter 'C4'
+    C1MIN = 0.5                                       !The minimum value for function parameter 'C1'
+    C1MAX = 1.5                                       !The maximum value for function parameter 'C1'
+    C2MIN = -0.5                                      !The minimum value for function parameter 'C2'
+    C2MAX = 0.5                                       !The maximum value for function parameter 'C2'
+    C3MIN = -3.5                                      !The minimum value for function parameter 'C3'
+    C3MAX = -2.5                                       !The maximum value for function parameter 'C3'
+    C4MIN = 1.5                                       !The minimum value for function parameter 'C4'
+    C4MAX = 2.5                                       !The maximum value for function parameter 'C4'
 
-    C1IST = 2.0                                       !The true value for function parameter 'C1'
-    C2IST = 0.5                                       !The true value for function parameter 'C2'
-    C3IST = -0.8                                      !The true value for function parameter 'C3'
-    C4IST = 3.0                                       !The true value for function parameter 'C4'
+    C1IST = 1.0                                       !The true value for function parameter 'C1'
+    C2IST = 0.0                                       !The true value for function parameter 'C2'
+    C3IST = -3.0                                      !The true value for function parameter 'C3'
+    C4IST = 2.0                                       !The true value for function parameter 'C4'
 
-    C = 0.5                                           !The quantitive multiplier for exaduration of error
+    C = 1.0                                           !The quantitive multiplier for exaduration of error
 
     N = 40                                            !Number of descrete data points100
 
@@ -46,8 +46,9 @@ PROGRAM MAIN
     M4 = 100
     M5 = 100
 
-    X0 = 0.0                                          !The value of the first X value
-    HX = 0.025                                        !The value of the horrizoltal step between the X values
+    X0 = -0.5                                         !The value of the first X value
+    HX = 0.05                                         !The value of the horrizoltal step between the X values
+
 
     WRITE(*,*) ' '                                    !Write input variables to console
     WRITE(*,*) ' '
