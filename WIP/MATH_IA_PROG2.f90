@@ -27,7 +27,7 @@ PROGRAM MAIN
     C2MIN = -0.5                                      !The minimum value for function parameter 'C2'
     C2MAX = 0.5                                       !The maximum value for function parameter 'C2'
     C3MIN = -3.5                                      !The minimum value for function parameter 'C3'
-    C3MAX = -2.5                                       !The maximum value for function parameter 'C3'
+    C3MAX = -2.5                                      !The maximum value for function parameter 'C3'
     C4MIN = 1.5                                       !The minimum value for function parameter 'C4'
     C4MAX = 2.5                                       !The maximum value for function parameter 'C4'
 
@@ -36,7 +36,7 @@ PROGRAM MAIN
     C3IST = -3.0                                      !The true value for function parameter 'C3'
     C4IST = 2.0                                       !The true value for function parameter 'C4'
 
-    C = 1.0                                           !The quantitive multiplier for exaduration of error
+    C = 0.5                                           !The quantitive multiplier for exaduration of error
 
     N = 40                                            !Number of descrete data points100
 
@@ -215,9 +215,16 @@ PROGRAM MAIN
 
 550 CONTINUE
 
+    S = 0.0
     DO 16 I = 1,N                                     !Generating values with error for given data points
+    S = S + (STR1(I)*C)**2
     Y1(I) = Y(I) + STR1(I) * C
 16  CONTINUE
+    S = S/N
+    S = SQRT(S)
+    WRITE(*,*)'True average-quadratic value of error:'
+    WRITE(*,*)S
+    WRITE(*,*)' '
 
     DO 30 I = 1,N                                     !Nullifying array NN
     NN(I) = 0
@@ -323,7 +330,7 @@ PROGRAM MAIN
 
      DIST = 0.0
      DO 56 I = 1,N
-     DIST = ((C1OPT + C2OPT * X(I) + C3OPT * (X(I))**2 + C4OPT * (X(I))**3) - Y(I))**2
+     DIST = ((C1OPT + C2OPT * X(I) + C3OPT * (X(I)**2) + C4OPT * (X(I))**3) - Y(I))**2
      56 CONTINUE
      DIST = DIST / N
      DIST = SQRT(DIST)
