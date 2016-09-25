@@ -70,7 +70,7 @@ when additionally it is also known, that: 1. vector $\dot{c} = (\dot{c}_{1}, \do
 \\
 Judging by references in scientific works that I read while researching for this IA [*], the most popular linear model of a studied relationship is
 \begin{equation}
-f(\dot{c},x)= \sum\limits_{j=1}^{m} \dot{c}_{j} \phi_{j}(x),
+f(\dot{c},x)= \sum\limits_{j=1}^{m} \dot{c}_{j} \phi_{j}(x), \label{functionform}
 \end{equation}
 specifically in polynomial form, when
 \begin{equation}
@@ -109,7 +109,41 @@ Its clear that the quality of the solution of this problem is dependant of an ar
 
 \section{Algorithm}
 
+Approximation of a functional dependence taking this new condition $Med(\xi)=0$ in mind, has been looked at in mathematics [*]. It is believed that in this case it is necessary to minimize the sum of absolute values of deviations of the modelled dependence $f(c^{*},x)$ from the unknown true function $f(\dot{c},x)$, where $c^{*}$ is the found optimal value of  vector $c$. This method is referred to as the Least Absolute Deviations (LAD). However, through my research I have found no methods of estimating LAD's accuracy. What value does an optimization method have if there is no way to determining the error it made? In addition, LAD does not presume the existence of priori limitations on the vector $\dot{c}$. And i must ask the question: What happens if the vector of parameters $c^{*}$, providing the minimum of the sum of modulus of errors, does not belong to the set $D$? \\
+\\
+It is clear, that in every separately taken case (run of an algorithm), the factual accuracy of the model solution (when the true function is known) cannot serve as either a comparative evaluation of two competing algorithms, nor criteria of effectiveness of any given algorithm. It is also clear, that if all, or close to all errors $\xi_{i}$ have the same sign (the condition $Med(\xi)=0$, although, the condition $E(\xi)=0$ as well, allow this, be it with a small probability), then neither method will give any good solutions. And also, with a certain 'layout' of errors $\xi_{i}$, a theoretically more sound method might by change give a worse solution that a less sound one. So, when estimating the effectiveness of a method, it is necessary to rely on average results of some number of random solutions. In conjunction with this, the idea lies in the fact that for the quality of constructed approximation $f(c^{*},x)$ to $f(\dot{c},x)$, I take the mathematical expectation
 
+\begin{equation}
+E(\rho(c^{*},\dot{c}))= \int\limits_{D}P(c)\rho(c^{*},\dot{c})\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}, \quad c = (c_{1},c_{2},\dots,c_{m}) \label{Erho}
+\end{equation}
+of proximity (distance) $\rho(c^{*},\dot{c})$ of function $f(c^{*},x)$ from $f(\dot{c},x)$ where in the role of distance $\rho(c^{*},\dot{c})$, one could take on of the functions
+\begin{eqnarray}
+\rho_{1}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left| c_{j}^{*}-c_{j} \right| \label{rho1}\\
+\rho_{2}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2} \label{rho2}\\
+\rho_{3}(c^{*},c) &=& \sqrt{\frac{1}{n}\sum\limits_{i=1}^{m} \left( y_{i}-f(c^{*},x_{i}) \right)^{2}} \label{rho3}
+\end{eqnarray}
+In solving the problem, that I have above labelled as 'aim-minimum', criteria (\ref{Erho}) was considered in a paper by [blak]. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in [balk]. I want to note that the problem that I have above labelled as 'aim-maximum' was not looked at in the mentioned paper. \\
+\\
+The probability density function $P(c),\  c \in D$ where $c$ is a vector that could be the unknown true vector $\dot{c}$, that (the function) appears in the $m$-multi integral (\ref{Erho}), can be constructed on the basis of the formula of the binomial distribution of a random value [*]. In fact, let's say: $c \in D$ is one of the vectors which claims that it is the unknown true vector $ \dot{c}$ from function (\ref{functionform}); $q_{i}$ are the elements of the sequence
+\begin{equation}
+q_{1}(c)=\tilde{y}_{1}-f(c,x_{1}),\ q_{2}(c)=\tilde{y}_{2}-f(c,x_{2}), \dots, \ q_{\eta}(c)=\tilde{y}_{\eta}-f(c,x_{\eta}); \label{sequence}
+\end{equation}
+where $\eta$ is a discreet random value, that can assume values
+\begin{equation}
+r=r(c)=\sum\limits_{i=1}^{n-1} \delta_{i}(c),
+\end{equation}
+where
+\begin{equation}
+\delta_{i}=\delta_{i}(c)=
+\begin{cases} 
+      1, \mathrm{if} \quad q_{i}(c)q_{i+1}(c)<0\\
+      0, \mathrm{if} \quad q_{i}(c)q_{i+1}(c)\geq 0
+   \end{cases}
+\end{equation}
+In meaningful terms, the value of $r$ is the number of changes of sign of the elements of sequence (\ref{sequence}) and this value could be numbers from 0 to $n-1$. If it truly happened that $c=\dot{c}$, then the values of $q_{i}$ would be nothing but the errors $\xi_{i}$, and by the condition $Med(\xi)=0$ the probabilities $p_{r}$ of events $\eta = r$ could be written as
+\begin{equation}
+p_{r}= \frac{\binom {n-1}r}{2^{n-1}}, \quad r = 0,1,\dots,n-1.
+\end{equation}
 
 \section{Given Examples}
 
