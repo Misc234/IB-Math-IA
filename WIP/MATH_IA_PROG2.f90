@@ -36,7 +36,7 @@ PROGRAM MAIN
     C3IST = -3.0                                      !The true value for function parameter 'C3'
     C4IST = 2.0                                       !The true value for function parameter 'C4'
 
-    C = 0.5                                           !The quantitive multiplier for exaduration of error
+    C = 0.01                                           !The quantitive multiplier for exaduration of error
 
     N = 40                                            !Number of descrete data points100
 
@@ -44,7 +44,6 @@ PROGRAM MAIN
     M2 = 100
     M3 = 100
     M4 = 100
-    M5 = 100
 
     X0 = -0.5                                         !The value of the first X value
     HX = 0.05                                         !The value of the horrizoltal step between the X values
@@ -132,7 +131,10 @@ PROGRAM MAIN
     !WRITE(*,*) '   CREATED ARRAYS WC1-WC4'
 
     DO 15  I = 1,N                                    !Generate true values for data points (without)
-    Y(I) = C1IST + C2IST * X(I) + C3IST * (X(I))**2 + C4IST * (X(I))**3
+    X1 = X(I)
+    X2 = X1 * X1
+    X3 = X2 * X1
+    Y(I) = C1IST + C2IST * X1 + C3IST * X2 + C4IST * X3
 15  CONTINUE
 
     !WRITE(*,*) '   CREATED Y(I)'
@@ -239,7 +241,10 @@ PROGRAM MAIN
     C3 = WC3(I,J,K,L)
     C4 = WC4(I,J,K,L)                                       !of function parameters 'a' and 'b'
     DO 24 II = 1,N
-    Y2(II) = C1 + C2 * X(II) + C3 * (X(II))**2 + C4 * (X(II))**3
+    X1 = X(II)
+    X2 = X1 * X1
+    X3 = X2 * X1
+    Y2(II) = C1 + C2 * X1 + C3 * X2 + C4 * X3
 24  CONTINUE
 
     NR = 0
@@ -330,7 +335,11 @@ PROGRAM MAIN
 
      DIST = 0.0
      DO 56 I = 1,N
-     DIST = ((C1OPT + C2OPT * X(I) + C3OPT * (X(I)**2) + C4OPT * (X(I))**3) - Y(I))**2
+     X1 = X(I)
+     X2 = X1 * X1
+     X3 = X2 * X1
+     S1 = C1OPT + C2OPT * X1 + C3OPT * X2 + C4OPT * X3 - Y(I)
+     DIST = DIST + (S1 * S1)
      56 CONTINUE
      DIST = DIST / N
      DIST = SQRT(DIST)
@@ -362,8 +371,8 @@ PROGRAM MAIN
 182  CONTINUE
 181  CONTINUE
 
-ERWOPT = ERWOPT / N
-ERWOPT = SQRT(ERWOPT)
+     ERWOPT = ERWOPT / N
+     ERWOPT = SQRT(ERWOPT)
 
     !WRITE(*,*) '   CALCULATED OPTIMAL VALUES'
 
