@@ -1,0 +1,47 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage[rightcaption]{sidecap}
+\usepackage{svg}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[margin=2cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{natbib}
+\pagestyle{fancy}
+\usepackage{float}
+\usepackage{cancel}
+\usepackage{subfig}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\numberwithin{equation}{subsection}
+
+\title{Approximation of Experimental Physical Values with Non-typical Conditions of Error}
+\date{\today}
+
+\DeclareRobustCommand\dash{%
+  \unskip\nobreak\thinspace\textemdash\allowbreak\thinspace\ignorespaces}
+
+\begin{document}
+\begin{gather}
+\nonumber
+E(\rho_{2}(c^{*},c)) \approx \sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{l}) - 2c_{j}^{*} \mu(W_{l}) c_{j}^{(l)} + \int\limits_{W_{l}} c_{j}^{2} \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] \right) \right] = \\
+\nonumber
+\\
+\nonumber
+\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2}  \sum\limits_{r \in I} p_{r}^{*}  - 2c_{j}^{*}  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \mu(W_{l})  c_{j}^{(l)}  + \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\nonumber
+\\
+\nonumber
+\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\sum\limits_{l \in J(r)} \mu(W_{l})} \sum\limits_{l \in J(r)} \mu(W_{j}) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\nonumber
+\\
+\nonumber
+\sum\limits_{j=1}^{m}  \left[    (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\left| J(r) \right| \prod\limits_{s=1}^{m} h_{s}} \sum\limits_{l \in J(r)} \left( \prod_{s=1}^{m} h_{s} \right) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\sum\limits_{j=1}^{m} \left[ c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} \frac{p_{j}^{*}}{ \left| J(r) \right|} \sum\limits_{l \in J(r)} c_{j}^{(l)} + \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right]. \label{eq-final-simplification}
+\end{gather}
+\end{document}
