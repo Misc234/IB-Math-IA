@@ -26,7 +26,6 @@
 \DeclareRobustCommand\dash{%
   \unskip\nobreak\thinspace\textemdash\allowbreak\thinspace\ignorespaces}
 
-\DeclareUnicodeCharacter{0177}{\^y}
 \begin{document}
 %TITLE
 \begin{titlepage}
@@ -312,8 +311,33 @@ E(\rho_{2}(c^{*},c)) \approx \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D
 \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \  \int\limits_{W_{(l)}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
 \nonumber
 \sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \ \int\limits_{W_{(l)}} ((c_{j}^{*})^{2}-2c_{j}^{*}c_{j}+c_{j}^{2}) \right) \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] = \\
-\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{(l)}) - 2c_{j}^{*} \int\limits_{W_{(l)}} c_{j} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{W_{(l)}} c_{j}^{2} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right) \right].
+\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{(l)}) - 2c_{j}^{*} \int\limits_{W_{(l)}} c_{j} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{W_{(l)}} c_{j}^{2} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right) \right]. \label{eq-simplification-chain}
 \end{gather}
+If in a multi integral, the limits of integration for each variable are given by other variables, then this multi integral is equal to the product of included in it, one-dimensional integrals [*]. Now, if we define coordinates of the edges of $W_{l}$ as $c_{j}^{(l)} - 0.5h_{j} = a(j,l)$ and $c_{j}^{(l)} + 0.5h_{j} = b(j,l)$ then it is not hard to be sure that 
+\begin{equation}
+\frac{1}{\mu(W_{l})} \int\limits_{W_l} c_{j} \mathrm{d} c_{1} \mathrm{d} c_{2} \ldots  \mathrm{d} c_{m} 
+	= \dfrac{1}{\prod\limits_{s=1}^{m}h_{s}}
+	\left( \  \int\limits_{b(j,l)}^{a(j,l)} c_{j}  \mathrm{d} c_{j}\right) 
+	\prod_{\substack{s=1\\ (s\ne j)}}^m \ 
+	\int\limits_{a(s,l)}^{b(s,l)} \!  \mathrm{d} c_{s} 
+	= c_{j}^{(l)}.
+\end{equation}
+If in addition we accept that
+\begin{gather}
+\sum\limits_{r \in I} p_{r}^{*} =1, \\
+\sum\limits_{l \in J(r)} \mu(W_{l}) =\mu(\tilde{D}_{r}), \\
+\mu(W_{l}) \equiv \prod\limits_{j=1}^{m}h_{j},
+\end{gather}
+then the simplification chain (\ref{eq-simplification-chain}) could be continued
+\begin{gather}
+\nonumber
+E(\rho_{2}(c^{*},c)) \approx \sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{l}) - 2c_{j}^{*} \mu(W_{l}) c_{j}^{(l)} + \int\limits_{W_{l}} c_{j}^{2} \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] \right) \right] = \\
+\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2}  \sum\limits_{r \in I} p_{r}^{*}  - 2c_{j}^{*}  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \mu(W_{l})  c_{j}^{(l)}  + \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\sum\limits_{l \in J(r)} \mu(W_{l})} \sum\limits_{l \in J(r)} \mu(W_{j}) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\sum\limits_{j=1}^{m}  \left[    (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\left| J(r) \right| \prod\limits_{s=1}^{m} h_{s}} \sum\limits_{l \in J(r)} \left( \prod_{s=1}^{m} h_{s} \right) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\end{gather}
+
+
 \section{Given Examples}
 
 \section{Conclusion and Reflection}
