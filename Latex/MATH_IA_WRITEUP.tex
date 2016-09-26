@@ -98,7 +98,7 @@ specifically when the algorithm of evaluation of the parameters of the function 
 \\
 I justify my interest to the condition $Med(\xi)=0$ by the case when the traditional condition $E(\xi)=0$ is unachievable. This happens when measurements are taken close to one of the natural limits of the physical relationship being measured. An example of such natural limit is the inability of some magnitude, such as weight, to be negative. In this case, the absolute value of the error made, can only be large (with respect to other errors made) in the \textit{same sign}, either positive or negative. Figure \ref{fig:graph-nl} shows an example of this graphically.
 \begin{figure}[h!]
-\includegraphics[scale=0.07]{natural_limits}
+\includegraphics[scale=0.1]{pic-naturallimits}
 \centering
 \caption{Graphical representation of a case where $E(\xi)=0$ does not work effectively.}
 \label{fig:graph-nl}
@@ -135,7 +135,7 @@ q_{1}(c)=\tilde{y}_{1}-f(c,x_{1}),\ q_{2}(c)=\tilde{y}_{2}-f(c,x_{2}), \dots, \ 
 \end{equation}
 where $q$ is a discreet random value, that can assume values
 \begin{equation}
-r=r(c)=\sum\limits_{i=1}^{n-1} \delta_{i}(c),
+r=r(c)=\sum\limits_{i=1}^{n-1} \delta_{i}(c), \label{eq-values-of-q}
 \end{equation}
 where
 \begin{equation}
@@ -169,7 +169,7 @@ E(\rho(c^{*},\dot{c}))=\sum\limits_{r \in I} \frac{p_{r}^{*}(c)}{\mu(D_{r})} \in
 \end{equation}
 where $\int_ {D_{r}}(\bullet)$ is a laconic (short) notation of a multi integral (in this case a $m$-multi integral). In the general case, such as this one, the limits of integration of each univariate integral depend on variables, based on which the integration of the external integral relative to the given univariate integral is carried out [*]. (Refer to the example in section 2). This significantly complicates the calculation of these multi integrals. Yet again, looking ahead, I want to note that in the algorithm created, integration is carried out on multidimensional parallelepipeds, when the limits of integration of each integral remain constant. \\
 \\
-\subsubsection{Illustrative example}
+\begin{subsection}{Illustrative example}
 For it to be clear, that the following bulky equations lead to success, let's consider an illustrative example, where $m=1$ (i.e. the vector $\dot{c}$ is a scalar value), $y=f(c;x)$ is a function with one parameter, where $\dot{c}$ is a scalar that has to be found. In this case $n=6$ and $D=\{ c: 2 \leq c \leq 6 \}$. In this way, the following graphical representations form.
 \begin{figure}[h!]%
     \centering
@@ -193,7 +193,65 @@ $i$ & $x_{i}$ & $f(\dot{c},x_{i})$ & $\xi_{i}$  & $\tilde{y}_{i}=f(\dot{c},x_{i}
 0 & 6 & 4      & 0.3   & 4.3  
 \end{tabular}
 \end{table}
-\newpage 
+For this example I will use proximity function (\ref{rho2}). \\
+\\
+As we already know, we can calculate the priori probabilities using (\ref{priori}), where $r=0,1,2,3,4,5$ like so:
+\begin{gather*}
+p_{0}= \frac{1}{32}; \ p_{1}= \frac{5}{32}; \ p_{2}= \frac{10}{32}; \ p_{3}= \frac{10}{32}; \ p_{4}= \frac{5}{32}; \ p_{5}= \frac{1}{32}
+\end{gather*}
+But can only have certain values: $r=0,2,3,4$. And ,so 
+\begin{gather*}
+s=p_{0}+p_{2}+p_{3}+p_{4}= \frac{1}{32} + \frac{10}{32} + \frac{10}{32} + \frac{5}{32} = \frac{26}{32}.
+\end{gather*}
+So, to calculate the posteriori probabilities
+\begin{eqnarray*}
+P_{0}^{*} &=& P_{0}: \frac{26}{32} = \frac{1}{32} : \frac{26}{32} = \frac{1}{26} \\
+P_{1}^{*} &=& 0 \\
+P_{2}^{*} &=& P_{2}: \frac{26}{32} = \frac{10}{32} : \frac{26}{32} = \frac{10}{26} \\
+P_{3}^{*} &=& P_{3}: \frac{26}{32} = \frac{10}{26} \\
+P_{4}^{*} &=& P_{4}: \frac{26}{32} = \frac{5}{32} : \frac{26}{32} = \frac{5}{26} \\
+P_{5}^{*} &=& 0
+\end{eqnarray*}
+Calculating $E(\rho(c^{*},c))$
+\begin{gather*}
+E(\rho(c^{*},c)) = \int\limits_{2}^{3.85} \underbrace{(c^{*}-c)^{2}}_{\rho(c^{*},c)} \cdot \frac{\overbrace{\frac{1}{26}}^{p_{0}^{*}}}{\underbrace{3.85-2}_{\text{similar to }\mu(D_{0})}} \mathrm{d}c \ + \int\limits_{3.9}^{4.3} (c^{*}-c)^{2} \cdot \frac{\frac{5}{26}}{4.3-3.9} \mathrm{d}c \
++ \int\limits_{4.3}^{5.0} (c^{*}-c)^{2} \cdot \frac{\frac{10}{26}}{5.0-4.3} \mathrm{d}c \\
++ \ 1.05 \cdot \left( \ \int\limits_{3.85}^{3.9} (c^{*}-c)^{2} \cdot \frac{10}{26} \mathrm{d}c + \
+\int\limits_{5.0}^{6.0} (c^{*}-c)^{2} \cdot \frac{10}{26} \mathrm{d}c \right) \\
+=(c^{*})^{2} \cdot c - c^{*} \cdot c^{2} + \frac{1}{3} c^{3}
+\end{gather*}
+Taking into account that later we will want to find the derivative $\frac{\mathrm{d}E(\rho(c^{*},c))}{\mathrm{d}c^{*}}$, we can omit the summand $\frac{1}{3} c^{3}$ as it is a constant, and the derivative of a constant is zero. Let's continue.
+\begin{eqnarray*}
+E(\rho(c^{*},c)) = 0.045 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{2}^{3.85}  \\
++ 7.323  &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{3.85}^{3.9} \\
++ 0.481 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{3.9}^{4.3}  \\
++ 0.549 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{4.3}^{5.0}  \\
++ 0.366 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{5.0}^{6.0}  \\
+= &1.361(c^{*})^{2}-12.061c^{*}&
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\frac{\mathrm{d}E(\rho(c^{*},c))}{\mathrm{d}c^{*}} &=& 2.722c^{*}-12.061 = 0 \\
+c^{*} &=& \frac{12.061}{2.722} = 4.431
+\end{eqnarray*}
+Seeing that $\dot{c} = 4.0$, we finally calculate $\rho$ using this method
+\begin{equation*}
+\rho = |4.431-4.0| = 0.431
+\end{equation*}
+I.e. the error made by this method is 0.431. Now let's see what kind of error will the Least Square Method give:
+\begin{gather*}
+Using Least Square Method \\
+\phi(c^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}-c^{*})^{2} \longrightarrow min \\
+\phi(c^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}^{2}-2 \tilde{y}_{i}c^{*} + (c^{*})^{2}) \\
+\frac{\mathrm{d}\phi(c^{*})}{\mathrm{d}c^{*}} =  \sum\limits_{i=1}^{6}(0 -\cancel{2} \tilde{y}_{i} +\cancel{2} c^{*}) = 0 \\
+\sum\limits_{i=1}^{6}c^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} \\
+6 \cdot c^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} = 35.25 \\
+c^{*} = \frac{35.25}{6} = 5.875 \\
+\text{And so the error } \rho = 1.875
+\end{gather*}
+In this case, the error made by LSM is significantly greater then the one made by my method. Back to the theory.\\
+\\
+\end{subsection}
 Let the proximity $\rho(c^{*},c)$ in (\ref{mathexpectancy}), be taken in the form (\ref{rho2}). Then the following simplification takes place.
 \begin{gather}
 \nonumber
@@ -208,10 +266,54 @@ E(\rho(c^{*},\dot{c}))=\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \int\l
 \end{gather}
 And finally:
 \begin{equation}
-E(\rho(c^{*},\dot{c}))= \sum\limits_{j=1}^{m} \left( (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{r}^{*} \frac{\int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}}{\mu(D_{r})} + \underbrace{\sum\limits_{r \in I} p_{r}^{*} \frac{\int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}}{\mu(D_{r})}}_{\text{derivative of this summand on } c_{1}^{*}, c_{2}^{*},\dots,c_{m}^{*} = 0} \right)
+E(\rho(c^{*},\dot{c}))= \sum\limits_{j=1}^{m} \left( (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{r}^{*} \frac{\int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}}{\mu(D_{r})} + \underbrace{\sum\limits_{r \in I} p_{r}^{*} \frac{\int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}}{\mu(D_{r})}}_{\text{derivative of this with respect to } c_{1}^{*}, c_{2}^{*},\dots,c_{m}^{*} = 0} \right) \label{eq-Erho-simp}
 \end{equation}
-
-
+In order to find the vector $c^{*}$, which provides the minimum of function (\ref{eq-Erho-simp}) and which I will take as the optimal estimate of the unknown vector $\dot{c}$, it is necessary (like in the case with a simple one-parameter function) to take the first partial derivative $\frac{\partial E}{\partial c_{j}^{*}}$ of function (\ref{eq-Erho-simp}) with respect to each variable $c_{j}^{*}$ [*]. After that, equate these derivatives to zero and solve the resulting system of linear equations. In this case, this system splits into $m$ separate linear equation with one variable:
+\begin{equation}
+2 c_{j}^{*} - 2 \sum\limits_{r \in I} p_{r}^{*}\frac{\int\limits_{D_{r}} c_{j}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots\mathrm{d}c_{m}}{\mu(D_{r})} , \quad j = 1,2,\dots,m.
+\end{equation}
+These equations have the following solutions:
+\begin{equation}
+c_{j}^{*} = \sum\limits_{r \in I} p_{r}^{*} \bar{c}_{(j,r)}, \quad j = 1,2,\dots,m, \label{eq-solutions-to-cj*}
+\end{equation}
+where
+\begin{equation}
+\bar{c}_{(j,r)} = \frac{\int\limits_{D_{r}} c_{j}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots\mathrm{d}c_{m}}{\mu(D_{r})}. \label{eq-cbar}
+\end{equation}
+\\
+Note that the formulae (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) - even though in some other notations - is the solution of the problem formulated and solved by algorithm in [*].\\
+\\
+From the point of view of practical realisation of my algorithm, that is based of formulae (\ref{eq-solutions-to-cj*}),(\ref{eq-cbar}), I can ask two questions: 1. Is it possible to derive a simple method of constructing the sets $D_{r}$; 2. Is it possible to derive a simple method of calculation the integrals of those sets $D_{r}$, which appear in the RHS of (\ref{eq-cbar}). What a geometrical construction (Figure [*]) has shown me, is that even in the case where $m=2$ and $n=10$, the regions $D_{r}$ have a relatively complicated geometry (some multi-peaked star-like shapes). However, this problem can be solved with the principal of the 'Gordian knot' - refuse to work with directly with sets $D_{r}$, but instead, to use their point (grid) approximation (even without describing these sets concretely) and use an analog of (\ref{eq-solutions-to-cj*}).\\
+\\
+The essence of this suggested method of thinking is as follows. Define $k(1),k(2),\dots,k(m)$ as some quite large real values, and a $m$-dimensional parallelepiped
+\begin{equation}
+W=\{ c:c_{j}^{(\text{min)}} \leq c_{j} \leq c_{j}^{(\text{max)}}, \quad j=1,2,\dots,m \}\subset \boldsymbol{R}^{m}
+\end{equation}
+which contains the set $D$ (if the set $D$ itself is a parallelepiped, then $W=D$). Cover this parallelepiped with a dense grid $\Gamma$ with
+\begin{equation}
+L = \prod\limits_{t=1}^{m}k(t)
+\end{equation}
+number of nodes $c^{(l)} = (c_{1}^{(l)},(c_{2}^{(l)},\dots,c_{m}^{(l)},\quad l=1,2,\dots,L)$ where each coordinate $c_{j}^{(l)}, \quad j=1,2,\dots,m,$ could independently from all the other $m-1$ coordinates assume of $k(j)$ values
+\begin{equation}
+c_{j}=c_{j}^{(\text{min})} + \frac{c_{j}^{(\text{max})}-c_{j}^{(\text{min})}}{k(j)}(t-\frac{1}{2}), \quad t=1,2,\dots,k(j).
+\end{equation}
+These parallelepipeds form the surface of the parallelepiped W. Now we have to chose from the defined $L$ nodes those, the ones who belong to the set $D$. Let $L_{0}$ be the quantity of the chosen nodes. Renumber the chosen nodes, by assigning the first $L_{0}$ numbers $l$ to them. \\
+\\
+For each $l=1,2,\dots,L_{0}$ find elements of $q_{i}(c^{(l)}), \quad i=1,2,\dots,n$ of sequence (\ref{sequence}), and based on their values, using (\ref{eq-values-of-q}), calculate the number $r$ of transition of sign of elements of (\ref{sequence}). Let $J(r), \quad r=0,1,\dots,n-1$ be the set of numbers $l$ of chosen nodes $c^{(l)}$ providing $r$ transitions of sign, and $|J(r)|$ - the number of nodes giving that many transitions. In this way, without directly constructing the sub-sets $D_{r}$, I approximate each of them with the union
+\begin{equation}
+\tilde{D}_{r} = \bigcup_{l \in J(r)} W_{l}.
+\end{equation}
+\\
+It is clear, that the assumption, that all vectors $c$, belonging to the parallelepiped $W_{l}$, will provide the same number of transitions of sign as the center $c^{l}$ of the parallelepiped, will only be incorrect for those parallelepipeds $W_{l}$, and do not completely belong to some one sub-set $D_{r}$. But with a dense grid $\Gamma$, and respectively, quite small-sized parallelepipeds $W_{(l)}$, the percent of such 'debatable' parallelepipeds compared to their general number $L_{0}$ will be quite small (so, in figure [*], when $m=2$, these 'debatable' parallelepipeds are positioned along the lines, and the 'non-debatable' - in the areas). In addition, the error resulting from classification of such 'debatable' parallelepipeds $W_{l}$ completely to some set $D_{r}$, will get (mostly) redeemed/repaid. Summing up all these arguments, it can be said, that the approximations of sets $D_{r}$, with the union of relatively 'small' parallelepipeds will give a good  approximation of the mathematical expectancy (\ref{mathexpectancy}) of error in estimation of parameters of a studies functional dependence:
+\begin{gather}
+\nonumber
+E(\rho_{2}(c^{*},c)) \approx \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \int\limits_{\tilde{D}_{r}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
+\nonumber
+\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \  \int\limits_{W_{(l)}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
+\nonumber
+\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \ \int\limits_{W_{(l)}} ((c_{j}^{*})^{2}-2c_{j}^{*}c_{j}+c_{j}^{2}) \right) \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] = \\
+\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{(l)}) - 2c_{j}^{*} \int\limits_{W_{(l)}} c_{j} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{W_{(l)}} c_{j}^{2} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right) \right].
+\end{gather}
 \section{Given Examples}
 
 \section{Conclusion and Reflection}
