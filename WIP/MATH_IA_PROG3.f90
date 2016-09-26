@@ -24,7 +24,7 @@ PROGRAM MAIN
 
     NSTR = 108                                        !Length of array STR
 
-    C = 0.5                                           !The quantitive multiplier for exaduration of error
+    C = 0.3                                           !The quantitive multiplier for exaduration of error
 
     M = 201                                           !The number of sub-regions in the horrizoltal
     K = 101                                           !The number of sub-regions in the vertical
@@ -155,6 +155,7 @@ PROGRAM MAIN
     DO 14 I = 1,N                                     !Generating values with error for given data points
     Y1(I) = Y(I) + STR1(I) * C
 14  CONTINUE
+
 
     DO 11 I = 1,M                                     !Generating arrays WA and WB
     DO 12 J = 1,K

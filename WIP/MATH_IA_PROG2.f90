@@ -13,13 +13,13 @@ PROGRAM MAIN
 
     JPRINT   = 1                                      !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 0                                      !Boolian to enable error distortion
+    JDISTORT = 1                                      !Boolian to enable error distortion
                                                       !(distortion by the value of CDISTORT)
-    CDISTORT = 20.0                                    !Distortion coeficient
+    CDISTORT = 5.0                                    !Distortion coeficient
 
     NDISTORT = 3                                      !Number of distorted values in any given variant
 
-    NVAR = 2                                          !Number of variants of the calculation
+    NVAR = 1                                          !Number of variants of the calculation
     NSTR = 108                                        !Length of array STR
 
     C1MIN = 0.5                                       !The minimum value for function parameter 'C1'
@@ -36,7 +36,7 @@ PROGRAM MAIN
     C3IST = -3.0                                      !The true value for function parameter 'C3'
     C4IST = 2.0                                       !The true value for function parameter 'C4'
 
-    C = 0.01                                           !The quantitive multiplier for exaduration of error
+    C = 0.3                                             !The quantitive multiplier for exaduration of error
 
     N = 40                                            !Number of descrete data points100
 
@@ -227,6 +227,11 @@ PROGRAM MAIN
     WRITE(*,*)'True average-quadratic value of error:'
     WRITE(*,*)S
     WRITE(*,*)' '
+
+WRITE(*,*) ' ,', C, ',', HX
+    DO 2222 I = 1,N
+    WRITE(*,*) I, ',', X(I), ',',Y1(I)
+2222 CONTINUE
 
     DO 30 I = 1,N                                     !Nullifying array NN
     NN(I) = 0

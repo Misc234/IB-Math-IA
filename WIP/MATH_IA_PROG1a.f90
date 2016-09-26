@@ -9,13 +9,13 @@ PROGRAM MAIN
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 0                                      !If the error values may be distorted or not
+    JDISTORT = 1                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
-    CDISTORT = 5.0                                    !Distortion coeficient
+    CDISTORT = 2.0                                    !Distortion coeficient
 
-    NDISTORT = 3                                      !Number of distorted values in any given variant
+    NDISTORT = 2                                      !Number of distorted values in any given variant
 
-    NVAR = 1                                          !Number of variants of the calculation
+    NVAR = 5                                          !Number of variants of the calculation
     NSTR = 108                                        !Length of array STR
     AMIN = 1.0                                        !The minimum value for function parameter 'a'
     AMAX = 3.0                                        !The maximum value for function parameter 'a'
@@ -24,7 +24,7 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 0.01                                           !The quantitive multiplier for exaduration of error
+    C = 1.0                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                           !The number of sub-regions in the vertical
@@ -138,6 +138,7 @@ PROGRAM MAIN
                0.70 ,   0.06 ,   0.18 ,   0.68 ,  &
               -1.80 ,  -0.88 ,   0.47 ,  -0.51    &
                /
+
 
     IVAR = 0
 500 CONTINUE
@@ -326,22 +327,6 @@ WRITE(*,*)' '
 
 52    CONTINUE
 51    CONTINUE
-
-
-!      AOPT3 = 0.0    !UNSTABLE CALCULATIONS
-!      BOPT3 = 0.0
-!      DO 81 I = 1,M
-!      DO 82 J = 1,K
-!      A = WA(I,J)
-!      B = WB(I,J)
-!      NR = NNR(I,J)
-!      PR = P(NR+1)/(NN(NR+1))
-!      AOPT3 = AOPT3 + A*PR
-!      BOPT3 = BOPT3 + B*PR
-!      82 CONTINUE
-!      81 CONTINUE
-!      WRITE(*,*) 'TEXT1| AOPT3 = ', AOPT3
-!      WRITE(*,*) 'TEXT1| BOPT3 = ', BOPT3
 
 !METHOD OF LEAST SQUARES - START
 
