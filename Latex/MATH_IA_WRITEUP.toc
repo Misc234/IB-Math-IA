@@ -3,6 +3,6 @@
 \contentsline {section}{\numberline {3}Formulation of the Problem}{2}
 \contentsline {section}{\numberline {4}Algorithm}{4}
 \contentsline {subsection}{\numberline {4.1}Illustrative example}{6}
-\contentsline {section}{\numberline {5}Found results}{12}
+\contentsline {section}{\numberline {5}Algorithm trials}{12}
 \contentsline {section}{\numberline {6}Conclusion and Reflection}{12}
 \contentsline {section}{\numberline {7}Bibliography}{13}

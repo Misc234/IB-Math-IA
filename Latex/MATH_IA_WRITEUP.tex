@@ -281,7 +281,7 @@ where
 \bar{c}_{(j,r)} = \frac{\int\limits_{D_{r}} c_{j}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots\mathrm{d}c_{m}}{\mu(D_{r})}. \label{eq-cbar}
 \end{equation}
 \\
-Note that the formulae (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) - even though in some other notations - is the solution of the problem formulated and solved by algorithm in [*].\\
+Note that the equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) - even though in some other notations - is the solution of the problem formulated and solved by algorithm in [*].\\
 \\
 From the point of view of practical realisation of my algorithm, that is based of formulae (\ref{eq-solutions-to-cj*}),(\ref{eq-cbar}), I can ask two questions: 1. Is it possible to derive a simple method of constructing the sets $D_{r}$; 2. Is it possible to derive a simple method of calculation the integrals of those sets $D_{r}$, which appear in the RHS of (\ref{eq-cbar}). What a geometrical construction (Figure [*]) has shown me, is that even in the case where $m=2$ and $n=10$, the regions $D_{r}$ have a relatively complicated geometry (some multi-peaked star-like shapes). However, this problem can be solved with the principal of the 'Gordian knot' - refuse to work with directly with sets $D_{r}$, but instead, to use their point (grid) approximation (even without describing these sets concretely) and use an analog of (\ref{eq-solutions-to-cj*}).\\
 \\
@@ -364,10 +364,13 @@ any variables $c_{j}^{*}$ (which are being optimised), its derivative is again e
 \end{equation}
 Equating these partial derivatives (\ref{eq-partial}) to zero we get, and therefore conclude with:
 \begin{equation}
-c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\limits_{l \in J_{r}} c_{j}^{(l)}, \quad j=1,2,\dots,m.
+c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\limits_{l \in J_{r}} c_{j}^{(l)}, \quad j=1,2,\dots,m. \label{eq-final}
 \end{equation}
-
-\section{Found results}
+This equation (\ref{eq-final}) is the one used in calculations of approximate values of the optimised vector $c^{*}$ in my custom software, the trails of which are later in this document.\\
+\\
+Now, let's compare (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
+, which in fact are quite complex convex polyhedrons [*] in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multi integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar})
+\section{Algorithm trials}
 
 \section{Conclusion and Reflection}
 \newpage
