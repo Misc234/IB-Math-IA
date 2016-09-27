@@ -1,4 +1,4 @@
-\documentclass[a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage[rightcaption]{sidecap}
@@ -11,20 +11,17 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage{natbib}
 \pagestyle{fancy}
 \usepackage{float}
 \usepackage{cancel}
 \usepackage{subfig}
-\usepackage{booktabs}
 \usepackage[utf8]{inputenc}
+\usepackage{natabib}
+
 \numberwithin{equation}{subsection}
 
 \title{Approximation of Experimental Physical Values with Non-typical Conditions of Error}
 \date{\today}
-
-\DeclareRobustCommand\dash{%
-  \unskip\nobreak\thinspace\textemdash\allowbreak\thinspace\ignorespaces}
 
 \begin{document}
 %TITLE
@@ -55,6 +52,50 @@ IB Mathematics Higher Level Internal Assessment on Statistics
 \section{Introduction}
 
 \section{Mathematical Background}
+Because of the nature of IB Mathematics IAs, the mathematics in this written work extend from the IB syllabus. Some notations, concepts, and calculations have to be explained. 
+
+\subsection{Notations}
+During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, a vector can only be 3D, or even 4D. Essentially, so long that a single value has multiple parameters it is a vector in the same number of dimensions as there are parameters [*]. In this IA, all vectors will be denoted with the variable $c$, be it with some indexes or accents, as long as a variable has $c$ in its core, it is a vector. Note that this is just a notation that I will use only in this paper. in addition, to save real estate not vertical vector notation will be used, instead I will use the so called ordered set notation of a vector [*] in the form of $c=(c_{1},c_{2},\dots)$.  \\
+\\
+Another new to IB notation in this IA is the product notation:
+\begin{gather*}
+\prod\limits_{i = m}^{n} x_{i} = x_{m} \cdot x_{m+1} \cdot \  \cdots \  \cdot x_{n-1} \cdot x_{n}.
+\end{gather*}
+This essentially works in much of the same way the familiar summation notation we use in class(using the Greek capital letter sigma), except that instead of summing values, it multiplies them (and uses Greek the capital letter pi) \footcite{product}.
+\subsection{Concepts}
+Derivatives are an essential part of the IB curriculum. But when it comes to functions with multiple variables (like in this IA), their derivative is taken differently. First off, the derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \footcite{matthews_1998}. The following example will explain this further:\\
+\\
+Find the local minimum of function $z$ with multiple variables:
+\begin{gather*}
+z = f(x,y) = 5(2x-3)^{2} + 4(4y+1)^{2}
+\end{gather*}
+Without calculating anything, we see that the minimum of this function occurs when $x= \frac{3}{2} $,$ y= -\frac{1}{4}$.
+\begin{gather*}
+\text{( Now expand this function )}\\
+z = 20x^{2} + 64y^{2} -60x + 32y +49
+\end{gather*}
+Now according to normal method of finding a minimum of a function, we equate, in this case, its partial derivatives (one with respect to $x$, the other to $y$) to zero and solve for $x$ and $y$.
+\begin{eqnarray*}
+\frac{\partial f(x,y)}{\partial x}  &=&  40x-60 = 0 \rightarrow x = \frac{60}{40}=\frac{3}{2}\\
+\frac{\partial f(x,y)}{\partial y}  &=&  128y-32 = 0 \rightarrow y = -\frac{32}{128}=-\frac{1}{4}
+\end{eqnarray*}
+Voila, the partial derivatives gave us the answer as well.\\
+\\
+But as much as derivatives a essential, so are integrals. This IA invokes the use of something called multi integrals. These are basically integral an of integral, where again a function with multiple variables is in question \footcite{stewart_2008}. I.e. a 2-milti integral of some two-variable function $g(x,y)$ is denoted as such:
+\begin{gather*}
+\int \int g(x,y) \mathrm{d}x\mathrm{d}y
+\end{gather*}
+Yet again let's employ an example: \\
+Find the area of the shaded region\\
+\begin{center}
+\includegraphics[scale=0.4]{pic-multiexample}
+\end{center}
+Obviously, $$A=\frac{1}{2}\cdot 2 \cdot 0.8 = 0.8.$$ Granted, the following method is very unnecessary (and this problem doesn't even require a multi integral), but for the sake of explanation, let's employ multi integrals as well.
+\begin{gather*}
+A = \underbrace{\int\limits_{0}^{2}}_{\text{(against } x\text{)}} \underbrace{\int\limits_{0}^{0.4x}}_{\text{(against } y\text{)}} \mathrm{d}x \mathrm{d}y =  \int\limits_{0}^{2} \mathrm{d}x \cdot \left[ y \right]_{0}^{0.4x} =  \int\limits_{0}^{2} \mathrm{d}x \cdot  \left[ 0.4x - 0 \right] = \int\limits_{0}^{2} \mathrm{d}x \cdot 0.4x = 0.4 \int\limits_{0}^{2} x\mathrm{d}x = \\
+0.4 \cdot \left[ \frac{x^{2}}{2} \right]_{0}^{2} = 0.4 \cdot \left[ \frac{2^{2}}{2} - \frac{0^{2}}{2} \right] = 0.4 \cdot 2 = 0.8.
+\end{gather*}
+And, again, the answer is the same. Now with these mathematical concepts explained we formulate the problem of this IA.
 
 \section{Formulation of the Problem}
 
@@ -126,7 +167,7 @@ of proximity (distance) $\rho(c^{*},\dot{c})$ of function $f(c^{*},x)$ from $f(\
 \rho_{2}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2} \label{rho2}\\
 \rho_{3}(c^{*},c) &=& \sqrt{\frac{1}{n}\sum\limits_{i=1}^{m} \left( y_{i}-f(c^{*},x_{i}) \right)^{2}} \label{rho3}
 \end{eqnarray}
-In solving the problem, that I have above labelled as 'aim-minimum', criteria (\ref{Erho}) was considered in a paper by [blak]. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in [balk]. I want to note that the problem that I have above labelled as 'aim-maximum' was not looked at in the mentioned paper. \\
+In solving the problem, that I have above labelled as 'aim-minimum', criteria (\ref{Erho}) was considered in article \footcite{balk2010regression}. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in \footcite{balk2010regression}. I want to note that the problem that I have above labelled as 'aim-maximum' was not looked at in the mentioned paper. \\
 \\
 The probability density function $P(c),\  c \in D$ where $c$ is a vector that could be the unknown true vector $\dot{c}$, that (the function) appears in the $m$-multi integral (\ref{Erho}), can be constructed on the basis of the formula of the binomial distribution of a random value [*]. In fact, let's say: $c \in D$ is one of the vectors which claims that it is the unknown true vector $ \dot{c}$ from function (\ref{functionform}); $q_{i}$ are the elements of the sequence
 \begin{equation}
@@ -144,7 +185,7 @@ where
       0, \mathrm{if} \quad q_{i}(c)q_{i+1}(c)\geq 0
    \end{cases}
 \end{equation}
-In meaningful terms, the value of $r$ is the number of transitions of sign of the elements of  (\ref{sequence}). Where $r \in [0,n-1]$. If it truly happens that $c=\dot{c}$, then the values of $q_{i}$ would be nothing but the errors $\xi_{i}$, and by the condition $Med(\xi)=0$ the probabilities $p_{r}$ of events $\eta = r$ could be written as
+In meaningful terms, the value of $r$ is the number of transitions of sign of the elements of  (\ref{sequence}). Where $r \in [0,n-1]$. If it truly happens that $c=\dot{c}$, then the values of $q_{i}$ would be nothing but the errors $\xi_{i}$, and by the condition $Med(\xi)=0$ the probabilities $p_{r}$ of events $q = r$ could be written as
 \begin{equation}
 p_{r}= \frac{\binom {n-1}r}{2^{n-1}}, \quad r = 0,1,\dots,n-1. \label{priori}
 \end{equation}
@@ -248,7 +289,8 @@ Using Least Square Method \\
 c^{*} = \frac{35.25}{6} = 5.875 \\
 \text{And so the error } \rho = 1.875
 \end{gather*}
-In this case, the error made by LSM is significantly greater then the one made by my method. Back to the theory.\\
+Because this example shows, that in the case of significant non-compliance to condition $E(\xi)=0$, my method is notably superior to LSM, and because of the limited format of this IA, I will not include further solutions that used LSM. %You may refer to (*) in the apendix for more such results.
+ Back to the theory.\\
 \\
 \end{subsection}
 Let the proximity $\rho(c^{*},c)$ in (\ref{mathexpectancy}), be taken in the form (\ref{rho2}). Then the following simplification takes place.
@@ -280,7 +322,7 @@ where
 \bar{c}_{(j,r)} = \frac{\int\limits_{D_{r}} c_{j}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots\mathrm{d}c_{m}}{\mu(D_{r})}. \label{eq-cbar}
 \end{equation}
 \\
-Note that the formulae (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) - even though in some other notations - is the solution of the problem formulated and solved by algorithm in [*].\\
+Note that the equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) - even though in some other notations - is the solution of the problem formulated and solved by algorithm in [*].\\
 \\
 From the point of view of practical realisation of my algorithm, that is based of formulae (\ref{eq-solutions-to-cj*}),(\ref{eq-cbar}), I can ask two questions: 1. Is it possible to derive a simple method of constructing the sets $D_{r}$; 2. Is it possible to derive a simple method of calculation the integrals of those sets $D_{r}$, which appear in the RHS of (\ref{eq-cbar}). What a geometrical construction (Figure [*]) has shown me, is that even in the case where $m=2$ and $n=10$, the regions $D_{r}$ have a relatively complicated geometry (some multi-peaked star-like shapes). However, this problem can be solved with the principal of the 'Gordian knot' - refuse to work with directly with sets $D_{r}$, but instead, to use their point (grid) approximation (even without describing these sets concretely) and use an analog of (\ref{eq-solutions-to-cj*}).\\
 \\
@@ -292,26 +334,36 @@ which contains the set $D$ (if the set $D$ itself is a parallelepiped, then $W=D
 \begin{equation}
 L = \prod\limits_{t=1}^{m}k(t)
 \end{equation}
-number of nodes $c^{(l)} = (c_{1}^{(l)},(c_{2}^{(l)},\dots,c_{m}^{(l)},\quad l=1,2,\dots,L)$ where each coordinate $c_{j}^{(l)}, \quad j=1,2,\dots,m,$ could independently from all the other $m-1$ coordinates assume of $k(j)$ values
+number of nodes $c^{(l)} = (c_{1}^{(l)},(c_{2}^{(l)},\dots,c_{m}^{(l)}),\quad l=1,2,\dots,L$, where each coordinate $c_{j}^{(l)}, \quad j=1,2,\dots,m,$ could independently from all the other $m-1$ coordinates (note that $m-1$ does not refer to sets of coordinates) assume one of $k(j)$ of values
 \begin{equation}
 c_{j}=c_{j}^{(\text{min})} + \frac{c_{j}^{(\text{max})}-c_{j}^{(\text{min})}}{k(j)}(t-\frac{1}{2}), \quad t=1,2,\dots,k(j).
 \end{equation}
+Parallel to grid $\Gamma$ implement the system $A$ of parallelepipeds $W_{l} \subset \boldsymbol{R}^{m}, \quad l=1,2,\dots,L,$ the centres of which are their nodes with sides
+\begin{gather}
+h_{j} = \frac{(c_{j}^{(\text{max})}-c_{j}^{(\text{min})})}{k(j)}: \\
+W_{l} = \lbrace c=(c_{1},c_{2},\dots,c_{m}):c_{j}^{(l)}-\frac{1}{2} h_{j} \leq c_{j} \leq c_{j}^{(l)}+\frac{1}{2} h_{j}, \quad j=1,2,\dots,m \rbrace .
+\end{gather}
 These parallelepipeds form the surface of the parallelepiped W. Now we have to chose from the defined $L$ nodes those, the ones who belong to the set $D$. Let $L_{0}$ be the quantity of the chosen nodes. Renumber the chosen nodes, by assigning the first $L_{0}$ numbers $l$ to them. \\
 \\
-For each $l=1,2,\dots,L_{0}$ find elements of $q_{i}(c^{(l)}), \quad i=1,2,\dots,n$ of sequence (\ref{sequence}), and based on their values, using (\ref{eq-values-of-q}), calculate the number $r$ of transition of sign of elements of (\ref{sequence}). Let $J(r), \quad r=0,1,\dots,n-1$ be the set of numbers $l$ of chosen nodes $c^{(l)}$ providing $r$ transitions of sign, and $|J(r)|$ - the number of nodes giving that many transitions. In this way, without directly constructing the sub-sets $D_{r}$, I approximate each of them with the union
+For each $l=1,2,\dots,L_{0}$ find elements of $q_{i}(c^{(l)}), \quad i=1,2,\dots,n$ of sequence (\ref{sequence}), and based on their values, using (\ref{eq-values-of-q}), calculate the number $r$ of transition of sign of elements of (\ref{sequence}). Let $J_{r}, \quad r=0,1,\dots,n-1$ be the set of numbers $l$ of chosen nodes $c^{(l)}$ providing $r$ transitions of sign, and $|J_{r}|$ - the number of nodes giving that many transitions. In this way, without directly constructing the sub-sets $D_{r}$, I approximate each of them with the union
 \begin{equation}
-\tilde{D}_{r} = \bigcup_{l \in J(r)} W_{l}.
+\tilde{D}_{r} = \bigcup_{l \in J_{r}} W_{l}.
 \end{equation}
 \\
 It is clear, that the assumption, that all vectors $c$, belonging to the parallelepiped $W_{l}$, will provide the same number of transitions of sign as the center $c^{l}$ of the parallelepiped, will only be incorrect for those parallelepipeds $W_{l}$, and do not completely belong to some one sub-set $D_{r}$. But with a dense grid $\Gamma$, and respectively, quite small-sized parallelepipeds $W_{(l)}$, the percent of such 'debatable' parallelepipeds compared to their general number $L_{0}$ will be quite small (so, in figure [*], when $m=2$, these 'debatable' parallelepipeds are positioned along the lines, and the 'non-debatable' - in the areas). In addition, the error resulting from classification of such 'debatable' parallelepipeds $W_{l}$ completely to some set $D_{r}$, will get (mostly) redeemed/repaid. Summing up all these arguments, it can be said, that the approximations of sets $D_{r}$, with the union of relatively 'small' parallelepipeds will give a good  approximation of the mathematical expectancy (\ref{mathexpectancy}) of error in estimation of parameters of a studies functional dependence:
 \begin{gather}
 \nonumber
 E(\rho_{2}(c^{*},c)) \approx \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \int\limits_{\tilde{D}_{r}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
+\nonumber 
+\text{(integral with limit } D_{r} \text{ can be split as the sum of integrals with limit } W_{l} \text{)}\\
+\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J_{r}} \  \int\limits_{W_{l}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
 \nonumber
-\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \  \int\limits_{W_{(l)}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
+\text{(the sum } \sum_{j=1}^{m} \text{ is facrotised out)} \\
 \nonumber
-\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \ \int\limits_{W_{(l)}} ((c_{j}^{*})^{2}-2c_{j}^{*}c_{j}+c_{j}^{2}) \right) \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] = \\
-\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{(l)}) - 2c_{j}^{*} \int\limits_{W_{(l)}} c_{j} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{W_{(l)}} c_{j}^{2} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right) \right]. \label{eq-simplification-chain}
+\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J_{r}} \ \int\limits_{W_{l}} ((c_{j}^{*})^{2}-2c_{j}^{*}c_{j}+c_{j}^{2}) \right) \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] = \\
+\nonumber
+\text{(expanding } ((c_{j}^{*})^{2}-2c_{j}^{*}c_{j}+c_{j}^{2}) \text{)}\\
+\sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J_{r}} \left[ (c_{j}^{*})^{2} \mu(W_{(l)}) - 2c_{j}^{*} \int\limits_{W_{l}} c_{j} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{W_{l}} c_{j}^{2} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right) \right]. \label{eq-simplification-chain}
 \end{gather}
 If in a multi integral, the limits of integration for each variable are given by other variables, then this multi integral is equal to the product of included in it, one-dimensional integrals [*]. Now, if we define coordinates of the edges of $W_{l}$ as $c_{j}^{(l)} - 0.5h_{j} = a(j,l)$ and $c_{j}^{(l)} + 0.5h_{j} = b(j,l)$ then it is not hard to be sure that 
 \begin{equation}
@@ -325,23 +377,57 @@ If in a multi integral, the limits of integration for each variable are given by
 If in addition we accept that
 \begin{gather}
 \sum\limits_{r \in I} p_{r}^{*} =1, \\
-\sum\limits_{l \in J(r)} \mu(W_{l}) =\mu(\tilde{D}_{r}), \\
+\sum\limits_{l \in J_{r}} \mu(W_{l}) =\mu(\tilde{D}_{r}), \\
 \mu(W_{l}) \equiv \prod\limits_{j=1}^{m}h_{j},
 \end{gather}
 then the simplification chain (\ref{eq-simplification-chain}) could be continued
 \begin{gather}
 \nonumber
-E(\rho_{2}(c^{*},c)) \approx \sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J(r)} \left[ (c_{j}^{*})^{2} \mu(W_{l}) - 2c_{j}^{*} \mu(W_{l}) c_{j}^{(l)} + \int\limits_{W_{l}} c_{j}^{2} \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] \right) \right] = \\
-\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2}  \sum\limits_{r \in I} p_{r}^{*}  - 2c_{j}^{*}  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \mu(W_{l})  c_{j}^{(l)}  + \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
-\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\sum\limits_{l \in J(r)} \mu(W_{l})} \sum\limits_{l \in J(r)} \mu(W_{j}) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J(r)} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
-\sum\limits_{j=1}^{m}  \left[    (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\left| J(r) \right| \prod\limits_{s=1}^{m} h_{s}} \sum\limits_{l \in J(r)} \left( \prod_{s=1}^{m} h_{s} \right) c_{j}^{(l)}  \right]
+E(\rho_{2}(c^{*},c)) \approx \sum\limits_{j=1}^{m}  \left[ \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \left( \sum\limits_{l \in J_{r}} \left[ (c_{j}^{*})^{2} \mu(W_{l}) - 2c_{j}^{*} \mu(W_{l}) c_{j}^{(l)} + \int\limits_{W_{l}} c_{j}^{2} \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] \right) \right] = 
 \end{gather}
-
-\section{Given Examples}
+\begin{gather}
+\nonumber
+\text{( middle step: } \sum_{l \in J_{r}}^{m}(c_{j}^{*})^{2} \mu(W_{l}) = (c_{j}^{*})^{2} \underbrace{\sum_{l \in J_{r}} \mu(W_{l})}_{=\mu(\tilde{D}_{r})} = (c_{j}^{*})^{2} \mu(\tilde{D}_{r}) \text{ )} \\
+\nonumber
+\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2}  \sum\limits_{r \in I} p_{r}^{*}  - 2c_{j}^{*}  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J_{r}} \mu(W_{l})  c_{j}^{(l)}  + \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J_{r}} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\nonumber
+\text{( middle step: } \sum_{r \in I} (c_{j}^{*})^{2} \frac{p_{r}^{*}}{\cancel{\mu(\tilde{D}_{r})}} \cancel{\mu(\tilde{D}_{r})} = (c_{j}^{*})^{2} \underbrace{\sum_{r \in I} p_{j}^{*}}_{=1} = (c_{j}^{*})^{2} \text{ )}\\
+\nonumber
+\sum\limits_{j=1}^{m} \left[  (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\sum\limits_{l \in J_{r}} \mu(W_{l})} \sum\limits_{l \in J_{r}} \mu(W_{j}) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J_{r}} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\nonumber
+\sum\limits_{j=1}^{m}  \left[    (c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} p_{j}^{*} \frac{1}{\left| J_{r} \right| \prod\limits_{s=1}^{m} h_{s}} \sum\limits_{l \in J_{r}} \left( \prod_{s=1}^{m} h_{s} \right) c_{j}^{(l)} +  \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J_{r}} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right] = \\
+\sum\limits_{j=1}^{m} \left[ c_{j}^{*})^{2} - 2c_{j}^{*} \sum\limits_{r \in I} \frac{p_{j}^{*}}{ \left| J_{r} \right|} \sum\limits_{l \in J_{r}} c_{j}^{(l)} + \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \sum\limits_{l \in J_{r}} \ \int\limits_{W_{l}} c_{j}^{2}  \mathrm{d}c_{1} \mathrm{d}c_{2} \dots \mathrm{d}c_{m} \right]. \label{eq-final-simplification}
+\end{gather}
+In order to find vector $c^{*}$, which provides the minimum estimate mathematical expectation (\ref{eq-final-simplification}) of error in the approximation of unknown true parameters of the functional dependence in question, and therefore also of vector $\dot{c}$, we take the same steps as in the case when we calculated the minimum of function (\ref{eq-Erho-simp}). Taking into account, that the last, third, summand in (\ref{eq-final-simplification}) does not contain 
+any variables $c_{j}^{*}$ (which are being optimised), its derivative is again equal to zero, we find its partial derivatives:
+\begin{equation}
+\frac{\partial E (\rho_{2}(c^{*},c))}{\partial c_{j}^{*}} \approx 2c_{j}^{*} - 2 \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\limits_{l \in J_{r}} c_{j}^{(l)}, \quad j=1,2,\dots,m. \label{eq-partial}
+\end{equation}
+Equating these partial derivatives (\ref{eq-partial}) to zero we get, and therefore conclude with:
+\begin{equation}
+c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\limits_{l \in J_{r}} c_{j}^{(l)}, \quad j=1,2,\dots,m. \label{eq-final}
+\end{equation}
+This equation (\ref{eq-final}) is the one used in calculations of approximate values of the optimised vector $c^{*}$ in my custom software, the trails of which are later in this document.\\
+\\
+Now, let's compare reviousy suggested in \footcite{balk2010regression} equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
+, which in fact are quite complex convex polyhedrons [*] in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multi integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In \footcite{balk2010regression} there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
+\section{Algorithm trials}
 
 \section{Conclusion and Reflection}
-\newpage
+First of I want to to conclude with mentioning again the conditions in which this method performs best, and subsequently when I would recommend using it. This method approximates, significantly better than LSM per se (and, it could be argued, that better than LAD), in conditions where among measured values $\title{y}_{i}$ there is a significant percentage of such of those values that their absolute value is relatively small (and therefore they are close to the studied functional dependence). We can't know which of them are so, and we don't have to, we just need to know that such values of $\title{y}_{i}$ exist. Said that, some values $\title{y}_{i}$ can peak quite significantly in one of the signs (+ve or -ve), without the approximation begin significantly affected. It is clear, that all conditions in which this method performs best can not be defined (the limited nature of calculation accounts for this), however, the trails given give a good representation of the success of this method.  And thus I have reached my aim. \\
+\\
+This is to say, that this investigation is far from perfect. Even though begin more constructive than previous work \footcite{balk2010regression} done in this topic , there are some holes. For example, the algorithm requires that a finite interval $[\alpha, \beta]$ is given to each parameter estimated, a computer can't run a calculation infinitely. \\
+\\
+I want to to note that the trials have shown  some results that I have not expected. For example, some individual trails (given in the appendix of this IA) have either unreasonably low of high factual error (error actually made by the method). This could be caused by some random 'layout' of the values of $\title{y}_{i}$ being either in favor or against a good approximation with any method (say when all or close to all absolute values of $\title{y}_{i}$ are large) or a bug in my code (but hopefully not that). \\
+\\
+In spite that, now, after writing and researching for this IA, I know that not only I have questioned the validity of a method of approximation. In it's own way deriving methods of approximation is its own mathematical field. Some methods work better than others in different circumstances. Just like the method described in this IA is suited for use even when there are peaks in the given data, other methods deal with other circumstances, like for example LSM, is suited for circumstances without those peaks. And so, like in most fields in mathematics, this is a continuation from what came before, and could (and should) be continued (by others) to find even better (working in more conditions) algorithms of approximation.
 
-\section*{Biblyography}
+
+
+\newpage
+\section{Bibliography}
+\bibliography{BIBLIOGRAPHY}
+\bibliographystyle{plain}
+
 \end{document}
 

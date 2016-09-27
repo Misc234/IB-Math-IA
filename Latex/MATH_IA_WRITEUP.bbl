@@ -1,8 +1,22 @@
 \begin{thebibliography}{1}
 
+\bibitem{product}
+{\em Summation and Product Notation}.
+\newblock Illinois State University Mathematics Department, 1995.
+
 \bibitem{balk2010regression}
 PI~Balk.
 \newblock {\em Regression-type problems under zero median noise}, volume~81.
 \newblock 2010.
+
+\bibitem{matthews_1998}
+P.~C. Matthews.
+\newblock {\em Vector calculus}.
+\newblock Springer, 1998.
+
+\bibitem{stewart_2008}
+James Stewart.
+\newblock {\em Calculus: early transcendentals}.
+\newblock Thomson Brooks/Cole, 2008.
 
 \end{thebibliography}
