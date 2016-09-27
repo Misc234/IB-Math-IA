@@ -1,22 +1,51 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{}
 
-\bibitem{product}
-{\em Summation and Product Notation}.
-\newblock Illinois State University Mathematics Department, 1995.
+\bibitem[Balk, 2010]{balk_2010}
+Balk, P. (2010).
+\newblock Regression-type problems under zero median noise.
+\newblock 81(1):142--145.
 
-\bibitem{balk2010regression}
-PI~Balk.
-\newblock {\em Regression-type problems under zero median noise}, volume~81.
-\newblock 2010.
+\bibitem[Cromwell, 1999]{cromwell_1999}
+Cromwell, P.~R. (1999).
+\newblock {\em Polyhedra}.
+\newblock Cambridge University Press.
 
-\bibitem{matthews_1998}
-P.~C. Matthews.
-\newblock {\em Vector calculus}.
-\newblock Springer, 1998.
+\bibitem[I.S.U.M.D, 1995]{product_1995}
+I.S.U.M.D (1995).
+\newblock {\em Summation and Product Notation}.
 
-\bibitem{stewart_2008}
-James Stewart.
-\newblock {\em Calculus: early transcendentals}.
-\newblock Thomson Brooks/Cole, 2008.
+\bibitem[Kelley, 1995]{kelley_1995}
+Kelley, J.~L. (1995).
+\newblock {\em General topology}.
+\newblock Springer.
+
+\bibitem[Matthews, 1998]{matthews_1998}
+Matthews, P.~C. (1998).
+\newblock {\em Vector calculus}, pages 45--48.
+\newblock Springer.
+
+\bibitem[Plackett, 1950]{Plackett_1950}
+Plackett, R.~L. (1950).
+\newblock Some theorems in least squares.
+\newblock {\em Biometrika.}, 37(1-2):149--157.
+
+\bibitem[Ross, 2007]{Ross_2007}
+Ross, S.~M. (2007).
+\newblock 2.4 expectation of a random variable.
+\newblock In {\em Introduction to probability models (9th ed)}. Academic Press.
+
+\bibitem[Stewart, 2008a]{stewart_2008_deriv}
+Stewart, J. (2008a).
+\newblock {\em Calculus: early transcendentals}, pages 878--891.
+\newblock Thomson Brooks/Cole.
+
+\bibitem[Stewart, 2008b]{stewart_2008_int}
+Stewart, J. (2008b).
+\newblock {\em Calculus: early transcendentals}, pages 950--1021.
+\newblock Thomson Brooks/Cole.
+
+\bibitem[Weisstein, 2014]{Weisstein_2014}
+Weisstein, E.~W. (2014).
+\newblock Dimension.
 
 \end{thebibliography}

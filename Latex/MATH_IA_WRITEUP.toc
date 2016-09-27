@@ -2,9 +2,8 @@
 \contentsline {section}{\numberline {2}Mathematical Background}{2}
 \contentsline {subsection}{\numberline {2.1}Notations}{2}
 \contentsline {subsection}{\numberline {2.2}Concepts}{2}
-\contentsline {section}{\numberline {3}Formulation of the Problem}{3}
-\contentsline {section}{\numberline {4}Algorithm}{5}
-\contentsline {subsection}{\numberline {4.1}Illustrative example}{7}
+\contentsline {section}{\numberline {3}Formulation of the Problem}{4}
+\contentsline {section}{\numberline {4}Algorithm}{6}
+\contentsline {subsection}{\numberline {4.1}Illustrative example}{8}
 \contentsline {section}{\numberline {5}Algorithm trials}{14}
-\contentsline {section}{\numberline {6}Conclusion and Reflection}{14}
-\contentsline {section}{\numberline {7}Bibliography}{15}
+\contentsline {section}{\numberline {6}Conclusion and Reflection}{17}
