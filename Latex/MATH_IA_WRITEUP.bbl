@@ -1,20 +1,22 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
 
-\bibitem[pro, ]{product}
-Summation and product notation.
+\bibitem{product}
+{\em Summation and Product Notation}.
+\newblock Illinois State University Mathematics Department, 1995.
 
-\bibitem[Balk, 2010]{balk2010regression}
-Balk, P. (2010).
+\bibitem{balk2010regression}
+PI~Balk.
 \newblock {\em Regression-type problems under zero median noise}, volume~81.
+\newblock 2010.
 
-\bibitem[Matthews, 1998]{matthews_1998}
-Matthews, P.~C. (1998).
+\bibitem{matthews_1998}
+P.~C. Matthews.
 \newblock {\em Vector calculus}.
-\newblock Springer.
+\newblock Springer, 1998.
 
-\bibitem[Stewart, 2008]{stewart_2008}
-Stewart, J. (2008).
+\bibitem{stewart_2008}
+James Stewart.
 \newblock {\em Calculus: early transcendentals}.
-\newblock Thomson Brooks/Cole.
+\newblock Thomson Brooks/Cole, 2008.
 
 \end{thebibliography}

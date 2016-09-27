@@ -11,20 +11,17 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage{natbib}
 \pagestyle{fancy}
 \usepackage{float}
 \usepackage{cancel}
 \usepackage{subfig}
-\usepackage{booktabs}
+\usepackage{natbib}
 \usepackage[utf8]{inputenc}
+
 \numberwithin{equation}{subsection}
 
 \title{Approximation of Experimental Physical Values with Non-typical Conditions of Error}
 \date{\today}
-
-\DeclareRobustCommand\dash{%
-  \unskip\nobreak\thinspace\textemdash\allowbreak\thinspace\ignorespaces}
 
 \begin{document}
 %TITLE
@@ -412,8 +409,8 @@ c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\li
 \end{equation}
 This equation (\ref{eq-final}) is the one used in calculations of approximate values of the optimised vector $c^{*}$ in my custom software, the trails of which are later in this document.\\
 \\
-Now, let's compare reviousy suggested in \citep{balk2010regression} equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
-, which in fact are quite complex convex polyhedrons [*] in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multi integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In \citep{balk2010regression} there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
+Now, let's compare reviousy suggested in \cite{balk2010regression} equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
+, which in fact are quite complex convex polyhedrons [*] in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multi integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In \cite{balk2010regression} there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
 \section{Algorithm trials}
 
 \section{Conclusion and Reflection}
@@ -429,11 +426,8 @@ In spite that, now, after writing and researching for this IA, I know that not o
 
 \newpage
 \section{Bibliography}
-\bibliographystyle{apalike}
 \bibliography{BIBLIOGRAPHY}
-\nocite{*}
-\flushleft
-
+\bibliographystyle{plain}
 
 \end{document}
 

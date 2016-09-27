@@ -11,20 +11,17 @@
 \usepackage[margin=2cm]{geometry}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
-\usepackage{natbib}
 \pagestyle{fancy}
 \usepackage{float}
 \usepackage{cancel}
 \usepackage{subfig}
-\usepackage{booktabs}
 \usepackage[utf8]{inputenc}
+\usepackage{natabib}
+
 \numberwithin{equation}{subsection}
 
 \title{Approximation of Experimental Physical Values with Non-typical Conditions of Error}
 \date{\today}
-
-\DeclareRobustCommand\dash{%
-  \unskip\nobreak\thinspace\textemdash\allowbreak\thinspace\ignorespaces}
 
 \begin{document}
 %TITLE
@@ -64,9 +61,9 @@ Another new to IB notation in this IA is the product notation:
 \begin{gather*}
 \prod\limits_{i = m}^{n} x_{i} = x_{m} \cdot x_{m+1} \cdot \  \cdots \  \cdot x_{n-1} \cdot x_{n}.
 \end{gather*}
-This essentially works in much of the same way the familiar summation notation we use in class(using the Greek capital letter sigma), except that instead of summing values, it multiplies them (and uses Greek the capital letter pi) \cite{product}.
+This essentially works in much of the same way the familiar summation notation we use in class(using the Greek capital letter sigma), except that instead of summing values, it multiplies them (and uses Greek the capital letter pi) \footcite{product}.
 \subsection{Concepts}
-Derivatives are an essential part of the IB curriculum. But when it comes to functions with multiple variables (like in this IA), their derivative is taken differently. First off, the derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \cite{matthews_1998}. The following example will explain this further:\\
+Derivatives are an essential part of the IB curriculum. But when it comes to functions with multiple variables (like in this IA), their derivative is taken differently. First off, the derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \footcite{matthews_1998}. The following example will explain this further:\\
 \\
 Find the local minimum of function $z$ with multiple variables:
 \begin{gather*}
@@ -84,7 +81,7 @@ Now according to normal method of finding a minimum of a function, we equate, in
 \end{eqnarray*}
 Voila, the partial derivatives gave us the answer as well.\\
 \\
-But as much as derivatives a essential, so are integrals. This IA invokes the use of something called multi integrals. These are basically integral an of integral, where again a function with multiple variables is in question \cite{stewart_2008}. I.e. a 2-milti integral of some two-variable function $g(x,y)$ is denoted as such:
+But as much as derivatives a essential, so are integrals. This IA invokes the use of something called multi integrals. These are basically integral an of integral, where again a function with multiple variables is in question \footcite{stewart_2008}. I.e. a 2-milti integral of some two-variable function $g(x,y)$ is denoted as such:
 \begin{gather*}
 \int \int g(x,y) \mathrm{d}x\mathrm{d}y
 \end{gather*}
@@ -170,7 +167,7 @@ of proximity (distance) $\rho(c^{*},\dot{c})$ of function $f(c^{*},x)$ from $f(\
 \rho_{2}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2} \label{rho2}\\
 \rho_{3}(c^{*},c) &=& \sqrt{\frac{1}{n}\sum\limits_{i=1}^{m} \left( y_{i}-f(c^{*},x_{i}) \right)^{2}} \label{rho3}
 \end{eqnarray}
-In solving the problem, that I have above labelled as 'aim-minimum', criteria (\ref{Erho}) was considered in article \cite{balk2010regression}. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in \cite{balk2010regression}. I want to note that the problem that I have above labelled as 'aim-maximum' was not looked at in the mentioned paper. \\
+In solving the problem, that I have above labelled as 'aim-minimum', criteria (\ref{Erho}) was considered in article \footcite{balk2010regression}. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in \footcite{balk2010regression}. I want to note that the problem that I have above labelled as 'aim-maximum' was not looked at in the mentioned paper. \\
 \\
 The probability density function $P(c),\  c \in D$ where $c$ is a vector that could be the unknown true vector $\dot{c}$, that (the function) appears in the $m$-multi integral (\ref{Erho}), can be constructed on the basis of the formula of the binomial distribution of a random value [*]. In fact, let's say: $c \in D$ is one of the vectors which claims that it is the unknown true vector $ \dot{c}$ from function (\ref{functionform}); $q_{i}$ are the elements of the sequence
 \begin{equation}
@@ -412,14 +409,14 @@ c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\li
 \end{equation}
 This equation (\ref{eq-final}) is the one used in calculations of approximate values of the optimised vector $c^{*}$ in my custom software, the trails of which are later in this document.\\
 \\
-Now, let's compare reviousy suggested in \citep{balk2010regression} equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
-, which in fact are quite complex convex polyhedrons [*] in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multi integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In \citep{balk2010regression} there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
+Now, let's compare reviousy suggested in \footcite{balk2010regression} equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
+, which in fact are quite complex convex polyhedrons [*] in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multi integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In \footcite{balk2010regression} there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
 \section{Algorithm trials}
 
 \section{Conclusion and Reflection}
 First of I want to to conclude with mentioning again the conditions in which this method performs best, and subsequently when I would recommend using it. This method approximates, significantly better than LSM per se (and, it could be argued, that better than LAD), in conditions where among measured values $\title{y}_{i}$ there is a significant percentage of such of those values that their absolute value is relatively small (and therefore they are close to the studied functional dependence). We can't know which of them are so, and we don't have to, we just need to know that such values of $\title{y}_{i}$ exist. Said that, some values $\title{y}_{i}$ can peak quite significantly in one of the signs (+ve or -ve), without the approximation begin significantly affected. It is clear, that all conditions in which this method performs best can not be defined (the limited nature of calculation accounts for this), however, the trails given give a good representation of the success of this method.  And thus I have reached my aim. \\
 \\
-This is to say, that this investigation is far from perfect. Even though begin more constructive than previous work \cite{balk2010regression} done in this topic , there are some holes. For example, the algorithm requires that a finite interval $[\alpha, \beta]$ is given to each parameter estimated, a computer can't run a calculation infinitely. \\
+This is to say, that this investigation is far from perfect. Even though begin more constructive than previous work \footcite{balk2010regression} done in this topic , there are some holes. For example, the algorithm requires that a finite interval $[\alpha, \beta]$ is given to each parameter estimated, a computer can't run a calculation infinitely. \\
 \\
 I want to to note that the trials have shown  some results that I have not expected. For example, some individual trails (given in the appendix of this IA) have either unreasonably low of high factual error (error actually made by the method). This could be caused by some random 'layout' of the values of $\title{y}_{i}$ being either in favor or against a good approximation with any method (say when all or close to all absolute values of $\title{y}_{i}$ are large) or a bug in my code (but hopefully not that). \\
 \\
@@ -429,11 +426,8 @@ In spite that, now, after writing and researching for this IA, I know that not o
 
 \newpage
 \section{Bibliography}
-\bibliographystyle{apalike}
 \bibliography{BIBLIOGRAPHY}
-\nocite{*}
-\flushleft
-
+\bibliographystyle{plain}
 
 \end{document}
 
