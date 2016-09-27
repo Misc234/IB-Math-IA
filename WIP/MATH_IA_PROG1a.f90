@@ -9,7 +9,7 @@ PROGRAM MAIN
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 1                                      !If the error values may be distorted or not
+    JDISTORT = 0                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
     CDISTORT = 2.0                                    !Distortion coeficient
 
@@ -24,7 +24,7 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 1.0                                           !The quantitive multiplier for exaduration of error
+    C = 0.3                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                           !The number of sub-regions in the vertical
@@ -37,7 +37,7 @@ PROGRAM MAIN
     WRITE(*,*) ' '                                    !Write input variables to console
     WRITE(*,*) ' '
     WRITE(*,*) '****************************************'
-    WRITE(*,*) '*  MATH IA PROGRAM 2 - SEPTEMBER 2016  *'
+    WRITE(*,*) '*  MATH IA PROGRAM 1a - SEPTEMBER 2016 *'
     WRITE(*,*) '*      TWO PARAMETER & COMPARISON      *'
     WRITE(*,*) '*          MATH_IA_PROG1 .f90          *'
     WRITE(*,*) '****************************************'
@@ -49,7 +49,7 @@ PROGRAM MAIN
     WRITE(*,*) '     NVAR           = ', NVAR
     WRITE(*,*) '     AIST           = ', AIST
     WRITE(*,*) '     BIST           = ', BIST
-    WRITE(*,*) '     C              = ', C
+    WRITE(*,*) '     C              = ', C  
     WRITE(*,*) '     N              = ', N
     WRITE(*,*) '     M              = ', M
     WRITE(*,*) '     K              = ', K
