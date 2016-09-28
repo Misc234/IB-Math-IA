@@ -9,7 +9,7 @@ PROGRAM MAIN
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 0                                      !If the error values may be distorted or not
+    JDISTORT = 1                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
     CDISTORT = 2.0                                    !Distortion coeficient
 
@@ -49,7 +49,7 @@ PROGRAM MAIN
     WRITE(*,*) '     NVAR           = ', NVAR
     WRITE(*,*) '     AIST           = ', AIST
     WRITE(*,*) '     BIST           = ', BIST
-    WRITE(*,*) '     C              = ', C  
+    WRITE(*,*) '     C              = ', C
     WRITE(*,*) '     N              = ', N
     WRITE(*,*) '     M              = ', M
     WRITE(*,*) '     K              = ', K
