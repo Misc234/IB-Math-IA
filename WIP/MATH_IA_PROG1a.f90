@@ -6,10 +6,11 @@ PROGRAM MAIN
                                                       !and settings for any given problem
     DIMENSION X(20), WA(200,100), WB(200,100), Y(20), STR(108), STR1(20), Y1(20), Y2(20), P(20)
 
+    ITRASH = 7
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 1                                      !If the error values may be distorted or not
+    JDISTORT = 0                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
     CDISTORT = 2.0                                    !Distortion coeficient
 
@@ -46,6 +47,9 @@ PROGRAM MAIN
     WRITE(*,*) '   INPUT VARIABLES*********************'
     WRITE(*,*) '    '
     WRITE(*,*) '     JPRINT         = ', JPRINT
+    WRITE(*,*) '     JDISTORT       = ', JDISTORT
+    IF(JDISTORT.EQ.1) WRITE(*,*) '     NDISTORT       = ', NDISTORT
+    IF(JDISTORT.EQ.1) WRITE(*,*) '     CDISTORT       = ', CDISTORT
     WRITE(*,*) '     NVAR           = ', NVAR
     WRITE(*,*) '     AIST           = ', AIST
     WRITE(*,*) '     BIST           = ', BIST
@@ -71,6 +75,11 @@ PROGRAM MAIN
     AVGBOPT2 = 0.0
     AVGERWOPT2 = 0.0
     AVGDIST2 = 0.0
+
+    AVGAOPT3 = 0.0
+    AVGBOPT3 = 0.0
+    AVGERWOPT3 = 0.0
+    AVGDIST3 = 0.0
 
     AVGDISTLSM1 = 0.0
     AVGDISTLSM2 = 0.0
@@ -215,9 +224,9 @@ PROGRAM MAIN
 20  CONTINUE
 
 
-     DO 24 I = 1,N
-         write (*,*) NN(I)
-24   CONTINUE
+!     DO 24 I = 1,N
+!         write (*,*) NN(I)
+!24   CONTINUE
 
     DO 31 I = 1,N                                    !Calculate these propabilities acodring to values found
     IF(I.LE.(N/2)) GOTO 35                           !using P(I) = (J cRn N-1) / 2^(N-1)
@@ -228,26 +237,25 @@ PROGRAM MAIN
     DO 32 J = 1,(N-1)
     IF(J.LT.(N-I+1)) GOTO 33
     S = S * J
-    !WRITE(*,*) 'S = S * J', S
 33  CONTINUE
 32  CONTINUE
     DO 34 J = 1,I - 1
     S = S/J
-    !WRITE(*,*) 'S = S / J', S
 34  CONTINUE
     DO 47 I2 = 1,(N-1)
     S = S / 2.0
-    !  WRITE(*,*) 'S = S / 2.0', S
 47  CONTINUE
     P(I) = S
 31  CONTINUE
 
-WRITE(*,*)' '
-WRITE(*,*)'PROB APRIORI'
-DO 444 I = 1,N
-  S = P(I)
-WRITE (*,*) S
-444   CONTINUE
+!WRITE(*,*)' '
+!WRITE(*,*)'PROB APRIORI'
+  S = 0.0
+  DO 444 I = 1,N
+  S = S + P(I)
+  444   CONTINUE
+  WRITE (*,*) S
+
 
 
 
@@ -266,18 +274,19 @@ WRITE(*,*)' '
      IF(NN(I).EQ.0) P(I) = 0.0
 42   CONTINUE
 
-WRITE(*,*)'PROB APOSTERIORI'
-DO 43 I = 1,N
-  S = P(I)
-WRITE (*,*) S
-43   CONTINUE
-WRITE(*,*)' '
+!WRITE(*,*)'PROB APOSTERIORI'
+!DO 43 I = 1,N
+!  S = P(I)
+!WRITE (*,*) S
+!43   CONTINUE
+!WRITE(*,*)' '
 
 !MAIN BLOCK 1 - END
 !MAIN BLOCK 2 - START
 
      ERWOPT1 = 900000000.1                            !Set the value for expectancy of error to be very large
      ERWOPT2 = 900000000.1
+     ERWOPT3 = 900000000.1
 
      DO 51 I = 1,M                                    !Loops calculate true expectancy of error and prodicted
      DO 52 J = 1,K                                    !by the program expectancy
@@ -286,6 +295,7 @@ WRITE(*,*)' '
 
      ERW1 = 0.0
      ERW2 = 0.0
+     ERW3 = 0.0
      DO 53 I1 = 1,M
      DO 54 J1 = 1,K
      A0 = WA(I1,J1)
@@ -293,15 +303,24 @@ WRITE(*,*)' '
 
       D1 = ABS(A-A0) + ABS(B-B0)
       D2 = (A - A0)**2 + (B - B0)**2
+      D3 = 0.0
+      DO 58 I3 = 1,N
+      S = (A+B * X(I3)) - (A0 + B0 * X(I3))
+      S = ABS(S)
+      D3 = D3 + S
+      D3 = D3 / N
+58 CONTINUE
       NR = NNR(I1,J1)
-      IF(NR.LE.7) GOTO 54
+      IF(NR.LE.ITRASH) GOTO 54
       PR = P(NR+1)
 
       DR1 = (D1 * PR)/(NN(NR+1))
       DR2 = (D2 * PR)/(NN(NR+1))
+      DR3 = (D3 * PR)/(NN(NR+1))
 
       ERW1 = ERW1 + DR1
       ERW2 = ERW2 + DR2
+      ERW3 = ERW3 + DR3
 54    CONTINUE
 53    CONTINUE
 
@@ -325,6 +344,19 @@ WRITE(*,*)' '
 
 200   CONTINUE
 
+      IF(ERW3.GT.ERWOPT3) GOTO 300
+      ERWOPT3 = ERW3
+      AOPT3 = A
+      BOPT3 = B
+      DIST3 = 0.0
+      DO 59 I3 = 1,N
+      S = (AOPT3 + BOPT3 * X(I3)) - (AIST + BIST * X(I3))
+      S = ABS(S)
+      DIST3 = DIST3 + S
+      DIST3 = DIST3 / N
+59 CONTINUE
+300 CONTINUE
+
 52    CONTINUE
 51    CONTINUE
 
@@ -345,7 +377,6 @@ WRITE(*,*)' '
 
       C21 = C12
       F = (C12 * C21 - C11 * C22)
-!      WRITE(*,*)'F = ', F
 
       AOPTLSM = (R2 * C12 - R1 * C22) / (C12 * C21 - C11 * C22)
       BOPTLSM = (R1 * C21 - R2 * C11) / (C12 * C21 - C11 * C22)
@@ -386,13 +417,18 @@ WRITE(*,*)' '
 
       AVGAOPT1 = AVGAOPT1 + AOPT1/NVAR
       AVGBOPT1 = AVGBOPT1 + BOPT1/NVAR
-      AVGERWOPT1 = AVGEWROPT1 + ERWOPT1/NVAR
+      AVGERWOPT1 = AVGERWOPT1 + ERWOPT1/NVAR
       AVGDIST1 = AVGDIST1 + DIST1/NVAR
 
       AVGAOPT2 = AVGAOPT2 + AOPT2/NVAR
       AVGBOPT2 = AVGBOPT2 + BOPT2/NVAR
-      AVGERWOPT2 = AVGEWROPT2 + ERWOPT2/NVAR
+      AVGERWOPT2 = AVGERWOPT2 + ERWOPT2/NVAR
       AVGDIST2 = AVGDIST2 + DIST2/NVAR
+
+      AVGAOPT3 = AVGAOPT3 + AOPT3/NVAR
+      AVGBOPT3 = AVGBOPT3 + BOPT3/NVAR
+      AVGERWOPT3 = AVGERWOPT3 + ERWOPT3/NVAR
+      AVGDIST3 = AVGDIST3 + DIST3/NVAR
 
       AVGDISTLSM1 = AVGDISTLSM1 + DISTLSM1/NVAR
       AVGDISTLSM2 = AVGDISTLSM2 + DISTLSM2/NVAR
@@ -425,6 +461,11 @@ WRITE(*,*)' '
       WRITE(*,*) '     BOPT2          = ', BOPT2
       WRITE(*,*) '     ERWOPT2        = ', ERWOPT2
       WRITE(*,*) '     DIST2          = ', DIST2
+      WRITE(*,*) ' '
+      WRITE(*,*) '     AOPT3          = ', AOPT3
+      WRITE(*,*) '     BOPT3          = ', BOPT3
+      WRITE(*,*) '     ERWOPT3        = ', ERWOPT3
+      WRITE(*,*) '     DIST3          = ', DIST3
       WRITE(*,*) ' '
       WRITE(*,*) ' '
       WRITE(*,*) '     LEAST SQUARE METHOD:'
@@ -460,6 +501,11 @@ WRITE(*,*)' '
       WRITE(*,*) '     AVGBOPT2       = ',AVGBOPT2
       WRITE(*,*) '     AVGERWOPT2     = ',AVGERWOPT2
       WRITE(*,*) '     AVGDIST2       = ',AVGDIST2
+      WRITE(*,*) ' '
+      WRITE(*,*) '     AVGAOPT3       = ',AVGAOPT3
+      WRITE(*,*) '     AVGBOPT3       = ',AVGBOPT3
+      WRITE(*,*) '     AVGERWOPT3     = ',AVGERWOPT3
+      WRITE(*,*) '     AVGDIST3       = ',AVGDIST3
       WRITE(*,*) ' '
       WRITE(*,*) '     AVGDISTLMM1    = ',AVGDISTLMM1
       WRITE(*,*) '     AVGDISTLMM2    = ',AVGDISTLMM2
