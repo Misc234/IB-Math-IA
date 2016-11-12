@@ -84,6 +84,13 @@ title = {2.4 Expectation of a random variable},
 year = {2007},
 }
 
+@book{smith_eggen_andre_2015,
+place={Boston, MA}, 
+title={A transition to advanced mathematics}, 
+publisher={Cengage Learning}, 
+author={Smith, Douglas and Eggen, Maurice and Andre, Richard St.}, 
+year={2015}}
+
 \end{filecontents}
 \documentclass[11pt,a4paper]{article}
 \usepackage{graphicx}
@@ -144,7 +151,7 @@ In this IA I aim to suggest an alternative method/algorithm of approximation, on
 Because of the nature of IB Mathematics IAs, the mathematics in this written work extend from the IB syllabus. Some notations, concepts, and calculations have to be explained. 
 
 \subsection{Notations}
-During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, a vector can only be 3D, or even 4D. Essentially, so long that a single value has multiple parameters (components) it is a vector in the same number of dimensions as there are parameters. In this IA, all vectors will be denoted with the variable $c$, be it with some indexes or accents, as long as a variable has $c$ in its core, it is a vector. Note that this is just a notation that I will use only in this paper. In addition, to save real estate, no vertical vector notation will be used, instead I will use the so called ordered set notation of a vector in the form of $c=(c_{1},c_{2},\dots)$. Where the vector $\dot{c}$ is in real coordinate space\footnote{\cite{kelley_1995}}; This allows several real variables to be treated as one, single variable. The notation $\boldsymbol{R}^{m}$ describes the dimension of space. I.e. $\boldsymbol{R}^{1}$ is one-dimensional space, $\boldsymbol{R}^{2}$ two-dimensional, and so on.\footnote{\cite{Weisstein_2014}} \\
+During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, as we know a vector can be 3D, or even 4D. Essentially, so long that a single value has multiple parameters (components) it is a vector in the same number of dimensions as there are parameters. In this IA, all vectors will be denoted with the variable $c$, be it with some indexes or accents, as long as a variable has $c$ in its core, it is a vector. Note that this is just a notation that I will use only in this paper. In addition, to save real estate, no vertical vector notation will be used, instead I will use the so called ordered set notation of a vector in the form of $c=(c_{1},c_{2},\dots)$. Where the vector ${c}$ is in real coordinate space\footnote{\cite{kelley_1995}}; This allows several real variables to be treated as one, single variable. The notation $\boldsymbol{R}^{m}$ describes the dimension of space. I.e. $\boldsymbol{R}^{1}$ is one-dimensional space, $\boldsymbol{R}^{2}$ two-dimensional, and so on.\footnote{\cite{Weisstein_2014}} \\
 \\
 Another new to IB notation in this IA is the product notation:
 \begin{gather*}
@@ -152,25 +159,25 @@ Another new to IB notation in this IA is the product notation:
 \end{gather*}
 This essentially works in much of the same way the familiar summation notation we use in class(using the Greek capital letter sigma), except that instead of summing values, it multiplies them (and uses Greek the capital letter pi).\footnote{\cite{product_1995}}
 \subsection{Concepts}
-Derivatives are an essential part of the IB curriculum. But when it comes to functions with multiple variables (like in this IA), their derivative is taken differently. First off, the derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \footnote{\cite{matthews_1998}, pages 45-48} \footnote{\cite{stewart_2008_deriv}, pages 878-891}. The following example will explain this further:\\
+When it comes to functions with multiple variables, their derivative is taken differently. First off, the derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \footnote{\cite{matthews_1998}, pages 45-48} \footnote{\cite{stewart_2008_deriv}, pages 878-891}. The following example will explain this further:\\
 \\
 Find the local minimum of function $z$ with multiple variables:
 \begin{gather*}
 z = f(x,y) = 5(2x-3)^{2} + 4(4y+1)^{2}
 \end{gather*}
-Without calculating anything, we see that the minimum of this function occurs when $x= \frac{3}{2} $,$ y= -\frac{1}{4}$.
+We see that the minimum of this function occurs when $x= \frac{3}{2} $,$ y= -\frac{1}{4}$.
 \begin{gather*}
-\text{( Now expand this function )}\\
+\text{( Expanding this function gives )}\\
 z = 20x^{2} + 64y^{2} -60x + 32y +49
 \end{gather*}
-Now according to normal method of finding a minimum of a function, we equate, in this case, its partial derivatives (one with respect to $x$, the other to $y$) to zero and solve for $x$ and $y$.
+Now according to the normal method of finding a minimum of a function, we equate, in this case, its partial derivatives (one with respect to $x$, the other to $y$) to zero and solve for $x$ and $y$.
 \begin{eqnarray*}
 \frac{\partial f(x,y)}{\partial x}  &=&  40x-60 = 0 \rightarrow x = \frac{60}{40}=\frac{3}{2}\\
 \frac{\partial f(x,y)}{\partial y}  &=&  128y-32 = 0 \rightarrow y = -\frac{32}{128}=-\frac{1}{4}
 \end{eqnarray*}
 Partial derivatives gave the answer as well.\\
 \\
-But as much as derivatives a essential, so are integrals. This IA invokes the use of something called multiple integrals. These are basically integral an of integral, where again a function with multiple variables is in question \footnote{\cite{stewart_2008_int}}. I.e. a double (two-multiple) integral of some two-variable function $g(x,y)$ is denoted as such:
+This IA invokes the use of multiple integrals. These are basically integrals of other integrals, where any function of multiple variables is in question.\footnote{\cite{stewart_2008_int}} Here, each integral has a separate variable of integration, even though they stem from the same function. I.e. a double (two-multiple) integral of some two-variable function $g(x,y)$ is denoted as such:
 \begin{gather*}
 \iint g(x,y) \mathrm{d}x\mathrm{d}y
 \end{gather*}
@@ -194,15 +201,16 @@ And, again, the answer is the same. Now with these mathematical concepts explain
 
 A function is one of the most known mathematical objects. An important task which has practical applications, is the approximation of a function or relationship based on some information known about the function or relationship in question. This information may either be determinate or statistical. An example of a determinate piece of information about function $f(x)$ is its range (or the possible values this function may have) on a given interval $[\alpha,\beta]$. Example of a statistical information may be the law of distribution of random errors $\xi_{i}$ in approximate values $\tilde{y}_{i} = f(x_{i})+\xi_{i}$ of the function, which in turn can describe a certain physical process (change of temperature over time, for example). In practice, a number $n$ of points $x_{i}$ can be obtained as results of some kind of physical experiment. Where in this case, the approximation of function $f(x)$ only makes sense if the this function is described by a finite number $m<n$ of parameters (coefficients) $c_{j}$, where the true values of said parameters will be denoted as $\dot{c}_{j}, \ j=1,2,\dots,m.$ \\
 \\
-This Internal Assessment will focus on the estimation of parameters of the function \footnote{Here, because the vector $\dot{c}$ has $m$ parameters (components), it will also be in $m$-dimensional space.}
-\begin{equation}
-y = f(\dot{c},x_{i}),\quad \dot{c} \in \boldsymbol{R}^{m},\quad x \in [\alpha,\beta],\quad \dot{c} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m}) \label{301}
+This Internal Assessment will focus on the estimation of parameters of the function 
+\begin{equation} 
+y = f(\dot{c},x_{i}),\quad \dot{c} \in \boldsymbol{R}^{m},\quad x \in [\alpha,\beta],\quad \dot{c} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m}) \label{301} \tag*{(\theequation)\protect\footnotemark}
 \end{equation}
+\footnotetext{Here, because the vector $\dot{c}$ has $m$ parameters (components), it will also be in $m$-dimensional space.}
 based on its approximate values
 \begin{equation}
 \tilde{y}_{i} = f(x_{i})+\xi_{i}, \quad i=1,2,\dots,n ,
 \end{equation}
-when additionally it is also known, that: 1. vector $\dot{c} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m})$ belongs to a given limited set $D$, like for example a parallelepiped in $\boldsymbol{R}^{m}$ dimensions; 2. $\xi$ is a limited continuous random value; the median of which $Med(\xi)$ is equal to zero. \\
+when additionally it is also known, that: 1. vector $\dot{c} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m})$ belongs to a given limited set $D$, like for example a parallelepiped in $\boldsymbol{R}^{m}$; 2. $\xi$ is a limited continuous random value; the median of which $Med(\xi)$ is equal to zero. \\
 \\
 Judging by references in scientific works that I read while researching for this IA [citations needed], the most popular linear model of a studied relationship is
 \begin{equation}
@@ -212,22 +220,22 @@ specifically in polynomial form, when
 \begin{equation}
 \phi_{1}(x)\equiv 1; \quad \phi_{j}(x)=x^{j-1},\quad j=1,2,\dots,m.
 \end{equation}
-\\
-In practice, it is often the case when it is not only necessary to estimate the parameters of a function, but identifying the type (structure) of this function is needed as well. In other words, a finite number $L$ of alternative structures is given
-\begin{equation}
-f_{l}(c;x), c \in \boldsymbol{R}^{m(l)}, \quad l=1,2,\dots,L,
-\end{equation}
-and it is necessary to identify to which of $L$ structures of function $f_{l}(c;x)$ belongs the function $f(\dot{c},x)$, and after that estimate the vector $\dot{c}$ of its parameters. In our school program, the class has encountered one such task, when it was said to find out if we were dealing with a linear or exponential relationship, be it in either physics or math. However, then, this problem was solved using the exact (or near to exact) values of both of the relationships, so it was easy to distinguish them. \\
-\\
+%\\
+%In practice, it is often the case when it is not only necessary to estimate the parameters of a function, but identifying the type (structure) of this function is needed as well. In other words, a finite number $L$ of alternative structures is given
+%\begin{equation}
+%f_{l}(c;x), c \in \boldsymbol{R}^{m(l)}, \quad l=1,2,\dots,L,
+%\end{equation}
+%and it is necessary to identify to which of $L$ structures of function $f_{l}(c;x)$ belongs the function $f(\dot{c},x)$, and after that estimate the vector $\dot{c}$ of its parameters. In our school program, the class has encountered one such task, when it was said to find out if we were dealing with a linear or exponential relationship, be it in either physics or math. However, then, this problem was solved using the exact (or near to exact) values of both of the relationships, so it was easy to distinguish them. \\
+%\\
 There are countless papers dedicated to the approximation of functions based on their approximate values (in practice - experimental data). Usually, in such papers the consensus is to use a certain condition. This condition is to assume that the mathematical expectancy of error is equal to zero \footnote{\cite{Plackett_1950}}.
 \begin{equation}
 E(\xi)=0
 \end{equation}
- However, in this IA this condition will not be used. Here instead of the condition of mathematical expectancy of error $\xi$ being equal to zero, I will assume that the median of the same error $\xi$ being equal to zero, 
+ However, in this IA this condition will not be used. Here, instead of the condition of mathematical expectancy of error $\xi$ being equal to zero, I will assume that the median of the same error $\xi$ being equal to zero, 
 \begin{equation}
 Med(\xi)=0
 \end{equation}
-specifically when the algorithm of evaluation of the parameters of the function is based on ideas from the \textit{method of least squares}. \\
+specifically when the approximation method of the parameters of the function is based on ideas of the \textit{LSM}. \\
 \\
 I justify my interest to the condition $Med(\xi)=0$ by the case when the traditional condition $E(\xi)=0$ is unachievable. This happens when measurements are taken close to one of the natural limits of the physical relationship being measured. An example of such natural limit is the inability of some magnitude, such as weight, to be negative. In this case, the absolute value of the error made, can only be large (with respect to other errors made) in the \textit{same sign}, either positive or negative. Figure \ref{fig:graph-nl} shows an example of this graphically.
 \begin{figure}[h!]
@@ -239,7 +247,7 @@ I justify my interest to the condition $Med(\xi)=0$ by the case when the traditi
 \\
 I want to bring attention to the fact, that the argument that this kind of measurement could be withdrawn by human intervention, is invalid for 2 reasons: 1. Any such withdrawal usually leads to loss of information. 2. In cases where the experiment requires high-capacity data collection human intervention may not be possible.\\
 \\
-Speaking of the errors, what is meant is not only error that was produced by a faulty measurement, but also any error caused by some factor that was either omitted or unaccounted for in function $f(x)$. Even though both conditions $E(\xi)=0$ and $Med(\xi)=0$ are not special cases of each other,it could be argued that from a point of view of solving practical problems, the condition $Med(\xi)=0$ is the more broad of the two (as in, it is easier to meet). The only requirement for meeting this condition is $P(\xi)>0$ is 0.5.  Hence the condition $Med(\xi)=0$ allows for some comparatively large random values of error $\xi$ to be on one side of the true function and not on the other, without the approximation to be significantly affected by those large values, unlike the condition $E(\xi)=0$. With condition $Med(\xi)=0$ the approximation can account for large peaks in values of $\xi$.\\
+What is meant is not only error that was produced by a faulty measurement, but also any error caused by some factor that was either omitted or unaccounted for in function $f(x)$. Even though both conditions $E(\xi)=0$ and $Med(\xi)=0$ are not special cases of each other,it could be argued that from a point of view of solving practical problems, the condition $Med(\xi)=0$ is the more broad of the two (as in, it is easier to meet). The only requirement for meeting this condition is $P(\xi)>0$ is 0.5.  Hence the condition $Med(\xi)=0$ allows for some comparatively large random values of error $\xi$ to be on one side of the true function and not on the other, without the approximation to be significantly affected by those large values, unlike the condition $E(\xi)=0$. With condition $Med(\xi)=0$ the approximation can account for large peaks in values of $\xi$.\\
 \\
 As mentioned before, the aim of this AI is as follows. To create an algorithm, capable of estimating the parameters of a functional dependence whose structure is known, accurately,  and to securely give an estimate to the accuracy of the calculated approximate values of the functional dependence. \\
 \\
@@ -247,22 +255,22 @@ Its clear that the quality of the solution of this problem is dependant of an ar
 
 \section{Algorithm}
 
-Approximation of a functional dependence taking this new condition $Med(\xi)=0$ in mind, has been looked at in mathematics (like for example in Regg-Med-Noise, [citation needed]). It is believed that in this case it is necessary to minimize the sum of absolute values of deviations of the modelled dependence $f(c^{*},x)$ from the unknown true function $f(\dot{c},x)$, where $c^{*}$ is the found optimal value of  vector $c$. This method is referred to as the Least Absolute Deviations (LAD). However, through my research I have found no methods of estimating LAD's accuracy. What value does an optimization method have if there is no way to determining the error it made? In addition, LAD does not presume the existence of priori limitations on the vector $\dot{c}$. And i must ask the question: What happens if the vector of parameters $c^{*}$, providing the minimum of the sum of modulus of errors, does not belong to the set $D$? \\
+Approximation of a functional dependence taking this new condition $Med(\xi)=0$ in mind, has been looked at in mathematics (see \citep{balk_2010}). It is believed that in this case it is necessary to minimize the sum of absolute values of deviations of the modelled dependence $f(c^{*},x)$ from the unknown true function $f(\dot{c},x)$, where $c^{*}$ is the found optimal value of  vector $c$. This method is referred to as the Least Absolute Deviations (LAD). However, through my research I have found no methods of estimating LAD's accuracy. What value does an optimization method have if there is no way to determining the error it made? In addition, LAD does not presume the existence of priori limitations on the vector $\dot{c}$. And I must ask the question: What happens if the vector of parameters $c^{*}$, providing the minimum of the sum of modulus of errors, does not belong to the set $D$? \\
 \\
-It is clear, that in every separately taken case (run of an algorithm), the factual accuracy of the model solution (when the true function is known) cannot serve as either a comparative evaluation of two competing algorithms, nor criteria of effectiveness of any given algorithm. It is also clear, that if all, or close to all errors $\xi_{i}$ have the same sign (the condition $Med(\xi)=0$, although, the condition $E(\xi)=0$ as well, allow this, be it with a small probability), then neither method will give any good solutions. And also, with a certain 'layout' of errors $\xi_{i}$, a theoretically more sound method might by change give a worse solution that a less sound one. So, when estimating the effectiveness of a method, it is necessary to rely on average results of some number of random solutions. In conjunction with this, the idea lies in the fact that for the quality of constructed approximation $f(c^{*},x)$ to $f(\dot{c},x)$, I take the mathematical expectation \footnote{\cite{Ross_2007}}
+It is clear, that in every separately taken case (run of an algorithm), the factual accuracy of the model solution (when the true function is known) cannot serve as either a comparative evaluation of two competing algorithms, nor criteria of effectiveness of any given algorithm. It is also clear, that if all, or close to all errors $\xi_{i}$ have the same sign (the condition $Med(\xi)=0$, although, the condition $E(\xi)=0$ as well, allow this, be it with a small probability), then neither method will give any good solutions. And also, with a certain 'layout' of errors $\xi_{i}$, a theoretically more sound method might by change give a worse solution that a less sound one. So, when estimating the effectiveness of a method, it is necessary to rely on average results of some number of random solutions. In conjunction with this, the idea lies in the fact that as a measure of accuracy of constructed approximation $f(c^{*},x)$ to $f(\dot{c},x)$, the mathematical expectation\footnote{\cite{Ross_2007}}
 
 \begin{equation}
 E(\rho(c^{*},\dot{c}))= \int\limits_{D}P(c)\rho(c^{*},\dot{c})\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}, \quad c = (c_{1},c_{2},\dots,c_{m}) \label{Erho}
 \end{equation}
 of proximity (distance) $\rho(c^{*},\dot{c})$ of function $f(c^{*},x)$ from $f(\dot{c},x)$ where in the role of distance $\rho(c^{*},\dot{c})$, one could take on of the functions
 \begin{eqnarray}
-\rho_{1}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left| c_{j}^{*}-c_{j} \right| \label{rho1}\\
-\rho_{2}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2} \label{rho2}\\
-\rho_{3}(c^{*},c) &=& \sqrt{\frac{1}{n}\sum\limits_{i=1}^{m} \left( y_{i}-f(c^{*},x_{i}) \right)^{2}} \label{rho3}
+\rho_{1}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left| c_{j}^{*}-c_{j} \right| \label{rho1} \qquad \text{( taken from LAD )}\\
+\rho_{2}(c^{*},c) &=& \sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2} \label{rho2} \qquad \text{( taken from LSM )}\\
+\rho_{3}(c^{*},c) &=& \sqrt{\frac{1}{n}\sum\limits_{i=1}^{m} \left( y_{i}-f(c^{*},x_{i}) \right)^{2}} \label{rho3} \qquad \text{( Self derived )}
 \end{eqnarray}
-In solving the problem, that I have above labelled as 'aim-minimum', criteria (\ref{Erho}) was considered in article called \textit{'Reggression-type Problems under Zero Median Noise'}(from now on being refered to as 'Regg-Med-Noise') \footnote{\cite{balk_2010}}. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in Regg-Med-Noise. I want to note that the problem that I have above labelled as 'aim-maximum' was not looked at in the mentioned paper. \\
+During my research I've found that criteria (\ref{Erho}) was considered in an article called \textit{'Reggression-type Problems under Zero Median Noise'} (referenced earlier as \citep{balk_2010}) \footnote{\cite{balk_2010}}. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in \citep{balk_2010}.\\
 \\
-The probability density function $P(c),\  c \in D$ where $c$ is a vector that could be the unknown true vector $\dot{c}$, that (the function) appears in the $m$-multiple integral (\ref{Erho}), can be constructed on the basis of the formula of the binomial distribution of a random value [citation needed]. In fact, let's say: $c \in D$ is one of the vectors which claims that it is the unknown true vector $ \dot{c}$ from function (\ref{functionform}); $q_{i}$ are the elements of the sequence
+The probability density function $P(c)$, ($c \in D$ where $c$ is any vector that could be the unknown true vector $\dot{c}$), which appears in the $m$-multiple integral (\ref{Erho}), can be constructed on the basis of the formula of the binomial distribution of a random value [citation needed]. In fact, let's say: $c \in D$ is one of the vectors which claims that it is the unknown true vector $ \dot{c}$ from function (\ref{functionform}); $q_{i}$ are the elements of the sequence
 \begin{equation}
 q_{1}(c)=\tilde{y}_{1}-f(c,x_{1}),\ q_{2}(c)=\tilde{y}_{2}-f(c,x_{2}), \dots, \ q_{n}(c)=\tilde{y}_{n}-f(c,x_{n}); \label{sequence}
 \end{equation}
@@ -282,7 +290,7 @@ In meaningful terms, the value of $r$ is the number of transitions of sign of th
 \begin{equation}
 p_{r}= \frac{\binom {n-1}r}{2^{n-1}}, \quad r = 0,1,\dots,n-1. \label{priori}
 \end{equation}
-Lets move on from discussing the question of the transition of sign with some one vector $c$, to the analysis of this situation with regards to the whole set $D$. Say that there exists a partitioning of set $D$ into a family of sub-sets $D_{1},D_{2},\dots,D_{n}$ such that the elements (in this case vectors $c$) of sub-set $D_{r}$ provide the same number $r-1$ of transitions of sign of elements of (\ref{sequence}). Note that here the sub-sets $D_{r}$ will take the form of $m$-dimensional polyhedrons \footnote{In geometry, a polyhedron is a solid in three (in this case $m$) dimensions with flat polygonal faces, straight edges and sharp vertices. A polyhedron is said to be convex, if any two points within it can be connected by a line segment with this segment also being within the polyhedron. \cite{cromwell_1999}} as they are in $m$-dimensional space. In this way, the priori probability that the unknown true vector $\dot{c} \in D_{r}$ in given by (\ref{priori}). However, in any separate case, some of the sub-sets $D_{r}$ could be empty, meaning  that with some vectors of parameters $c \in D$, the number of transitions of sign of (\ref{sequence}) will not equal the given value of $r$ (any one can make sure of this by trying to draw a line which would crossed a given poly-line by guess, in such way that all of the endpoints of this poly-line turned out to be on either side of the guessed line). The priori probabilities $p_{r}$ that the unknown true vector $\dot{c}$ is in one of the non-empty sub-sets $D_{r}$ can be recalculated to the posteriori probabilities $p_{r}^{*}$. Let's define $I$ as the set of the numbers of all the non-empty sub-sets $D_{r}$. Then
+Lets move on from discussing the question of the transition of sign with some one vector $c$, to the analysis of this situation with regards to the whole set $D$. Say that there exists a partitioning (splitting) of set $D$ into a family of sub-sets $D_{1},D_{2},\dots,D_{n}$ such that the elements (in this case vectors $c$) of sub-set $D_{r}$ provide the same number $r-1$ of transitions of sign of elements of (\ref{sequence}). Note that here the sub-sets $D_{r}$ will take the form of $m$-dimensional polyhedrons \footnote{In geometry, a polyhedron is a solid in three (in this case $m$) dimensions with flat polygonal faces, straight edges and sharp vertices. A polyhedron is said to be convex, if any two points within it can be connected by a line segment with this segment also being within the polyhedron. \cite{cromwell_1999}} as they are in $m$-dimensional space. In this way, the priori probability that the unknown true vector $\dot{c} \in D_{r}$ in given by (\ref{priori}). However, in any separate case, some of the sub-sets $D_{r}$ could be empty, meaning  that with some vectors of parameters $c \in D$, the number of transitions of sign of (\ref{sequence}) will not equal the given value of $r$ (any one can make sure of this by trying to draw a line which would crossed a given poly-line by guess, in such way that all of the endpoints of this poly-line turned out to be on either side of the guessed line). The priori probabilities $p_{r}$ that the unknown true vector $\dot{c}$ is in one of the non-empty sub-sets $D_{r}$ can be recalculated to the posteriori probabilities $p_{r}^{*}$. Let's define $I$ as the set of the numbers of all the non-empty sub-sets $D_{r}$. Then
 \begin{equation}
 p_{r}^{*}= 
 \begin{cases} 
@@ -290,17 +298,19 @@ p_{r}^{*}=
 		0, \quad r \in \{ 0,1,\dots,n-1 \} \setminus I
 \end{cases}
 \end{equation}
-Because in our case the vectors $c$, are those that could be the true vector $\dot{c}$, are continuous values, and not discreet ones, then to use formula (\ref{Erho}) we must proceed from estimates $p_{r}^{*}$ of the probabilities of event $\dot{c} \in D_{r}$ to estimates $p_{r}^{*}(c), c \in D_{r}$, of a probability density function. As there is no information  which would allow me to somehow rank/sort the 'preference' of vector $c$ in the bounds of each sub-set $D_{r}$, it is logical to assume uniform distribution
+Because in our case the vectors $c$, are continuous values, and not discreet ones, then to use formula (\ref{Erho}) we must proceed from estimates $p_{r}^{*}$ of the probabilities of event $\dot{c} \in D_{r}$ to estimates $p_{r}^{*}(c), c \in D_{r}$, of a probability density function. As there is no information suggesting the distribution of vectors $c$ in the bounds of each sub-set $D_{r}$, it is logical to assume uniform distribution
 \begin{equation}
 P_{r}^{*}(c)=\frac{p_{r}^{*}(c)}{\mu(D_{r})}, \quad r \in I,
 \end{equation}
-where $\mu(D_{r})$ is the measure (analogous to the volume) of sub-set $D_{r}$ in $\boldsymbol{R}^{m}$ dimensions. \\
+where $\mu(D_{r})$ is the measure (analogous to the volume) of sub-set $D_{r}$ in $\boldsymbol{R}^{m}$. \\
 \\
 Therefore (\ref{Erho}) becomes
-\begin{equation}
-E(\rho(c^{*},\dot{c}))=\sum\limits_{r \in I} \frac{p_{r}^{*}(c)}{\mu(D_{r})} \int\limits_{D_{r}}\rho(c^{*},\dot{c})\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \label{mathexpectancy}
-\end{equation}
-where $\int_ {D_{r}}(\bullet)$ is a laconic (short) notation of a multiple integral (in this case a $m$-multiple integral). In the general case, such as this one, the limits of integration of each univariate integral depend on variables, based on which the integration of the external integral relative to the given univariate integral is carried out \footnote{\cite{stewart_2008_int}}. (Refer to the example in section 2). This significantly complicates the calculation of these multiple integrals. Yet again, looking ahead, I want to note that in the algorithm created, integration is carried out on multidimensional parallelepipeds, when the limits of integration of each integral remain constant. \\
+\begin{gather}
+E(\rho(c^{*},\dot{c}))=\sum\limits_{r \in I} \frac{p_{r}^{*}(c)}{\mu(D_{r})} \int\limits_{D_{r}}\rho(c^{*},\dot{c})\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \label{mathexpectancy}\\
+\nonumber
+\text{( where $\int_ {D_{r}}(\bullet)$ is a laconic notation of an $m$-multiple integral )}
+\end{gather}
+In the general case, such as this one, the limits of integration of each univariate integral depend on other variables, based on which the integration of the external integral relative to the given univariate integral is carried out \footnote{\cite{stewart_2008_int}}. (Refer to the example in section 2.2). This significantly complicates the calculation of these multiple integrals. Yet again, looking ahead, I want to note that in the algorithm created, integration is carried out on multidimensional parallelepipeds, when the limits of integration of each integral remain constant. \\
 \\
 \begin{subsection}{Illustrative example}
 For it to be clear, that the following bulky equations lead to success, let's consider an illustrative example, where $m=1$ (i.e. the vector $\dot{c}$ is a scalar value), $y=f(c;x)$ is a function with one parameter, where $\dot{c}$ is a scalar that has to be found. In this case $n=6$ and $D=\{ c: 2 \leq c \leq 6 \}$. In this way, the following graphical representations form.
@@ -326,6 +336,7 @@ $i$ & $x_{i}$ & $f(\dot{c},x_{i})$ & $\xi_{i}$  & $\tilde{y}_{i}=f(\dot{c},x_{i}
 0 & 6 & 4      & 0.3   & 4.3  
 \end{tabular}
 \end{table}
+\noindent
 For this example I will use proximity function (\ref{rho2}). \\
 \\
 As we already know, we can calculate the priori probabilities using (\ref{priori}), where $r=0,1,2,3,4,5$ like so:
@@ -347,7 +358,7 @@ P_{5}^{*} &=& 0
 \end{eqnarray*}
 Calculating $E(\rho(c^{*},c))$
 \begin{gather*}
-E(\rho(c^{*},c)) = \int\limits_{2}^{3.85} \underbrace{(c^{*}-c)^{2}}_{\rho(c^{*},c)} \cdot \frac{\overbrace{\frac{1}{26}}^{p_{0}^{*}}}{\underbrace{3.85-2}_{\text{similar to }\mu(D_{0})}} \mathrm{d}c \ + \int\limits_{3.9}^{4.3} (c^{*}-c)^{2} \cdot \frac{\frac{5}{26}}{4.3-3.9} \mathrm{d}c \
+E(\rho(c^{*},c)) = \int\limits_{2}^{3.85} \underbrace{(c^{*}-c)^{2}}_{\rho(c^{*},c)} \cdot \frac{\overbrace{\frac{1}{26}}^{p_{0}^{*}}}{\underbrace{3.85-2}_{\mu(D_{0})}} \mathrm{d}c \ + \int\limits_{3.9}^{4.3} (c^{*}-c)^{2} \cdot \frac{\frac{5}{26}}{4.3-3.9} \mathrm{d}c \
 + \int\limits_{4.3}^{5.0} (c^{*}-c)^{2} \cdot \frac{\frac{10}{26}}{5.0-4.3} \mathrm{d}c \\
 + \ 1.05 \cdot \left( \ \int\limits_{3.85}^{3.9} (c^{*}-c)^{2} \cdot \frac{10}{26} \mathrm{d}c + \
 \int\limits_{5.0}^{6.0} (c^{*}-c)^{2} \cdot \frac{10}{26} \mathrm{d}c \right) \\
@@ -371,17 +382,17 @@ Seeing that $\dot{c} = 4.0$, we finally calculate $\rho$ using this method
 \begin{equation*}
 \rho = |4.431-4.0| = 0.431
 \end{equation*}
-I.e. the error made by this method is 0.431. Now let's see what kind of error will the Least Square Method give:
-\begin{gather*}
-Using Least Square Method \\
-\phi(c^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}-c^{*})^{2} \longrightarrow min \\
-\phi(c^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}^{2}-2 \tilde{y}_{i}c^{*} + (c^{*})^{2}) \\
-\frac{\mathrm{d}\phi(c^{*})}{\mathrm{d}c^{*}} =  \sum\limits_{i=1}^{6}(0 -\cancel{2} \tilde{y}_{i} +\cancel{2} c^{*}) = 0 \\
-\sum\limits_{i=1}^{6}c^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} \\
-6 \cdot c^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} = 35.25 \\
-c^{*} = \frac{35.25}{6} = 5.875 \\
-\text{And so the error } \rho = 1.875
-\end{gather*}
+Error made by this method is 0.431. Now let's see what kind of error will the LSM give:
+\begin{eqnarray*}
+\text{Using Least Square Method} \\
+\phi(c^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}-c^{*})^{2} \longrightarrow min &\qquad & \text{(Sum of the squares of errors has to be minimised)}\\
+\phi(c^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}^{2}-2 \tilde{y}_{i}c^{*} + (c^{*})^{2}) &\qquad & \text{(Expanding the polynomeal)}\\
+\frac{\mathrm{d}\phi(c^{*})}{\mathrm{d}c^{*}} =  \sum\limits_{i=1}^{6}(0 -\cancel{2} \tilde{y}_{i} +\cancel{2} c^{*}) = 0  &\qquad & \text{(Finding the derivative and equating it to zero)}\\
+ \sum\limits_{i=1}^{6}c^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} &\qquad & \text{(Re-arranging the result)}\\
+ 6 \cdot c^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} = 35.25 &\qquad & \\
+ c^{*} = \frac{35.25}{6} = 5.875 &\qquad & \text{(Solving for $c^{*}$)}\\
+& \qquad & \text{And so the error } \rho = 1.875
+\end{eqnarray*}
 LSM gives a bigger error because in it deviations are squared \footnote{\cite{Plackett_1950}}, and therefore large derivations are weighted more heavily. Because this example shows, that in the case of significant non-compliance to condition $E(\xi)=0$, my method is notably superior to LSM, and because of the limited format of this IA, I will not include further solutions that used LSM. %You may refer to (*) in the apendix for more such results.
  Back to the theory.\\
 \\
@@ -417,7 +428,7 @@ where
 \\
 Note that the equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) - even though in some other notations - are the put forward in Regg-Med-Noise.\\
 \\
-From the point of view of practical realisation of my algorithm, that is based of formulae (\ref{eq-solutions-to-cj*}),(\ref{eq-cbar}), I can ask two questions: 1. Is it possible to derive a simple method of constructing the sets $D_{r}$; 2. Is it possible to derive a simple method of calculation the integrals of those sets $D_{r}$, which appear in the RHS of (\ref{eq-cbar}). What a geometrical construction (Figure (omitted)) has shown me, is that even in the case where $m=2$ and $n=10$, the regions $D_{r}$ have a relatively complicated geometry (some multi-peaked star-like shapes). However, this problem can be solved with the principal of the 'Gordian knot' - refuse to work with directly with sets $D_{r}$, but instead, to use their point (grid) approximation (even without describing these sets concretely) and use an analog of (\ref{eq-solutions-to-cj*}).\\
+From the point of view of practical realisation of my algorithm, that is based of formulae (\ref{eq-solutions-to-cj*}),(\ref{eq-cbar}), I can ask two questions: 1. Is it possible to derive a simple method of constructing the sets $D_{r}$; 2. Is it possible to derive a simple method of calculation the integrals of those sets $D_{r}$, which appear in the RHS of (\ref{eq-cbar}). What a geometrical construction (Figure omitted) has shown me, is that even in the case where $m=2$ and $n=10$, the regions $D_{r}$ have a relatively complicated geometry (some multi-peaked star-like shapes). However, this problem can be solved with the principal of the 'Gordian knot' - refuse to work with directly with sets $D_{r}$, but instead, to use their point (grid) approximation (even without describing these sets concretely) and use an analog of (\ref{eq-solutions-to-cj*}).\\
 \\
 The essence of this suggested method of thinking is as follows. Define $k(1),k(2),\dots,k(m)$ as some quite large real values, and a $m$-dimensional parallelepiped
 \begin{equation}
@@ -440,10 +451,11 @@ These parallelepipeds form the surface of the parallelepiped W. Now we have to c
 \\
 For each $l=1,2,\dots,L_{0}$ find elements of $q_{i}(c^{(l)}), \quad i=1,2,\dots,n$ of sequence (\ref{sequence}), and based on their values, using (\ref{eq-values-of-q}), calculate the number $r$ of transition of sign of elements of (\ref{sequence}). Let $J_{r}, \quad r=0,1,\dots,n-1$ be the set of numbers $l$ of chosen nodes $c^{(l)}$ providing $r$ transitions of sign, and $|J_{r}|$ - the number of nodes giving that many transitions. In this way, without directly constructing the sub-sets $D_{r}$, I approximate each of them with the union
 \begin{equation}
-\tilde{D}_{r} = \bigcup_{l \in J_{r}} W_{l}.
+\tilde{D}_{r} = \bigcup_{l \in J_{r}} W_{l}. \tag*{(\theequation)\protect\footnotemark}
 \end{equation}
+\footnotetext{Here, $\tilde{D_{r}}$ is the arbitrary union of all sets $W_l$ such that $l$ is an element of $J_r$.}
 \\
-It is clear, that the assumption, that all vectors $c$, belonging to the parallelepiped $W_{l}$, will provide the same number of transitions of sign as the center $c^{l}$ of the parallelepiped, will only be incorrect for those parallelepipeds $W_{l}$, and do not completely belong to some one sub-set $D_{r}$. But with a dense grid $\Gamma$, and respectively, quite small-sized parallelepipeds $W_{(l)}$, the percent of such 'debatable' parallelepipeds compared to their general number $L_{0}$ will be quite small (so, in figure (omitted), when $m=2$, these 'debatable' parallelepipeds are positioned along the lines, and the 'non-debatable' - in the areas). In addition, the error resulting from classification of such 'debatable' parallelepipeds $W_{l}$ completely to some set $D_{r}$, will get (mostly) redeemed/repaid. Summing up all these arguments, it can be said, that the approximations of sets $D_{r}$, with the union of relatively 'small' parallelepipeds will give a good  approximation of the mathematical expectancy (\ref{mathexpectancy}) of error in estimation of parameters of a studies functional dependence:
+It is clear, that the assumption, that all vectors $c$, belonging to the parallelepiped $W_{l}$, will provide the same number of transitions of sign as the center $c^{(l)}$ of the parallelepiped, will only be incorrect for those parallelepipeds $W_{l}$, and do not completely belong to some one sub-set $D_{r}$. But with a dense grid $\Gamma$, and respectively, quite small-sized parallelepipeds $W_{l}$, the percent of such 'debatable' parallelepipeds compared to their general number $L_{0}$ will be quite small (so, in figure (omitted), when $m=2$, these 'debatable' parallelepipeds are positioned along the lines, and the 'non-debatable' - in the areas). In addition, the error resulting from classification of such 'debatable' parallelepipeds $W_{l}$ completely to some set $D_{r}$, will get (mostly) redeemed/repaid. Summing up all these arguments, it can be said, that the approximations of sets $D_{r}$, with the union of relatively 'small' parallelepipeds will give a good  approximation of the mathematical expectancy (\ref{mathexpectancy}) of error in estimation of parameters of a studies functional dependence:
 \begin{gather}
 \nonumber
 E(\rho_{2}(c^{*},c)) \approx \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(\tilde{D}_{r})} \int\limits_{\tilde{D}_{r}} \sum\limits_{j=1}^{m}(c_{j}^{*}-c_{j})^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
@@ -503,13 +515,13 @@ c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\li
 This equation (\ref{eq-final}) is the one used in calculations of approximate values of the optimised vector $c^{*}$ in my custom software, the trails of which are later in this document.\\
 \\
 Now, let's compare reviousy suggested in Regg-Med-Noise equations (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}) with the suggested equation (\ref{eq-final}). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
-, which in fact are quite complex convex polyhedrons in $\boldsymbol{R}^{m}$ dimensions. Therefore 2. this equation does not require the expansive calculation of multiple integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In Regg-Med-Noise there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
+, which in fact are quite complex convex polyhedrons in $\boldsymbol{R}^{m}$. Therefore 2. this equation does not require the expansive calculation of multiple integrals found in (\ref{eq-solutions-to-cj*}) and (\ref{eq-cbar}).  In Regg-Med-Noise there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $c^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence  \ref{sequence}.
 
 \section{Algorithm trials}
 Now that the method that will be used is finalized, testing it is a necessity. First, to show that this method gives better estimates than others (in this case LSM), multiple sets of 'experimental' data with pseudo-random errors of varying intensities were estimated using the method derived here and LSM. Both methods ran through those sets two times, with differing intensities \footnote{Intensity, factually is a positive value used to vertically stretch 'experimental values' about the true functional dependency, in the program used to calculate these approximations.}. The true function in this case had only two parameters $c_{1}^{*}$ and $c_{2}^{*}$, which equal 2.0 and 0.5 respectably, making the true function $y=0,5x + 2$. Note that the pseudo-random error values lie between 3 and -3 under the law of normal distribution.
 \begin{table}[h!]
 \centering
-\caption{Algorithm approximations of sets of data using method derived here}
+\caption{Algorithm approximations of sets of data using method derived here.}
 \label{my-label}
 \begin{tabular}{|c|r|r|r|r|r|r|r|r|}
 \multirow{2}{*}{sets} & \multicolumn{4}{c|}{intensity=0.15}                                                                                                            & \multicolumn{4}{c|}{intensity=0.3}                                                                                                             \\
@@ -524,7 +536,7 @@ average               & 2.063                            & 0.458                
 \end{table}
 \begin{table}[h!]
 \centering
-\caption{Algorithm approximations of sets of distorted data using method derived here}
+\caption{Algorithm approximations of sets of distorted data using method derived here.}
 \label{my-label}
 \begin{tabular}{|c|r|r|r|r|r|r|r|r|}
 \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}dist. \\ sets \end{tabular}} & \multicolumn{4}{c|}{intensity=0.15}                                                                                                            & \multicolumn{4}{c|}{intensity=0.3}                                                                                                             \\
@@ -539,7 +551,7 @@ average                                                                     & 2.
 \end{table}
 \begin{table}[h!]
 \centering
-\caption{Algorithm approximations of sets of data using LSM}
+\caption{Algorithm approximations of sets of data using LSM.}
 \label{my-label}
 \begin{tabular}{|c|r|r|r|r|r|r|}
 \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}sets\\ (LSM)\end{tabular}} & \multicolumn{3}{c|}{intensity=0.15}                                                                      & \multicolumn{3}{c|}{intensity=0.3}                                                                       \\
@@ -554,7 +566,7 @@ average                                                               & 2.083   
 \end{table}
 \begin{table}[h!]
 \centering
-\caption{Algorithm approximations of sets of distorted data using LSM}
+\caption{Algorithm approximations of sets of distorted data using LSM.}
 \label{my-label}
 \begin{tabular}{|c|r|r|r|r|r|r|}
 \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}dist. sets\\ (LSM)\end{tabular}} & \multicolumn{3}{c|}{intensity=0.15}                                                                      & \multicolumn{3}{c|}{intensity=0.3}                                                                       \\
@@ -571,23 +583,22 @@ average                                                                         
 \begin{figure}[h!]%
 \centering
 \includegraphics[scale=2.5]{pic-prog2-c-not3}
-\caption{Approximation of $y=2x^{3}-2x^{2}+1$ with error intensity=1.0}
+\caption{Approximation of $y=2x^{3}-2x^{2}+1$ with error intensity=0.3}
 \label{fig:results-1}
 \end{figure}
 \begin{figure}[h!]%
 \centering
 \includegraphics[scale=2.5]{pic-prog2-c-1}
-\caption{Approximation of $y=2x^{3}-2x^{2}+1$ with error intensity=0.3}%
+\caption{Approximation of $y=2x^{3}-2x^{2}+1$ with error intensity=1.0}%
 \label{fig:results-2}%
 \end{figure}
-\\You may reefer to additional trials, as well as the source code used for those trials given in the appendix\footnote{Not present in this copy.} of this IA.
 \newpage
 \section{Conclusion and Reflection}
-First of I want to to conclude with mentioning again the conditions in which this method performs best, and subsequently when I would recommend using it. This method approximates, significantly better than LSM per se (and, it could be argued, that better than LAD), in conditions where among measured values $\title{y}_{i}$ there is a significant percentage of such of those values that their absolute value is relatively small (and therefore they are close to the studied functional dependence). We can't know which of them are so, and we don't have to, we just need to know that such values of $\title{y}_{i}$ exist. Said that, some values $\title{y}_{i}$ can peak quite significantly in one of the signs (+ve or -ve), without the approximation begin significantly affected. It is clear, that all conditions in which this method performs best can not be defined (the limited nature of calculation accounts for this), however, the trails given give a good representation of the success of this method.  And thus I have reached my aim. \\
+First of I want to to conclude with mentioning again the conditions in which this method performs best, and subsequently when I would recommend using it. This method approximates, significantly better than LSM per se (and, it could be argued, that better than LAD), in conditions where among measured values $\tilde{y}_{i}$ there is a significant percentage of such of those values that their absolute value is relatively small (and therefore they are close to the studied functional dependence). We can't know which of them are so, and we don't have to, we just need to know that such values of $\tilde{y}_{i}$ exist. Said that, some values $\tilde{y}_{i}$ can peak quite significantly in one of the signs (+ve or -ve), without the approximation begin significantly affected. It is clear, that all conditions in which this method performs best can not be defined (the limited nature of calculation accounts for this), however, the trails given give a good representation of the success of this method.  And thus I have reached my aim. \\
 \\
 This is to say, that this investigation is far from perfect. Even though begin more constructive than previous work (such as Regg-Med-Noise) done in this topic , there are some holes. For example, the algorithm requires that a finite interval $[\alpha, \beta]$ is given to each parameter estimated, a computer can't run a calculation infinitely. \\
 \\
-I want to to note that the trials have shown  some results that I have not expected. For example, some individual trails (given in the appendix of this IA) have either unreasonably low of high factual error (error actually made by the method). This could be caused by some random 'layout' of the values of $\title{y}_{i}$ being either in favor or against a good approximation with any method (say when all or close to all absolute values of $\tilde{y}_{i}$ are large) or a bug in my code (but hopefully not that). \\
+I want to to note that the trials have shown  some results that I have not expected. For example, some individual trails (given in the appendix of this IA) have either unreasonably low of high factual error (error actually made by the method). This could be caused by some random 'layout' of the values of $\tilde{y}_{i}$ being either in favor or against a good approximation with any method (say when all or close to all absolute values of $\tilde{y}_{i}$ are large) or a bug in my code (but hopefully not that). \\
 \\
 In spite that, now, after writing and researching for this IA, I know that not only I have questioned the validity of a method of approximation. In it's own way deriving methods of approximation is its own mathematical field. Some methods work better than others in different circumstances. Just like the method described in this IA is suited for use even when there are peaks in the given data, other methods deal with other circumstances, like for example LSM, is suited for circumstances without those peaks. And so, like in most fields in mathematics, this is a continuation from what came before, and could (and should) be continued (by others) to find even better (working in more conditions) algorithms of approximation.
 

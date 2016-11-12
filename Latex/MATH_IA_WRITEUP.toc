@@ -6,4 +6,4 @@
 \contentsline {section}{\numberline {4}Algorithm}{6}
 \contentsline {subsection}{\numberline {4.1}Illustrative example}{8}
 \contentsline {section}{\numberline {5}Algorithm trials}{14}
-\contentsline {section}{\numberline {6}Conclusion and Reflection}{17}
+\contentsline {section}{\numberline {6}Conclusion and Reflection}{15}
