@@ -144,13 +144,13 @@ In this IA I aim to suggest an alternative method/algorithm of approximation, on
 Because of the nature of IB Mathematics IAs, the mathematics in this written work extend from the IB syllabus. Some notations, concepts, and calculations have to be explained. 
 
 \subsection{Notations}
-During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, a vector can only be 3D, or even 4D. Essentially, so long that a single value has multiple parameters (components) it is a vector in the same number of dimensions as there are parameters. In this IA, all vectors will be denoted with the variable $c$, be it with some indexes or accents, as long as a variable has $c$ in its core, it is a vector. Note that this is just a notation that I will use only in this paper. In addition, to save real estate, no vertical vector notation will be used, instead I will use the so called ordered set notation of a vector in the form of $c=(c_{1},c_{2},\dots)$. Where the vector $\dot{c}$ is in real coordinate space\footnote{\cite{kelley_1995}}; This allows several real variables to be treated as one, single variable. The notation $\boldsymbol{R}^{m}$ describes the dimension of space. I.e. $\boldsymbol{R}^{1}$ is one-dimensional space, $\boldsymbol{R}^{2}$ two-dimensional, and so on.\footnote{\cite{Weisstein_2014}}. \\
+During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, a vector can only be 3D, or even 4D. Essentially, so long that a single value has multiple parameters (components) it is a vector in the same number of dimensions as there are parameters. In this IA, all vectors will be denoted with the variable $c$, be it with some indexes or accents, as long as a variable has $c$ in its core, it is a vector. Note that this is just a notation that I will use only in this paper. In addition, to save real estate, no vertical vector notation will be used, instead I will use the so called ordered set notation of a vector in the form of $c=(c_{1},c_{2},\dots)$. Where the vector $\dot{c}$ is in real coordinate space\footnote{\cite{kelley_1995}}; This allows several real variables to be treated as one, single variable. The notation $\boldsymbol{R}^{m}$ describes the dimension of space. I.e. $\boldsymbol{R}^{1}$ is one-dimensional space, $\boldsymbol{R}^{2}$ two-dimensional, and so on.\footnote{\cite{Weisstein_2014}} \\
 \\
 Another new to IB notation in this IA is the product notation:
 \begin{gather*}
 \prod\limits_{i = m}^{n} x_{i} = x_{m} \cdot x_{m+1} \cdot \  \cdots \  \cdot x_{n-1} \cdot x_{n}.
 \end{gather*}
-This essentially works in much of the same way the familiar summation notation we use in class(using the Greek capital letter sigma), except that instead of summing values, it multiplies them (and uses Greek the capital letter pi) \footnote{\cite{product_1995}}.
+This essentially works in much of the same way the familiar summation notation we use in class(using the Greek capital letter sigma), except that instead of summing values, it multiplies them (and uses Greek the capital letter pi).\footnote{\cite{product_1995}}
 \subsection{Concepts}
 Derivatives are an essential part of the IB curriculum. But when it comes to functions with multiple variables (like in this IA), their derivative is taken differently. First off, the derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \footnote{\cite{matthews_1998}, pages 45-48} \footnote{\cite{stewart_2008_deriv}, pages 878-891}. The following example will explain this further:\\
 \\
@@ -168,11 +168,15 @@ Now according to normal method of finding a minimum of a function, we equate, in
 \frac{\partial f(x,y)}{\partial x}  &=&  40x-60 = 0 \rightarrow x = \frac{60}{40}=\frac{3}{2}\\
 \frac{\partial f(x,y)}{\partial y}  &=&  128y-32 = 0 \rightarrow y = -\frac{32}{128}=-\frac{1}{4}
 \end{eqnarray*}
-Voilà, the partial derivatives gave us the answer as well.\\
+Partial derivatives gave the answer as well.\\
 \\
 But as much as derivatives a essential, so are integrals. This IA invokes the use of something called multiple integrals. These are basically integral an of integral, where again a function with multiple variables is in question \footnote{\cite{stewart_2008_int}}. I.e. a double (two-multiple) integral of some two-variable function $g(x,y)$ is denoted as such:
 \begin{gather*}
-\int \int g(x,y) \mathrm{d}x\mathrm{d}y
+\iint g(x,y) \mathrm{d}x\mathrm{d}y
+\end{gather*}
+Likewise, this can be applied to a function with $m$ variables like so:
+\begin{gather*}
+\idotsint g(x,y,\dots,m) \mathrm{d}x\mathrm{d}y \dots \mathrm{d}m
 \end{gather*}
 Yet again let's employ an example: \\
 Find the area of the shaded region\\
@@ -351,12 +355,12 @@ E(\rho(c^{*},c)) = \int\limits_{2}^{3.85} \underbrace{(c^{*}-c)^{2}}_{\rho(c^{*}
 \end{gather*}
 Taking into account that later we will want to find the derivative $\frac{\mathrm{d}E(\rho(c^{*},c))}{\mathrm{d}c^{*}}$, we can omit the summand $\frac{1}{3} c^{3}$ as it is a constant, and the derivative of a constant is zero. Let's continue.
 \begin{eqnarray*}
-E(\rho(c^{*},c)) = 0.045 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{2}^{3.85}  \\
-+ 7.323  &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{3.85}^{3.9} \\
-+ 0.481 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{3.9}^{4.3}  \\
-+ 0.549 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{4.3}^{5.0}  \\
-+ 0.366 &\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]&_{5.0}^{6.0}  \\
-= &1.361(c^{*})^{2}-12.061c^{*}&
+E(\rho(c^{*},c)) =& 0.045 & \cdot\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]_{2}^{3.85}  \\
++ & 7.323 &\cdot\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]_{3.85}^{3.9} \\
++ & 0.481 &\cdot\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]_{3.9}^{4.3}  \\
++ & 0.549 &\cdot\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]_{4.3}^{5.0}  \\
++ & 0.366 &\cdot\left[ (c^{*})^{2} \cdot c - c^{*} \cdot c^{2} \right]_{5.0}^{6.0}  \\
+= & 1.361 &\cdot(c^{*})^{2}-12.061c^{*}
 \end{eqnarray*}
 
 \begin{eqnarray*}
