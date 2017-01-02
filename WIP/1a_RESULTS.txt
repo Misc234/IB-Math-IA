@@ -1,0 +1,300 @@
+****************************************
+*   MATH IA PROGRAM 1a - JANUARY 2017  *
+*      TWO PARAMETER & COMPARISON      *
+*          MATH_IA_PROG1 .f90          *
+****************************************
+
+
+   INPUT VARIABLES*********************
+
+     JPRINT         =            1
+     JDISTORT       =            0
+     NVAR           =            5
+     AIST           =    2.00000000
+     BIST           =   0.500000000
+     C              =   0.300000012
+     N              =           20
+     M              =          200
+     K              =          100
+     AMIN           =    1.00000000
+     AMAX           =    3.00000000
+     BMIN           =    0.00000000
+     BMAX           =    1.00000000
+     X0             =    0.00000000
+     HX             =    5.00000007E-02
+
+   ************************************
+
+         START VARIANT            1
+  1.00000000
+
+SP:
+ 0.820322037
+
+         DONE                     1
+
+
+   ************************************
+         VARIANT #           1
+   ************************************
+   OUTPUT VARIABLES********************
+
+     PROGRAM METHOD:
+
+     AOPT1          =    2.06532669
+     BOPT1          =   0.343434334
+     ERWOPT1        =   0.527382016
+     DIST1          =   0.221892357
+
+     AOPT2          =    2.04522610
+     BOPT2          =   0.404040396
+     ERWOPT2        =   0.191453055
+     DIST2          =    1.12536456E-02
+
+     AOPT3          =    2.15577888
+     BOPT3          =   0.252525240
+     ERWOPT3        =    1.21312477E-02
+     DIST3          =    4.14057123E-03
+ 
+
+     LEAST SQUARE METHOD:
+
+     AOPTLSM        =    2.13902068
+     BOPTLSM        =   0.222420365
+     DISTLSM1       =   0.416600317
+     DISTLSM2       =    9.63772088E-02
+
+
+     LEAST MODULUS METHOD:
+
+     AOPTLMM        =    1.99497485
+     BOPTLMM        =   0.434343427
+     DISTLMM1       =    7.06817210E-02
+     DISTLMM2       =    4.33603767E-03
+
+   ************************************
+
+
+         START VARIANT            2
+  1.00000000
+
+SP:
+ 0.676197052
+
+         DONE                     2
+
+
+   ************************************
+         VARIANT #           2
+   ************************************
+   OUTPUT VARIABLES********************
+
+     PROGRAM METHOD:
+
+     AOPT1          =    2.06532669
+     BOPT1          =   0.585858583
+     ERWOPT1        =   0.477641135
+     DIST1          =   0.151185274
+
+     AOPT2          =    2.12562799
+     BOPT2          =   0.555555582
+     ERWOPT2        =   0.153434560
+     DIST2          =    1.88688170E-02
+
+     AOPT3          =    2.20603013
+     BOPT3          =   0.474747479
+     ERWOPT3        =    9.74358805E-03
+     DIST3          =    9.58456192E-03
+
+
+     LEAST SQUARE METHOD:
+
+     AOPTLSM        =    2.24221182
+     BOPTLSM        =   0.264753997
+     DISTLSM1       =   0.477457821
+     DISTLSM2       =   0.114007249
+
+
+     LEAST MODULUS METHOD:
+
+     AOPTLMM        =    2.26633167
+     BOPTLMM        =   0.111111112
+     DISTLMM1       =   0.655220568
+     DISTLMM2       =   0.222167134
+
+   ************************************
+
+
+         START VARIANT            3
+  1.00000000
+
+SP:
+ 0.772304535
+
+         DONE                     3
+
+
+   ************************************
+         VARIANT #           3
+   ************************************
+   OUTPUT VARIABLES********************
+
+     PROGRAM METHOD:
+
+     AOPT1          =    1.78391957
+     BOPT1          =   0.848484874
+     ERWOPT1        =   0.463014573
+     DIST1          =   0.564565301
+
+     AOPT2          =    1.84422112
+     BOPT2          =   0.707070708
+     ERWOPT2        =   0.158948064
+     DIST2          =    6.71453401E-02
+
+     AOPT3          =    1.60301507
+     BOPT3          =   0.989898980
+     ERWOPT3        =    4.35082754E-03
+     DIST3          =    3.53324157E-03
+
+
+     LEAST SQUARE METHOD:
+
+     AOPTLSM        =    2.06122184
+     BOPTLSM        =   0.457512200
+     DISTLSM1       =   0.103709638
+     DISTLSM2       =    5.55332657E-03
+
+
+     LEAST MODULUS METHOD:
+
+     AOPTLMM        =    2.06532669
+     BOPTLMM        =   0.545454562
+     DISTLMM1       =   0.110781252
+     DISTLMM2       =    6.33369386E-03
+
+   ************************************
+
+
+         START VARIANT            4
+  1.00000000
+
+SP:
+ 0.916429520
+
+         DONE                     4
+
+
+   ************************************
+         VARIANT #           4
+   ************************************
+   OUTPUT VARIABLES********************
+
+     PROGRAM METHOD:
+
+     AOPT1          =    2.16582918
+     BOPT1          =   0.525252521
+     ERWOPT1        =   0.442230105
+     DIST1          =   0.191081703
+
+     AOPT2          =    2.15577888
+     BOPT2          =   0.505050480
+     ERWOPT2        =   0.143668085
+     DIST2          =    2.42925677E-02
+
+     AOPT3          =    2.15577888
+     BOPT3          =   0.525252521
+     ERWOPT3        =    9.51721519E-03
+     DIST3          =    9.45801847E-03
+
+
+     LEAST SQUARE METHOD:
+
+     AOPTLSM        =    2.12053657
+     BOPTLSM        =   0.459081650
+     DISTLSM1       =   0.161454916
+     DISTLSM2       =    1.62033755E-02
+
+
+     LEAST MODULUS METHOD:
+
+     AOPTLMM        =    2.18592978
+     BOPTLMM        =   0.525252521
+     DISTLMM1       =   0.211182296
+     DISTLMM2       =    3.52075733E-02
+
+   ************************************
+
+
+         START VARIANT            5
+  1.00000000
+
+SP:
+ 0.772268295
+
+         DONE                     5
+
+
+   ************************************
+         VARIANT #           5
+   ************************************
+   OUTPUT VARIABLES********************
+
+     PROGRAM METHOD:
+
+     AOPT1          =    2.16582918
+     BOPT1          =   0.282828271
+     ERWOPT1        =   0.428781092
+     DIST1          =   0.383000910
+
+     AOPT2          =    2.14572859
+     BOPT2          =   0.353535354
+     ERWOPT2        =   0.158998176
+     DIST2          =    4.26887125E-02
+
+     AOPT3          =    2.21608043
+     BOPT3          =   0.272727281
+     ERWOPT3        =    1.23778014E-02
+     DIST3          =    4.05001520E-05
+
+
+     LEAST SQUARE METHOD:
+
+     AOPTLSM        =    2.27117515
+     BOPTLSM        =    8.78227055E-02
+     DISTLSM1       =   0.683352470
+     DISTLSM2       =   0.243426085
+
+
+     LEAST MODULUS METHOD:
+
+     AOPTLMM        =    2.21608043
+     BOPTLMM        =   0.323232323
+     DISTLMM1       =   0.392848104
+     DISTLMM2       =    7.79375583E-02
+
+   ************************************
+
+   AVERAGE VALUES**********************
+
+     AVGAOPT1       =    2.04924631
+     AVGBOPT1       =   0.517171681
+     AVGERWOPT1     =   0.467809767
+     AVGDIST1       =   0.302345097
+
+     AVGAOPT2       =    2.06331658
+     AVGBOPT2       =   0.505050540
+     AVGERWOPT2     =   0.161300391
+     AVGDIST2       =    3.28498185E-02
+
+     AVGAOPT3       =    2.06733656
+     AVGBOPT3       =   0.503030300
+     AVGERWOPT3     =    9.62413568E-03
+     AVGDIST3       =    5.35137905E-03
+
+     AVGDISTLMM1    =   0.288142800
+     AVGDISTLMM2    =    6.91963956E-02
+
+     AVGDISTLSM1    =   0.368515044
+     AVGDISTLSM2    =    9.51134488E-02
+
+   ************************************

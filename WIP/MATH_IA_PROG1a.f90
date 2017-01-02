@@ -6,7 +6,7 @@ PROGRAM MAIN
                                                       !and settings for any given problem
     DIMENSION X(20), WA(200,100), WB(200,100), Y(20), STR(108), STR1(20), Y1(20), Y2(20), P(20)
 
-    ITRASH = 7
+    ITRASH = 0
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
@@ -38,7 +38,7 @@ PROGRAM MAIN
     WRITE(*,*) ' '                                    !Write input variables to console
     WRITE(*,*) ' '
     WRITE(*,*) '****************************************'
-    WRITE(*,*) '*  MATH IA PROGRAM 1a - SEPTEMBER 2016 *'
+    WRITE(*,*) '*   MATH IA PROGRAM 1a - JANUARY 2017  *'
     WRITE(*,*) '*      TWO PARAMETER & COMPARISON      *'
     WRITE(*,*) '*          MATH_IA_PROG1 .f90          *'
     WRITE(*,*) '****************************************'
