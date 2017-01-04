@@ -6,7 +6,7 @@ PROGRAM MAIN
                                                       !and settings for any given problem
     DIMENSION X(20), WA(200,100), WB(200,100), Y(20), STR(1008), STR1(20), Y1(20), Y2(20), P(20)
 
-    ITRASH = 6
+    ITRASH = 0
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
@@ -25,7 +25,7 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 0.3                                           !The quantitive multiplier for exaduration of error
+    C = 0.1                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                           !The number of sub-regions in the vertical
