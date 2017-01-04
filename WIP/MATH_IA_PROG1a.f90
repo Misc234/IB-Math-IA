@@ -25,7 +25,7 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 0.1                                           !The quantitive multiplier for exaduration of error
+    C = 1.0                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                           !The number of sub-regions in the vertical
