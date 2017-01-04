@@ -10,9 +10,9 @@ PROGRAM MAIN
 
     JPRINT = 1                                        !Boolian to write variant calculation
                                                       !(1 print, 0 don't print)
-    JDISTORT = 0                                      !If the error values may be distorted or not
+    JDISTORT = 1                                      !If the error values may be distorted or not
                                                       !(distortion by the value of CDISTORT)
-    CDISTORT = 2.0                                    !Distortion coeficient
+    CDISTORT = 5.0                                    !Distortion coeficient
 
     NDISTORT = 2                                      !Number of distorted values in any given variant
 
@@ -25,7 +25,7 @@ PROGRAM MAIN
     AIST = 2.0                                        !The true value for function parameter 'a'
     BIST = 0.5                                        !The true value for function parameter 'b'
 
-    C = 1.0                                           !The quantitive multiplier for exaduration of error
+    C = 0.3                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
     K = 100                                           !The number of sub-regions in the vertical

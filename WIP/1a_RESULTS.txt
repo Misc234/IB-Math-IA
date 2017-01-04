@@ -8,12 +8,14 @@
    INPUT VARIABLES*********************
 
      JPRINT         =            1
-     JDISTORT       =            0
+     JDISTORT       =            1
      ITRASH         =            0
+     NDISTORT       =            2
+     CDISTORT       =    5.00000000
      NVAR           =            5
      AIST           =    2.00000000
      BIST           =   0.500000000
-     C              =    1.00000000
+     C              =   0.300000012
      N              =           20
      M              =          200
      K              =          100
@@ -27,10 +29,15 @@
    ************************************
 
          START VARIANT            1
+
+         DISTORTED VALUES:
+                                     10
+                                      4
+
   1.00000000
 
 SP:
- 0.612377167
+ 0.820322037
 
          DONE                     1
 
@@ -42,45 +49,50 @@ SP:
 
      PROGRAM METHOD:
 
-     AOPT1          =    1.90452266
-     BOPT1          =   0.353535354
-     ERWOPT1        =   0.910356045
-     DIST1          =   0.241941988
+     AOPT1          =    2.07537699
+     BOPT1          =   0.343434334
+     ERWOPT1        =   0.534278095
+     DIST1          =   0.231942654
 
-     AOPT2          =    2.00502515
-     BOPT2          =   0.414141417
-     ERWOPT2        =   0.636275530
-     DIST2          =    7.39694852E-03
+     AOPT2          =    2.06532669
+     BOPT2          =   0.404040396
+     ERWOPT2        =   0.198577687
+     DIST2          =    1.34758223E-02
 
-     AOPT3          =    1.81407034
-     BOPT3          =   0.555555582
-     ERWOPT3        =    3.95772941E-02
-     DIST3          =    7.01568276E-03
+     AOPT3          =    2.13567829
+     BOPT3          =   0.282828271
+     ERWOPT3        =    1.22127188E-02
+     DIST3          =    3.68754426E-03
 
 
      LEAST SQUARE METHOD:
 
-     AOPTLSM        =    2.46340013
-     BOPTLSM        =  -0.425261766
-     DISTLSM1       =    1.38866186
-     DISTLSM2       =    1.07084894
+     AOPTLSM        =    2.59323835
+     BOPTLSM        =  -0.217321873
+     DISTLSM1       =    1.31056023
+     DISTLSM2       =   0.866482437
 
 
      LEAST MODULUS METHOD:
 
-     AOPTLMM        =    1.97487438
-     BOPTLMM        =   0.292929292
-     DISTLMM1       =   0.232196331
-     DISTLMM2       =    4.35095727E-02
+     AOPTLMM        =    1.99497485
+     BOPTLMM        =   0.434343427
+     DISTLMM1       =    7.06817210E-02
+     DISTLMM2       =    4.33603767E-03
 
    ************************************
 
 
          START VARIANT            2
+
+         DISTORTED VALUES:
+                                     16
+                                      7
+
   1.00000000
 
 SP:
- 0.616689682
+ 0.676197052
 
          DONE                     2
 
@@ -92,45 +104,50 @@ SP:
 
      PROGRAM METHOD:
 
-     AOPT1          =    1.99497485
-     BOPT1          =   0.474747479
-     ERWOPT1        =   0.540537298
-     DIST1          =    3.02776694E-02
+     AOPT1          =    2.06532669
+     BOPT1          =   0.595959604
+     ERWOPT1        =   0.480667025
+     DIST1          =   0.161286294
 
-     AOPT2          =    2.04522610
-     BOPT2          =   0.454545468
-     ERWOPT2        =   0.246071056
-     DIST2          =    4.11151443E-03
+     AOPT2          =    2.13567829
+     BOPT2          =   0.555555582
+     ERWOPT2        =   0.156507596
+     DIST2          =    2.14950219E-02
 
-     AOPT3          =    1.93467331
-     BOPT3          =   0.535353541
-     ERWOPT3        =    1.97778903E-02
-     DIST3          =    1.67545839E-03
+     AOPT3          =    2.04522610
+     BOPT3          =   0.646464646
+     ERWOPT3        =    1.00064995E-02
+     DIST3          =    9.68327466E-03
 
 
      LEAST SQUARE METHOD:
 
-     AOPTLSM        =    2.80737257
-     BOPTLSM        =  -0.284152150
-     DISTLSM1       =    1.59152472
-     DISTLSM2       =    1.26674509
+     AOPTLSM        =    2.41569710
+     BOPTLSM        =   0.438134223
+     DISTLSM1       =   0.477562875
+     DISTLSM2       =   0.176631451
 
 
      LEAST MODULUS METHOD:
 
-     AOPTLMM        =    2.54773855
-     BOPTLMM        =    0.00000000
-     DISTLMM1       =    1.04773855
-     DISTLMM2       =   0.550017536
+     AOPTLMM        =    2.26633167
+     BOPTLMM        =   0.111111112
+     DISTLMM1       =   0.655220568
+     DISTLMM2       =   0.222167134
 
    ************************************
 
 
          START VARIANT            3
+
+         DISTORTED VALUES:
+                                      5
+                                     14
+
   1.00000000
 
 SP:
- 0.475608826
+ 0.772304535
 
          DONE                     3
 
@@ -142,45 +159,50 @@ SP:
 
      PROGRAM METHOD:
 
-     AOPT1          =    2.11557794
-     BOPT1          =   0.434343427
-     ERWOPT1        =   0.510137200
-     DIST1          =   0.181234509
+     AOPT1          =    1.78391957
+     BOPT1          =   0.848484874
+     ERWOPT1        =   0.463978857
+     DIST1          =   0.564565301
 
-     AOPT2          =    2.08542728
-     BOPT2          =   0.454545468
-     ERWOPT2        =   0.201807052
-     DIST2          =    9.36393533E-03
+     AOPT2          =    1.84422112
+     BOPT2          =   0.707070708
+     ERWOPT2        =   0.160721734
+     DIST2          =    6.71453401E-02
 
-     AOPT3          =    2.08542728
-     BOPT3          =   0.505050480
-     ERWOPT3        =    1.29404226E-02
-     DIST3          =    4.74799657E-03
+     AOPT3          =    1.60301507
+     BOPT3          =   0.989898980
+     ERWOPT3        =    4.44233278E-03
+     DIST3          =    3.53324157E-03
 
 
      LEAST SQUARE METHOD:
 
-     AOPTLSM        =    2.20407224
-     BOPTLSM        =   0.358375490
-     DISTLSM1       =   0.345696747
-     DISTLSM2       =    6.17029816E-02
+     AOPTLSM        =    2.47038794
+     BOPTLSM        =   0.222762719
+     DISTLSM1       =   0.747625232
+     DISTLSM2       =   0.298125327
 
 
      LEAST MODULUS METHOD:
 
-     AOPTLMM        =    2.22613049
-     BOPTLMM        =   0.626262605
-     DISTLMM1       =   0.352393091
-     DISTLMM2       =    6.70772418E-02
+     AOPTLMM        =    2.06532669
+     BOPTLMM        =   0.545454562
+     DISTLMM1       =   0.110781252
+     DISTLMM2       =    6.33369386E-03
 
    ************************************
 
 
          START VARIANT            4
+
+         DISTORTED VALUES:
+                                      4
+                                      6
+
   1.00000000
 
 SP:
- 0.892074585
+ 0.914581299
 
          DONE                     4
 
@@ -192,45 +214,50 @@ SP:
 
      PROGRAM METHOD:
 
-     AOPT1          =    2.59799004
-     BOPT1          =   0.636363626
-     ERWOPT1        =   0.611100435
-     DIST1          =   0.734353662
+     AOPT1          =    2.16582918
+     BOPT1          =   0.515151501
+     ERWOPT1        =   0.449547142
+     DIST1          =   0.180980682
 
-     AOPT2          =    2.36683416
-     BOPT2          =   0.585858583
-     ERWOPT2        =   0.278591990
-     DIST2          =   0.141938999
+     AOPT2          =    2.15577888
+     BOPT2          =   0.494949490
+     ERWOPT2        =   0.149651065
+     DIST2          =    2.42925677E-02
 
-     AOPT3          =    2.45728636
-     BOPT3          =   0.565656543
-     ERWOPT3        =    2.46196464E-02
-     DIST3          =    2.73414440E-02
+     AOPT3          =    2.16582918
+     BOPT3          =   0.515151501
+     ERWOPT3        =    9.89057217E-03
+     DIST3          =    9.48333461E-03
 
 
      LEAST SQUARE METHOD:
 
-     AOPTLSM        =    2.40178657
-     BOPTLSM        =   0.363608003
-     DISTLSM1       =   0.538178563
-     DISTLSM2       =   0.180035219
+     AOPTLSM        =    2.69327855
+     BOPTLSM        =  -0.281469345
+     DISTLSM1       =    1.47474790
+     DISTLSM2       =    1.09132946
 
 
      LEAST MODULUS METHOD:
 
-     AOPTLMM        =    2.62814069
-     BOPTLMM        =   0.555555582
-     DISTLMM1       =   0.683696270
-     DISTLMM2       =   0.397647142
+     AOPTLMM        =    2.18592978
+     BOPTLMM        =   0.525252521
+     DISTLMM1       =   0.211182296
+     DISTLMM2       =    3.52075733E-02
 
    ************************************
 
 
          START VARIANT            5
+
+         DISTORTED VALUES:
+                                     15
+                                      2
+
   1.00000000
 
 SP:
- 0.593894958
+ 0.772268295
 
          DONE                     5
 
@@ -242,64 +269,64 @@ SP:
 
      PROGRAM METHOD:
 
-     AOPT1          =    2.47738695
-     BOPT1          =   0.393939406
-     ERWOPT1        =   0.702339590
-     DIST1          =   0.583447576
+     AOPT1          =    2.16582918
+     BOPT1          =   0.272727281
+     ERWOPT1        =   0.431918472
+     DIST1          =   0.393101901
 
-     AOPT2          =    2.37688446
-     BOPT2          =   0.444444448
-     ERWOPT2        =   0.414416969
-     DIST2          =   0.145128310
+     AOPT2          =    2.15577888
+     BOPT2          =   0.343434334
+     ERWOPT2        =   0.160900548
+     DIST2          =    4.87798676E-02
 
-     AOPT3          =    2.39698505
-     BOPT3          =   0.595959604
-     ERWOPT3        =    2.45804861E-02
-     DIST3          =    2.56786440E-02
+     AOPT3          =    2.34673357
+     BOPT3          =   0.141414136
+     ERWOPT3        =    1.24122808E-02
+     DIST3          =    3.69509886E-04
 
 
      LEAST SQUARE METHOD:
 
-     AOPTLSM        =    2.90391469
-     BOPTLSM        =  -0.873924315
-     DISTLSM1       =    2.27783895
-     DISTLSM2       =    2.70472956
+     AOPTLSM        =    2.54986620
+     BOPTLSM        =    7.49557614E-02
+     DISTLSM1       =   0.974910438
+     DISTLSM2       =   0.483015448
 
 
      LEAST MODULUS METHOD:
 
-     AOPTLMM        =    2.67839193
-     BOPTLMM        =    1.01010101E-02
-     DISTLMM1       =    1.16829085
-     DISTLMM2       =   0.700216651
+     AOPTLMM        =    2.21608043
+     BOPTLMM        =   0.323232323
+     DISTLMM1       =   0.392848104
+     DISTLMM2       =    7.79375583E-02
 
    ************************************
 
    AVERAGE VALUES**********************
 
-     AVGAOPT1       =    2.21809053
-     AVGBOPT1       =   0.458585858
-     AVGERWOPT1     =   0.654894114
-     AVGDIST1       =   0.354251087
+     AVGAOPT1       =    2.05125618
+     AVGBOPT1       =   0.515151501
+     AVGERWOPT1     =   0.472077906
+     AVGDIST1       =   0.306375355
 
-     AVGAOPT2       =    2.17587948
-     AVGBOPT2       =   0.470707059
-     AVGERWOPT2     =   0.355432510
-     AVGDIST2       =    6.15879409E-02
+     AVGAOPT2       =    2.07135677
+     AVGBOPT2       =   0.501010120
+     AVGERWOPT2     =   0.165271729
+     AVGDIST2       =    3.50377224E-02
 
-     AVGAOPT3       =    2.13768840
-     AVGBOPT3       =   0.551515162
-     AVGERWOPT3     =    2.42991485E-02
-     AVGDIST3       =    1.32918451E-02
+     AVGAOPT3       =    2.05929637
+     AVGBOPT3       =   0.515151501
+     AVGERWOPT3     =    9.79288109E-03
+     AVGDIST3       =    5.35138091E-03
 
-     AVGDISTLMM1    =   0.696863055
-     AVGDISTLMM2    =   0.351693630
-     AVGAOPTLMM     =    2.41105533
-     AVGBOPTLMM     =   0.296969682
+     AVGDISTLMM1    =   0.288142800
+     AVGDISTLMM2    =    6.91963956E-02
+     AVGAOPTLMM     =    2.14572859
+     AVGBOPTLMM     =   0.387878776
 
-     AVGDISTLSM1    =    1.22838020
-     AVGDISTLSM2    =    1.05681229
-     AVGAOPTLSM     =    2.55610919
-     AVGBOPTLSM     =  -0.172270954
+     AVGDISTLSM1    =   0.997081399
+     AVGDISTLSM2    =   0.583116829
+     AVGAOPTLSM     =    2.54449368
+     AVGBOPTLSM     =    4.74123023E-02
 
    ************************************
