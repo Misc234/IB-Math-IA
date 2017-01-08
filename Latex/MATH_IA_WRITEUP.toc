@@ -1,9 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Mathematical Background}{2}
-\contentsline {subsection}{\numberline {2.1}Notations}{2}
-\contentsline {subsection}{\numberline {2.2}Concepts}{2}
+\contentsline {subsection}{\numberline {2.1}Vectors and m-dimensional space}{2}
+\contentsline {subsection}{\numberline {2.2}Partial Derivatives}{2}
+\contentsline {subsection}{\numberline {2.3}Multiple Integrals}{3}
+\contentsline {subsection}{\numberline {2.4}Lebesgue Measure}{4}
 \contentsline {section}{\numberline {3}Formulation of the Problem}{4}
-\contentsline {section}{\numberline {4}Algorithm}{6}
+\contentsline {section}{\numberline {4}Algorithm}{5}
 \contentsline {subsection}{\numberline {4.1}Illustrative example}{8}
-\contentsline {section}{\numberline {5}Algorithm trials}{14}
-\contentsline {section}{\numberline {6}Conclusion and Reflection}{15}
+\contentsline {section}{\numberline {5}Algorithm trials}{11}
+\contentsline {section}{\numberline {6}Conclusion}{12}
+\contentsline {section}{\numberline {7}Appendix A}{13}
+\contentsline {subsection}{\numberline {7.1}Method Description of Computation of Theoretical Algorithm}{13}

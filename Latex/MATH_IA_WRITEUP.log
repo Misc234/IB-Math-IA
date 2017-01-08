@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.31)  13 NOV 2016 11:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.8.31)  8 JAN 2017 04:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -291,6 +291,43 @@ Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
 (c:/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen135
+)
+(c:/texlive/2016/texmf-dist/tex/latex/tools/varioref.sty
+Package: varioref 2016/02/16 v1.5c package for extended references (FMi)
+\c@vrcnt=\count117
+)
+(c:/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+
+(c:/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count118
+\calc@Bcount=\count119
+\calc@Adimen=\dimen136
+\calc@Bdimen=\dimen137
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count120
+\calc@Cskip=\skip67
+)
+(c:/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count121
+\l_MT_multwidth_dim=\dimen138
+\origjot=\skip68
+\l_MT_shortvdotswithinadjustabove_dim=\dimen139
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen140
+\l_MT_above_intertext_sep=\dimen141
+\l_MT_below_intertext_sep=\dimen142
+\l_MT_above_shortintertext_sep=\dimen143
+\l_MT_below_shortintertext_sep=\dimen144
 )
 (c:/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
@@ -605,43 +642,33 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./MATH_IA_WRITEUP.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+)) (./MATH_IA_WRITEUP.aux)
 \openout1 = `MATH_IA_WRITEUP.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
-LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 144.
+LaTeX Font Info:    ... okay on input line 144.
  (c:/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen136
+\scratchcounter=\count122
+\scratchdimen=\dimen145
 \scratchbox=\box32
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count123
+\nofMParguments=\count124
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen137
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen146
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
 \everyMPtoPDFconversion=\toks29
 ) (c:/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -698,20 +725,20 @@ Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 126.
 )
-\CenteringLeftskip=\skip65
-\RaggedLeftLeftskip=\skip66
-\RaggedRightLeftskip=\skip67
-\CenteringRightskip=\skip68
-\RaggedLeftRightskip=\skip69
-\RaggedRightRightskip=\skip70
-\CenteringParfillskip=\skip71
-\RaggedLeftParfillskip=\skip72
-\RaggedRightParfillskip=\skip73
-\JustifyingParfillskip=\skip74
-\CenteringParindent=\skip75
-\RaggedLeftParindent=\skip76
-\RaggedRightParindent=\skip77
-\JustifyingParindent=\skip78
+\CenteringLeftskip=\skip69
+\RaggedLeftLeftskip=\skip70
+\RaggedRightLeftskip=\skip71
+\CenteringRightskip=\skip72
+\RaggedLeftRightskip=\skip73
+\RaggedRightRightskip=\skip74
+\CenteringParfillskip=\skip75
+\RaggedLeftParfillskip=\skip76
+\RaggedRightParfillskip=\skip77
+\JustifyingParfillskip=\skip78
+\CenteringParindent=\skip79
+\RaggedLeftParindent=\skip80
+\RaggedRightParindent=\skip81
+\JustifyingParindent=\skip82
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -776,243 +803,264 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [1]
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
+Underfull \hbox (badness 10000) in paragraph at lines 165--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
+Underfull \hbox (badness 10000) in paragraph at lines 173--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--165
-
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 177--181
+Underfull \hbox (badness 10000) in paragraph at lines 198--201
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
-
- []
-
-<images/pic-multiexample.pdf, id=27, 798.985pt x 344.28625pt>
+<images/pic-multiexample.pdf, id=24, 798.985pt x 344.28625pt>
 File: images/pic-multiexample.pdf Graphic file (type pdf)
 
 <use images/pic-multiexample.pdf>
-Package pdftex.def Info: images/pic-multiexample.pdf used on input line 191.
+Package pdftex.def Info: images/pic-multiexample.pdf used on input line 202.
 (pdftex.def)             Requested size: 319.58833pt x 137.71205pt.
- [3 <./images/pic-multiexample.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--205
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--216
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[3 <./images/pic-multiexample.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 224--228
 
  []
 
-[4] <pic-naturallimits.pdf, id=36, 3103.595pt x 1710.39pt>
+<pic-naturallimits.pdf, id=30, 3103.595pt x 1710.39pt>
 File: pic-naturallimits.pdf Graphic file (type pdf)
 
 <use pic-naturallimits.pdf>
-Package pdftex.def Info: pic-naturallimits.pdf used on input line 242.
+Package pdftex.def Info: pic-naturallimits.pdf used on input line 254.
 (pdftex.def)             Requested size: 310.37769pt x 171.04901pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--255
+Underfull \hbox (badness 10000) in paragraph at lines 249--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--255
+Underfull \hbox (badness 10000) in paragraph at lines 249--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--255
+Underfull \hbox (badness 10000) in paragraph at lines 249--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--255
+Underfull \hbox (badness 10000) in paragraph at lines 249--267
 
  []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 270--273
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [5 <./pic-naturallimits.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 258--261
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--274
-
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 304--308
+Underfull \hbox (badness 10000) in paragraph at lines 317--321
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--315
+Underfull \hbox (badness 10000) in paragraph at lines 323--327
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--315
-
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [7] <IlusExample.pdf, id=52, 190.7125pt x 152.57pt>
 File: IlusExample.pdf Graphic file (type pdf)
  <use IlusExample.pdf>
-Package pdftex.def Info: IlusExample.pdf used on input line 319.
+Package pdftex.def Info: IlusExample.pdf used on input line 338.
 (pdftex.def)             Requested size: 248.9709pt x 199.16928pt.
 
 <examplegraph.png, id=53, 199.22818pt x 227.68936pt>
 File: examplegraph.png Graphic file (type png)
  <use examplegraph.png>
-Package pdftex.def Info: examplegraph.png used on input line 321.
+Package pdftex.def Info: examplegraph.png used on input line 340.
 (pdftex.def)             Requested size: 149.37517pt x 170.71652pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--343
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8 <./IlusExample.pdf> <./examplegraph.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 414--420
 
  []
 
-[8 <./IlusExample.pdf> <./examplegraph.png>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 395--401
 
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 427--434
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--434
-
- []
-
-
-Overfull \hbox (6.8632pt too wide) in paragraph at lines 440--442
-\OT1/cmr/m/n/10.95 number of nodes $\OML/cmm/m/it/10.95 c[] \OT1/cmr/m/n/10.95 
-= (\OML/cmm/m/it/10.95 c[]; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 c[]; [] ; c
-[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ;  l \OT1/cmr/m/n/10.95 = 1\OML/cmm/m
-/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; [] ; L$\OT1/cmr/m/n/10.95
- , where each co-or-di-nate $\OML/cmm/m/it/10.95 c[];  j \OT1/cmr/m/n/10.95 = 1
-\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; [] ; m;$
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 449--453
 
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-[12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 514--519
-
- []
-
-
-Overfull \hbox (16.16158pt too wide) in paragraph at lines 526--536
- [][] 
- []
-
-
-Overfull \hbox (14.03241pt too wide) in paragraph at lines 541--551
- [][] 
- []
-
-<images/pic-prog2-c-not3.pdf, id=75, 156.585pt x 104.39pt>
-File: images/pic-prog2-c-not3.pdf Graphic file (type pdf)
-
-<use images/pic-prog2-c-not3.pdf>
-Package pdftex.def Info: images/pic-prog2-c-not3.pdf used on input line 585.
-(pdftex.def)             Requested size: 391.46152pt x 260.9743pt.
-
-<images/pic-prog2-c-1.pdf, id=76, 163.61125pt x 109.40875pt>
-File: images/pic-prog2-c-1.pdf Graphic file (type pdf)
-
-<use images/pic-prog2-c-1.pdf>
-Package pdftex.def Info: images/pic-prog2-c-1.pdf used on input line 591.
-(pdftex.def)             Requested size: 409.0271pt x 273.52115pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 521--595
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 462--468
 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 462--468
+
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Overfull \hbox (7.72116pt too wide) in paragraph at lines 474--476
+\OT1/cmr/m/n/10.95 number of nodes $[][] = (\OML/cmm/m/it/10.95 c[]; \OT1/cmr/m
+/n/10.95 (\OML/cmm/m/it/10.95 c[]; [] ; c[]\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10
+.95 ;  l \OT1/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/c
+mm/m/it/10.95 ; [] ; L$\OT1/cmr/m/n/10.95 , where each co-or-di-nate $\OML/cmm/
+m/it/10.95 c[];  j \OT1/cmr/m/n/10.95 = 1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.
+95 2\OML/cmm/m/it/10.95 ; [] ; m;$
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 483--487
+
+ []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
+[13]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 597--604
+Underfull \hbox (badness 10000) in paragraph at lines 548--553
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--604
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
- []
+[15]
 
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-Underfull \hbox (badness 10000) in paragraph at lines 597--604
+[16] (./MATH_IA_WRITEUP.bbl)
 
- []
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 13.59999pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
 
-[15] [16 <./images/pic-prog2-c-not3.pdf> <./images/pic-prog2-c-1.pdf>] [17]
-(./MATH_IA_WRITEUP.bbl) [18] (./MATH_IA_WRITEUP.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[17] (./MATH_IA_WRITEUP.aux) ) 
 Here is how much of TeX's memory you used:
- 6200 strings out of 493013
- 88461 string characters out of 6136993
- 193547 words of memory out of 5000000
- 9579 multiletter control sequences out of 15000+600000
- 16157 words of font info for 59 fonts, out of 8000000 for 9000
+ 6983 strings out of 493013
+ 100065 string characters out of 6136993
+ 196993 words of memory out of 5000000
+ 10349 multiletter control sequences out of 15000+600000
+ 16421 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,27n,98p,1736b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2016
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-di
-st/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pf
-b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2016/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2016/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sl10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texliv
-e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2016/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2016/texmf-dist/f
-onts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on MATH_IA_WRITEUP.pdf (19 pages, 556622 bytes).
+ 68i,27n,98p,2272b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmbx12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pf
+b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mib10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+<c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2016/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y6.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on MATH_IA_WRITEUP.pdf (18 pages, 461003 bytes).
 PDF statistics:
- 162 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 158 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

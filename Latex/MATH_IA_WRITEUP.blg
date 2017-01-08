@@ -6,45 +6,45 @@ Database file #1: BIBLIOGRAPHY.bib
 Warning--empty journal in balk_2010
 Warning--empty publisher in product_1995
 Warning--empty journal in Weisstein_2014
-You've used 11 entries,
+You've used 12 entries,
             1935 wiz_defined-function locations,
-            531 strings with 4598 characters,
-and the built_in function-call counts, 3839 in all, are:
-= -- 373
-> -- 88
+            537 strings with 4750 characters,
+and the built_in function-call counts, 4188 in all, are:
+= -- 405
+> -- 106
 < -- 13
-+ -- 29
-- -- 26
-* -- 262
-:= -- 651
-add.period$ -- 32
-call.type$ -- 11
-change.case$ -- 61
-chr.to.int$ -- 10
-cite$ -- 14
-duplicate$ -- 185
-empty$ -- 319
-format.name$ -- 37
-if$ -- 787
++ -- 35
+- -- 32
+* -- 291
+:= -- 715
+add.period$ -- 35
+call.type$ -- 12
+change.case$ -- 69
+chr.to.int$ -- 11
+cite$ -- 15
+duplicate$ -- 199
+empty$ -- 342
+format.name$ -- 44
+if$ -- 854
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 18
-newline$ -- 56
-num.names$ -- 33
-pop$ -- 90
+missing$ -- 20
+newline$ -- 61
+num.names$ -- 36
+pop$ -- 100
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 76
 quote$ -- 0
-skip$ -- 141
+skip$ -- 150
 stack$ -- 0
-substring$ -- 271
-swap$ -- 34
+substring$ -- 283
+swap$ -- 35
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 56
 warning$ -- 3
-while$ -- 34
+while$ -- 36
 width$ -- 0
-write$ -- 135
+write$ -- 148
 (There were 3 warnings)
