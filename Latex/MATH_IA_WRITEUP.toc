@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {2.3}Multiple Integrals}{3}
 \contentsline {subsection}{\numberline {2.4}Lebesgue Measure}{4}
 \contentsline {section}{\numberline {3}Formulation of the Problem}{4}
-\contentsline {section}{\numberline {4}Algorithm}{5}
+\contentsline {section}{\numberline {4}Algorithm}{6}
 \contentsline {subsection}{\numberline {4.1}Illustrative example}{8}
 \contentsline {section}{\numberline {5}Algorithm trials}{11}
 \contentsline {section}{\numberline {6}Conclusion}{12}

@@ -4,58 +4,86 @@
 Balk, P. (2010).
 \newblock Regression-type problems under zero median noise.
 \newblock 81(1):142--145.
+\newblock Article.
+
+\bibitem[Cortzen and Weisstein, 2017]{cortzen_weisstein}
+Cortzen, A. and Weisstein, E.~W. (2017).
+\newblock Measure.
+\newblock \url{http://mathworld.wolfram.com/Measure.html}.
+\newblock Accessed on 8th January 2017.
+
+\bibitem[Coxeter, 1973]{coxeter_1973}
+Coxeter, H. S.~M. (1973).
+\newblock {\em Regular Polytopes}.
+\newblock Dover Publ.
+\newblock Book.
 
 \bibitem[Cromwell, 1999]{cromwell_1999}
 Cromwell, P.~R. (1999).
 \newblock {\em Polyhedra}.
 \newblock Cambridge University Press.
+\newblock Article.
 
 \bibitem[I.S.U.M.D, 1995]{product_1995}
 I.S.U.M.D (1995).
 \newblock {\em Summation and Product Notation}.
+\newblock Accessed on 14th September 2016.
 
 \bibitem[Kelley, 1995]{kelley_1995}
 Kelley, J.~L. (1995).
 \newblock {\em General topology}.
 \newblock Springer.
 
+\bibitem[Lebesgue, 1902]{lebesgue_1902}
+Lebesgue, H. (1902).
+\newblock {\em Intégrale, longueur, aire}.
+\newblock Book.
+
 \bibitem[Matthews, 1998]{matthews_1998}
 Matthews, P.~C. (1998).
 \newblock {\em Vector calculus}, pages 45--48.
 \newblock Springer.
+\newblock Book.
 
 \bibitem[Mood et~al., 1974]{mood_graybill_boes_1974}
 Mood, A.~M., Graybill, F.~A., and Boes, D.~C. (1974).
 \newblock {\em Introduction to the theory of statistics}.
 \newblock McGraw-Hill, 3rd edition edition.
+\newblock Book.
 
 \bibitem[Plackett, 1950]{Plackett_1950}
 Plackett, R.~L. (1950).
 \newblock Some theorems in least squares.
 \newblock {\em Biometrika.}, 37(1-2):149--157.
+\newblock Book.
 
 \bibitem[Ross, 2007]{Ross_2007}
 Ross, S.~M. (2007).
 \newblock 2.4 expectation of a random variable.
 \newblock In {\em Introduction to probability models (9th ed)}. Academic Press.
+\newblock Book.
 
 \bibitem[Smith et~al., 2015]{smith_eggen_andre_2015}
 Smith, D., Eggen, M., and Andre, R.~S. (2015).
 \newblock {\em A transition to advanced mathematics}.
 \newblock Cengage Learning.
+\newblock Book.
 
 \bibitem[Stewart, 2008a]{stewart_2008_deriv}
 Stewart, J. (2008a).
 \newblock {\em Calculus: early transcendentals}, pages 878--891.
 \newblock Thomson Brooks/Cole.
+\newblock Book.
 
 \bibitem[Stewart, 2008b]{stewart_2008_int}
 Stewart, J. (2008b).
 \newblock {\em Calculus: early transcendentals}, pages 950--1021.
 \newblock Thomson Brooks/Cole.
+\newblock Book.
 
 \bibitem[Weisstein, 2014]{Weisstein_2014}
 Weisstein, E.~W. (2014).
 \newblock Dimension.
+\newblock Accessed on 3rd September 2016.
 
 \end{thebibliography}

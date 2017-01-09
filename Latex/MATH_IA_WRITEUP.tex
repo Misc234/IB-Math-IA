@@ -8,24 +8,26 @@
   number={1},
   pages={142--145},
   year={2010},
-  organization={Springer}
-}
+  organization={Springer},
+  note={Article.}}
 
 @book{product_1995, 
  title={Summation and Product Notation},
  author={I.S.U.M.D},
  organisation={Illinois State University Mathematics Department},
- url={http://math.illinoisstate.edu/day/courses/old/305/contentsummationnotation.html},  
+ howpublished = {\url{http://math.illinoisstate.edu/day/courses/old/305/contentsummationnotation.html}},
+ note={Accessed on 14th September 2016.},
  journal={Summation and Product Notation}, 
  year={1995}}
  
- @inbook{matthews_1998, 
+@inbook{matthews_1998, 
  place={Berlin}, 
  title={Vector calculus}, 
  publisher={Springer}, 
  author={Matthews, P. C.}, 
  pages={45--48},
- year={1998}}
+ year={1998},
+ note={Book.}}
 
 
 @inbook{stewart_2008_int, 
@@ -34,7 +36,8 @@
  publisher={Thomson Brooks/Cole}, 
  author={Stewart, James}, 
  pages={950--1021},
- year={2008}}
+ year={2008},
+ note= {Book.}}
  
  @inbook{stewart_2008_deriv, 
  place={Belmont, CA}, 
@@ -42,22 +45,24 @@
  publisher={Thomson Brooks/Cole}, 
  author={Stewart, James}, 
  pages={878--891},
- year={2008}}
+ year={2008},
+ note={Book.}}
  
 @book{cromwell_1999, 
  place={Cambridge}, 
  title={Polyhedra}, 
  publisher={Cambridge University Press}, 
  author={Cromwell, Peter R.}, 
- year={1999}}
+ year={1999},
+ note={Article.}}
  
- @article{Weisstein_2014,
-author = {Weisstein, Eric W.},
-publisher = {From MathWorld--A Wolfram Web Resource},
-title = {Dimension},
-year = {2014},
-url = {http://mathworld.wolfram.com/Dimension.html},
-}
+@article{Weisstein_2014,
+ author = {Weisstein, Eric W.},
+ publisher = {From MathWorld--A Wolfram Web Resource},
+ title = {Dimension},
+ year = {2014},
+ howpublished = {\url{http://mathworld.wolfram.com/Dimension.html}},
+ note={Accessed on 3rd September 2016.}}
 
 @book{kelley_1995, 
  place={New York}, 
@@ -66,43 +71,69 @@ url = {http://mathworld.wolfram.com/Dimension.html},
  author={Kelley, John L.}, 
  year={1995}}
  
- @article{Plackett_1950,
-author = {Plackett, R. L.},
-journal = {Biometrika.},
-number = {1-2},
-pages = {149-157},
-title = {Some Theorems in Least Squares},
-volume = {37},
-year = {1950},
-}
+@article{Plackett_1950,
+ author = {Plackett, R. L.},
+ journal = {Biometrika.},
+ number = {1-2},
+ pages = {149-157},
+ title = {Some Theorems in Least Squares},
+ volume = {37},
+ year = {1950},
+ note={Book.}}
 
 @incollection{Ross_2007,
-author = {Sheldon M. Ross},
-booktitle = {Introduction to probability models (9th ed)},
-publisher = {Academic Press},
-title = {2.4 Expectation of a random variable},
-year = {2007},
-}
+ author = {Sheldon M. Ross},
+ booktitle = {Introduction to probability models (9th ed)},
+ publisher = {Academic Press},
+ title = {2.4 Expectation of a random variable},
+ year = {2007},
+ note={Book.}}
 
 @book{smith_eggen_andre_2015,
-place={Boston, MA}, 
-title={A transition to advanced mathematics}, 
-publisher={Cengage Learning}, 
-author={Smith, Douglas and Eggen, Maurice and Andre, Richard St.}, 
-year={2015}}
+ place={Boston, MA}, 
+ title={A transition to advanced mathematics}, 
+ publisher={Cengage Learning}, 
+ author={Smith, Douglas and Eggen, Maurice and Andre, Richard St.}, 
+ year={2015},
+ note={Book.}}
 
 @book{mood_graybill_boes_1974, 
-place={Auckland}, 
-edition={3rd Edition}, 
-title={Introduction to the theory of statistics}, 
-publisher={McGraw-Hill}, 
-author={Mood, Alexander M. and Graybill, Franklin A. and Boes, Duane C.}, 
-year={1974}}
+ place={Auckland}, 
+ edition={3rd Edition}, 
+ title={Introduction to the theory of statistics}, 
+ publisher={McGraw-Hill}, 
+ author={Mood, Alexander M. and Graybill, Franklin A. and Boes, Duane C.}, 
+ year={1974},
+ note={Book.}}
+
+@book{lebesgue_1902, 
+ place={Milan}, 
+ title={Intégrale, longueur, aire}, 
+ author={Lebesgue, Henri}, 
+ year={1902},
+ note={Book.}}
+ 
+@misc{cortzen_weisstein, 
+ title={Measure}, 
+ howpublished = {\url{http://mathworld.wolfram.com/Measure.html}}, 
+ journal={Measure -- from Wolfram MathWorld}, 
+ author={Cortzen, Allan and Weisstein, Eric W.},
+ year={2017},
+ note={Accessed on 8th January 2017.}}
+ 
+@book{coxeter_1973, 
+ place={New York}, 
+ title={Regular Polytopes}, 
+ publisher={Dover Publ.}, 
+ author={Coxeter, Harold Scott Macdonald.}, 
+ year={1973},
+ note={Book.}}
 
 \end{filecontents}
 \documentclass[11pt,a4paper]{article}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
+\usepackage{url}
 \usepackage{natbib}
 \usepackage[rightcaption]{sidecap}
 \usepackage{svg}
@@ -139,7 +170,7 @@ year={1974}}
 \title{Deriving an Alternative Data Approximation Method to Be Used in Non-typical  Circumstances}
 \date{\today}
 
-\newcommand{\vecc}{\textbf{c}}
+\newcommand{\vecc}{\vec{\textbf{c}}}
 
 \begin{document}
 %TITLE
@@ -168,9 +199,9 @@ In this exploration I aim to suggest an alternative method/algorithm of approxim
 \section{Mathematical Background} \label{concepts}
 \subsection{Vectors and m-dimensional space}
 
-During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, as we know a vector can be 3D, or even 4D. Essentially, so long that a single value has multiple parameters (components) it is a vector in the same number of dimensions as there are parameters. In this IA, all vectors will be denoted with the variable $\vecc$, be it with some indexes or accents, as long as a variable has $\vecc$ in its core, it is a vector. Note that this is just a notation that I will use only in this paper. In addition, I will be using herizontal vector notation like so: $\vecc=(c_{1},c_{2},\dots c_{m})$. Where the vector ${\vecc}$ is in real coordinate space\footnote{\cite{kelley_1995}}; This allows several real variables to be treated as one, single variable. The notation $\boldsymbol{R}^{m}$ describes the dimension of space. i.e. $\boldsymbol{R}^{1}$ is one-dimensional space, $\boldsymbol{R}^{2}$ two-dimensional, and so on.\footnote{\cite{Weisstein_2014}}
+During the IB Math HL program, students learn about vectors. 2D-Vectors usually have only magnitude and direction, however, as we know a vector can be 3D, or even 4D. Essentially, so long that a single value has multiple parameters (components) it is a vector in the same number of dimensions as there are parameters. In this exploration, all vectors will be denoted with the variable $\vecc$. Note that this is just a notation that I will use only in this paper. In addition, I will be using herizontal vector notation like so: $\vecc=(c_{1},c_{2},\dots c_{m})$. Where the vector ${\vecc}$ is in real coordinate (euclidean) space\footnote{\cite{kelley_1995}}; This allows several real variables to be treated as one, single variable. Note that when dealing with space in higher than three dimentions (when talking about any function with more than three parameters), the notation $\boldsymbol{R}^{m}$ will be used, where $m$ is any positive integer. This notation describes the dimension of space. i.e. $\boldsymbol{R}^{1}$ is one-dimensional space, $\boldsymbol{R}^{2}$ two-dimensional, and so on.\footnote{\cite{Weisstein_2014}}
 \subsection{Partial Derivatives}
-When it comes to functions with multiple variables, their derivative is taken differently. The derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant \footnote{\cite{matthews_1998}, pages 45-48} \footnote{\cite{stewart_2008_deriv}, pages 878-891}. The following example will explain this further:\\
+When it comes to functions with multiple variables, their derivative is taken differently. The derivative of such functions is called a partial derivative. Denoted using a stylized symbol $\partial$, it is the derivative of a function with multiple variables, with respect to one of them, when others are held constant. \footnote{\cite{matthews_1998}, pages 45-48} \footnote{\cite{stewart_2008_deriv}, pages 878-891} The following example will explain this further:\\
 \\
 Find the local minimum of function $z$ with multiple variables:
 \begin{gather*}
@@ -187,7 +218,7 @@ Now according to the normal method of finding a minimum of a function, we equate
 \frac{\partial f(x,y)}{\partial y}  &=&  128y-32 = 0 \rightarrow y = -\frac{32}{128}=-\frac{1}{4}
 \end{eqnarray*}
 Partial derivatives gave the answer as well.
-\subsection{Multiple Integrals}
+\subsection{Multiple Integrals} \label{multiint}
 This exploration invokes the use of multiple integrals. These are basically integrals of other integrals, where any function of multiple variables is in question.\footnote{\cite{stewart_2008_int}} Here, each integral has a separate variable of integration, even though they stem from the same function. i.e. a double (two-multiple) integral of some two-variable function $g(x,y)$ is denoted as such:
 \begin{gather*}
 \iint g(x,y) \mathrm{d}x\mathrm{d}y
@@ -199,7 +230,7 @@ Likewise, this can be applied to a function with $m$ variables like so:
 Yet again let's employ an example: \\
 Find the area of the shaded region\\
 \begin{center}
-\includegraphics[scale=0.4]{pic-multiexample}
+\includegraphics[scale=0.3]{updated/int}
 \end{center}
 Obviously, $$A=\frac{1}{2}\cdot 2 \cdot 0.8 = 0.8 \ \text{units}^{2}$$ Granted, the following method is very unnecessary (and this problem doesn't even require a multiple integral), but for the sake of explanation, let's employ multiple integrals as well.
 \begin{gather*}
@@ -207,7 +238,10 @@ A = \underbrace{\int\limits_{0}^{2}}_{\text{(against } x\text{)}} \underbrace{\i
 0.4 \cdot \left[ \frac{x^{2}}{2} \right]_{0}^{2} = 0.4 \cdot \left[ \frac{2^{2}}{2} - \frac{0^{2}}{2} \right] = 0.4 \cdot 2 = 0.8.
 \end{gather*}
 And, again, the answer is the same.
-\subsection{Lebesgue Measure}
+\subsection{Lebesgue Measure} \label{measure}
+In mathematical analysis, a measure on a set, is the assignment of a number to all suitable sub-sets of that set.\footnote{\cite{cortzen_weisstein}} Essentially, a measure of a set can be interpreted as its size, and is therefore a generalization of length, area and volume. In particular, the Lebesgue measure assigns length, area and volume (in a conventional sense) to suitable sub-sets of an $m$-dimensional euclidean space $\boldsymbol{R}^m$.\footnote{\cite{lebesgue_1902}} This is particularly useful when dealing with any set that is in more than tree dimensions, as just 'volume' of such a set can not be defined. Thus, a more general idea of 'volume' is used: the Lebesgue Measure.\\
+\\
+If there is a set $K$ in $\boldsymbol{R}^m$, then the Lebesgue measure of $K$ will be denoted as $\mu(K)$. For example, if $K$ is in $\boldsymbol{R}^1$, and is the interval $[0,1]$, its Lebesgue measure $\mu([0,1])$ is its length, i.e. 1. Similarly, if $K$ is in $\boldsymbol{R}^3$, and is a cube with sides 2, its Lebesgue measure $\mu(K)$ is its volume, i.e. $2^3$ or 8. This principal may be applied to any set in $\boldsymbol{R}^m$ euclidean space.
 
 \section{Formulation of the Problem}
 
@@ -222,7 +256,7 @@ based on its approximate values
 \begin{equation}
 \tilde{y}_{i} = f(x_{i})+\xi_{i}, \quad i=1,2,\dots,n ,
 \end{equation}
-when additionally it is also known, that: (1) vector $\dot{\vecc} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m})$ belongs to a given limited set $D$, like for example a parallelepiped in $\boldsymbol{R}^{m}$; (2) $\xi$ is a limited continuous random value; the median of which $(Med(\xi))$ is equal to zero. \\
+when additionally it is also known, that: (1) vector $\dot{\vecc} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m})$ belongs to a given limited set $D$, like for example a parallelotope\footnote{In geometry, a parallelepiped is a polyhedron in $\boldsymbol{R}^3$, with six faces, each being a parallelogram. It can be generalized to be in $\boldsymbol{R}^m$, then it would take on the name of Parallelotope (\cite{coxeter_1973}). I specifically refer to a Parallelotope as both any cube and any cuboid in $\boldsymbol{R}^m$ is just a special case of a Parallelotope, therefore the term Parallelotope is more general and more accurate in this context. To clarify, a Parallelotope in $\boldsymbol{R}^{3}$ is by definition a parallelepiped.} in $\boldsymbol{R}^{m}$; (2) $\xi$ is a limited continuous random value; the median of which $(Med(\xi))$ is equal to zero. \\
 \\
 Judging by references in scientific works that I read while researching for this exploration, the most popular linear model of a studied relationship is
 \begin{equation}
@@ -243,15 +277,15 @@ There are countless papers dedicated to the approximation of functions based on 
 \begin{equation}
 E(\xi)=0
 \end{equation}
- However, in this IA this condition will not be used. Here, instead of the condition of mathematical expectancy of error $\xi$ being equal to zero, I will assume that the median of the same error $\xi$ being equal to zero, 
+ However, in this exploration this condition will not be used. Here, instead of the condition of mathematical expectancy of error $\xi$ being equal to zero, I will assume that the median of the same error $\xi$ being equal to zero, 
 \begin{equation}
 Med(\xi)=0
 \end{equation}
 specifically when the approximation method of the parameters of the function is based on ideas of the \textit{LSM}. \\
 \\
-I justify my interest to the condition $Med(\xi)=0$ by the case when the traditional condition $E(\xi)=0$ is unachievable. This happens when measurements are taken close to one of the natural limits of the physical relationship being measured. An example of such natural limit is the inability of some magnitude, such as weight, to be negative. In this case, the absolute value of the error made, can only be large (with respect to other errors made) in the \textit{same sign}, either positive or negative. Figure \ref{fig:graph-nl} shows an example of this graphically.
+In a measurement containing an error $\xi$, that error $\xi$ is considered positive if the measurement itself differs from the true function by a positive value, and negative that measurement differs by a negative value. I justify my interest to the condition $Med(\xi)=0$ by the case when the traditional condition $E(\xi)=0$ is unachievable. This happens when measurements are taken close to one of the natural limits of the physical relationship being measured. An example of such natural limit is the inability of some magnitude, such as weight, to be negative. In this case, large errors $\xi$ (relative to others) may only occur in such errors $\xi$ that have the same sign, either positive or negative, i.e. in a given case, only positive errors $\xi$ are large or only negative errors $\xi$ are large, depending on the natural limit. Figure \ref{fig:graph-nl} shows an example of this graphically. Here the natural limit is 0 (measurements can not be negative), so large errors $\xi$ only occur while they're positive.
 \begin{figure}[h!]
-\includegraphics[scale=0.1]{pic-naturallimits}
+\includegraphics[scale=0.35]{updated/fig1}
 \centering
 \caption{Graphical representation of a case where $E(\xi)=0$ does not work effectively.}
 \label{fig:graph-nl}
@@ -319,9 +353,9 @@ To clarify, here the a priori probabilities suggested a chance that the true vec
 \\
 Because in our case the vectors $\vecc$, are continuous values, and not discreet ones, then to use formula (\vref{Erho}~) we must proceed from estimates $p_{r}^{*}$ of the probabilities of event $\dot{\vecc} \in D_{r}$ to estimates $p_{r}^{*}(\vecc), \vecc \in D_{r}$, of a probability density function. As there is no information suggesting the distribution of vectors $\vecc$ in the bounds of each sub-set $D_{r}$, it is logical to assume uniform distribution across each sub-set. Then for all $r \in I$
 \begin{equation}
-P_{r}^{*}(\vecc)=\frac{p_{r}^{*}}{\mu(D_{r})}, \quad \vecc \in D_{r},
+P_{r}^{*}(\vecc)=\frac{p_{r}^{*}}{\mu(D_{r})}, \quad \vecc \in D_{r} \label{posteriori}
 \end{equation}
-where $\mu(D_{r})$ is the Lebesgue measure (explained in section \vref{concepts}) of sub-set $D_{r}$ in $\boldsymbol{R}^{m}$. \\
+where $\mu(D_{r})$ is the Lebesgue measure (explained in section \vref{measure}) of sub-set $D_{r}$ in $\boldsymbol{R}^{m}$. \\
 \\
 Therefore (\vref{Erho}~) becomes
 \begin{gather}
@@ -329,18 +363,18 @@ E(\rho(\vecc^{*},\dot{\vecc}))=\sum\limits_{r \in I} \frac{p_{r}^{*}(\vecc)}{\mu
 \nonumber
 \text{( where $\int_ {D_{r}}(\bullet)$ is a laconic notation of an $m$-multiple integral )}
 \end{gather}
-In the general case, such as this one, the limits of integration of each univariate integral depend on other variables, based on which the integration of the external integral relative to the given univariate integral is carried out \footnote{\cite{stewart_2008_int}}. (Refer to the example in section \vref{concepts}). This significantly complicates the calculation of these multiple integrals. Yet again, looking ahead, I want to note that in the algorithm created, integration is carried out on multidimensional parallelepipeds, when the limits of integration of each integral remain constant.
+In the general case, such as this one, the limits of integration of each univariate integral depend on other variables, based on which the integration of the external integral relative to the given univariate integral is carried out.\footnote{\cite{stewart_2008_int}} (Refer to the example in section \vref{multiint}). This significantly complicates the calculation of these multiple integrals. Yet again, looking ahead, I want to note that in the algorithm created, integration is carried out on multidimensional parallelepipeds, when the limits of integration of each integral remain constant.
 
-\begin{subsection}{Illustrative example}
-For it to be clear, that the following bulky equations lead to success, let's consider an illustrative example, where $m=1$ (i.e. the vector $\dot{\vecc}$ is a scalar value), $y=f(\vecc;x)$ is a function with one parameter, where $\dot{\vecc}$ is a scalar that has to be found. In this case $n=6$ and $D=\{ \vecc: 2 \leq \vecc \leq 6 \}$. In this way, the following graphical representations form.
-\begin{figure}[h!]%
-    \centering
-    \subfloat[Graph of proposed example]{{\includegraphics[height=7cm]{IlusExample} }}%
-    \qquad
-    \subfloat[Illustration of transitions of sign $q_{i}$ between each $\tilde{y}_{i}$]{{\includegraphics[height=6cm]{examplegraph} }}
-    \caption{ }%
-    \label{fig:example}%
-\end{figure}
+\subsection{Illustrative example}
+Let's consider an illustrative example. Here, I will be comparing my method to the LSM. In this example $m=1$ (i.e. the vector $\dot{\vecc}$ can be treated as a scalar value), $y=f(\vecc;x)$ is a function with one parameter, where $\dot{\vecc}$ is a vector that has to be found. Let $n=6$ and $D=\{ \vecc: 2 \leq \vecc \leq 6 \}$.
+%\begin{figure}[h!]%
+%    \centering
+%    \subfloat[Graph of proposed example]{{\includegraphics[height=7cm]{IlusExample} }}%
+%    \qquad
+%    \subfloat[Illustration of transitions of sign $q_{i}$ between each $\tilde{y}_{i}$]{{\includegraphics[height=6cm]{examplegraph} }}
+%    \caption{ }%
+%    \label{fig:example}%
+%\end{figure}
 
 \begin{table}[h!]
 \caption {Table of values for this example} \label{tab:title} 
@@ -352,21 +386,21 @@ $i$ & $x_{i}$ & $f(\dot{\vecc},x_{i})$ & $\xi_{i}$  & $\tilde{y}_{i}=f(\dot{\vec
 3 & 3 & 4      & 0.2   & 4.2   \\
 4 & 4 & 4      & 10    & 14.0  \\
 5 & 5 & 4      & -0.15 & 3.85  \\
-0 & 6 & 4      & 0.3   & 4.3  
+6 & 6 & 4      & 0.3   & 4.3  
 \end{tabular}
 \end{table}
 \noindent
 For this example I will use proximity function (\vref{rho2}~) also used in LSM. I am doing this as I will later compare the two methods.\\
 \noindent
-As we already know, we can calculate the priori probabilities using (\vref{priori}~), where $r=0,1,2,3,4,5$ like so:
+As we already know, we can calculate the a priori probabilities using (\vref{priori}~), where $r=0,1,2,3,4,5$ like so:
 \begin{gather*}
 p_{0}= \frac{1}{32}; \ p_{1}= \frac{5}{32}; \ p_{2}= \frac{10}{32}; \ p_{3}= \frac{10}{32}; \ p_{4}= \frac{5}{32}; \ p_{5}= \frac{1}{32}
 \end{gather*}
-But can only have certain values: $r=0,2,3,4$. And ,so 
+But in this case there can only be certain values of $r$, namely the values of set $I=\{0,2,3,4\}$. (This is because in this example there is no possible vector $\vecc$ that would produce a line that would give either 1 or 5 transitions of sign). And ,so 
 \begin{gather*}
-s=p_{0}+p_{2}+p_{3}+p_{4}= \frac{1}{32} + \frac{10}{32} + \frac{10}{32} + \frac{5}{32} = \frac{26}{32}.
+\sum\limits_{s \in I}p_{s}=p_{0}+p_{2}+p_{3}+p_{4}= \frac{1}{32} + \frac{10}{32} + \frac{10}{32} + \frac{5}{32} = \frac{26}{32}.
 \end{gather*}
-So, to calculate the posteriori probabilities
+So, to calculate the posteriori probabilities using (\vref{posteriori}~)
 \begin{eqnarray*}
 p_{0}^{*} &=& p_{0}: \frac{26}{32} = \frac{1}{32} : \frac{26}{32} = \frac{1}{26} \\
 p_{1}^{*} &=& 0 \\
@@ -377,56 +411,52 @@ p_{5}^{*} &=& 0
 \end{eqnarray*}
 Calculating $E(\rho(\vecc^{*},\vecc))$
 \begin{gather*}
-E(\rho(\vecc^{*},\vecc)) = \int\limits_{2}^{3.85} \underbrace{(\vecc^{*}-\vecc)^{2}}_{\rho(\vecc^{*},\vecc)} \cdot \frac{\overbrace{\frac{1}{26}}^{p_{0}^{*}}}{\underbrace{3.85-2}_{\mu(D_{0})}} \mathrm{d}\vecc \ + \int\limits_{3.9}^{4.3} (\vecc^{*}-\vecc)^{2} \cdot \frac{\frac{5}{26}}{4.3-3.9} \mathrm{d}\vecc \
-+ \int\limits_{4.3}^{5.0} (\vecc^{*}-\vecc)^{2} \cdot \frac{\frac{10}{26}}{5.0-4.3} \mathrm{d}\vecc \\
-+ \ 1.05 \cdot \left( \ \int\limits_{3.85}^{3.9} (\vecc^{*}-\vecc)^{2} \cdot \frac{10}{26} \mathrm{d}\vecc + \
-\int\limits_{5.0}^{6.0} (\vecc^{*}-\vecc)^{2} \cdot \frac{10}{26} \mathrm{d}\vecc \right) \\
-=(\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} + \frac{1}{3} \vecc^{3}
+E(\rho(\vecc^{*},\vecc)) = \int\limits_{2}^{3.85} \underbrace{(\vecc^{*}-\vecc)^{2}}_{\rho(\vecc^{*},\vecc)} \cdot \frac{\overbrace{\frac{1}{26}}^{p_{0}^{*}}}{\underbrace{3.85-2}_{\mu(D_{0})}} \mathrm{d}\vecc \ + \int\limits_{3.85}^{3.9} (\vecc^{*}-\vecc)^{2} \cdot \frac{\frac{10}{26}}{1.05} \mathrm{d}\vecc + \int\limits_{3.9}^{4.3} (\vecc^{*}-\vecc)^{2} \cdot \frac{\frac{5}{26}}{4.3-3.9} \mathrm{d}\vecc \\
++ \int\limits_{4.3}^{5.0} (\vecc^{*}-\vecc)^{2} \cdot \frac{\frac{10}{26}}{5.0-4.3} \mathrm{d}\vecc + \int\limits_{5.0}^{6.0} (\vecc^{*}-\vecc)^{2} \cdot \frac{\frac{10}{26}}{1.05}  \mathrm{d}\vecc
 \end{gather*}
 Taking into account that later we will want to find the derivative $\frac{\mathrm{d}E(\rho(\vecc^{*},\vecc))}{\mathrm{d}\vecc^{*}}$, we can omit the summand $\frac{1}{3} \vecc^{3}$ as it is a constant, and the derivative of a constant is zero. Let's continue.
 \begin{eqnarray*}
-E(\rho(\vecc^{*},\vecc)) =& 0.045 & \cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} \right]_{2}^{3.85}  \\
-+ & 7.323 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} \right]_{3.85}^{3.9} \\
-+ & 0.481 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} \right]_{3.9}^{4.3}  \\
-+ & 0.549 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} \right]_{4.3}^{5.0}  \\
-+ & 0.366 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} \right]_{5.0}^{6.0}  \\
-= & 1.361 &\cdot(\vecc^{*})^{2}-12.061\vecc^{*}
+E(\rho(\vecc^{*},\vecc)) =& 0.021 & \cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} + \frac{1}{3} \vecc^{3}\right]_{2}^{3.85}  \\
++ & 0.366 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} + \frac{1}{3} \vecc^{3} \right]_{3.85}^{3.9} \\
++ & 0.481 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} + \frac{1}{3} \vecc^{3} \right]_{3.9}^{4.3}  \\
++ & 0.549 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} + \frac{1}{3} \vecc^{3} \right]_{4.3}^{5.0}  \\
++ & 0.366 &\cdot\left[ (\vecc^{*})^{2} \cdot \vecc - \vecc^{*} \cdot \vecc^{2} + \frac{1}{3} \vecc^{3} \right]_{5.0}^{6.0}  \\
+= & 1.000 &\cdot(\vecc^{*})^{2}-9.55\vecc^{*} + 23.282
 \end{eqnarray*}
 
 \begin{eqnarray*}
-\frac{\mathrm{d}E(\rho(\vecc^{*},\vecc))}{\mathrm{d}\vecc^{*}} &=& 2.722\vecc^{*}-12.061 = 0 \\
-\vecc^{*} &=& \frac{12.061}{2.722} = 4.431
+\frac{\mathrm{d}E(\rho(\vecc^{*},\vecc))}{\mathrm{d}\vecc^{*}} &=& 2\vecc^{*}-9.55 = 0 \\
+\vecc^{*} &=& \frac{9.55}{2} = 4.773
 \end{eqnarray*}
 Seeing that $\dot{\vecc} = 4.0$, we finally calculate $\rho$ using this method
 \begin{equation*}
-\rho = |4.431-4.0| = 0.431
+\rho = |4.773-4.0| = 0.773
 \end{equation*}
 Error made by this method is 0.431. Now let's see what kind of error will the LSM give:
 \begin{eqnarray*}
 \text{Using Least Square Method} \\
 \phi(\vecc^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}-\vecc^{*})^{2} \longrightarrow min &\qquad & \text{(Sum of the squares of errors has to be minimised)}\\
-\phi(\vecc^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}^{2}-2 \tilde{y}_{i}\vecc^{*} + (\vecc^{*})^{2}) &\qquad & \text{(Expanding the polynomeal)}\\
+\phi(\vecc^{*})= \sum\limits_{i=1}^{6}(\tilde{y}_{i}^{2}-2 \tilde{y}_{i}\vecc^{*} + (\vecc^{*})^{2}) &\qquad & \text{(Expanding the polynomial)}\\
 \frac{\mathrm{d}\phi(\vecc^{*})}{\mathrm{d}\vecc^{*}} =  \sum\limits_{i=1}^{6}(0 -\cancel{2} \tilde{y}_{i} +\cancel{2} \vecc^{*}) = 0  &\qquad & \text{(Finding the derivative and equating it to zero)}\\
  \sum\limits_{i=1}^{6}\vecc^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} &\qquad & \text{(Re-arranging the result)}\\
  6 \cdot \vecc^{*} = \sum\limits_{i=1}^{6} \tilde{y}_{i} = 35.25 &\qquad & \\
  \vecc^{*} = \frac{35.25}{6} = 5.875 &\qquad & \text{(Solving for $\vecc^{*}$)}\\
 & \qquad & \text{And so the error } \rho = 1.875
 \end{eqnarray*}
-LSM gives a bigger error because in it deviations are squared \footnote{\cite{Plackett_1950}}, and therefore large derivations are weighted more heavily. Because this example shows, that in the case of significant non-compliance to condition $E(\xi)=0$, my method is notably superior to LSM, and because of the limited format of this IA, I will not include further solutions that used LSM. %You may refer to (*) in the apendix for more such results.
+LSM gives a bigger error because in it deviations are squared \footnote{\cite{Plackett_1950}}, and therefore large derivations are weighted more heavily. Because this example shows, that in the case of significant non-compliance to condition $E(\xi)=0$, my method is notably superior to LSM, and because of the limited format of this exploration, I will not include further solutions that used LSM. %You may refer to (*) in the apendix for more such results.
  Back to the theory.\\
 \\
-\end{subsection}
 Let the proximity $\rho(\vecc^{*},\vecc)$ in (\vref{mathexpectancy}~), be taken in the form (\vref{rho2}~). Then the following simplification takes place.
 \begin{gather}
 \nonumber
-E(\rho(\vecc^{*},\dot{\vecc}))=\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \int\limits_{D_{r}}\sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} = \\
+E(\rho(\vecc^{*},\dot{\vecc}))=\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \int\limits_{D_{r}}\sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2}\mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}\\
 \nonumber
 \textit{expanding} \left( c_{j}^{*}-c_{j} \right)^{2} \\
 \nonumber
-\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \sum\limits_{j=1}^{m} \left[ (c_{j}^{*})^{2} \underbrace{\int\limits_{D_{r}} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}}_{{=\mu(D_{r})}} - 2c_{j}^{*} \int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}\right]= \\
+=\sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \sum\limits_{j=1}^{m} \left[ (c_{j}^{*})^{2} \underbrace{\int\limits_{D_{r}} \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}}_{{=\mu(D_{r})}} - 2c_{j}^{*} \int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m}\right]\\
 \nonumber
-\sum\limits_{j=1}^{m} \left( \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \left[ (c_{j}^{*})^{2} \mu(D_{r})-2c_{j}^{*} \int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right) = \\ 
-\sum\limits_{j=1}^{m} \left( (c_{j}^{*})^{2} \cancel{\mu(D_{r})} \underbrace{\sum\limits_{r \in I} \frac{p_{r}^{*}}{\cancel{\mu(D_{r})}}}_{\sum\limits_{r \in I}p_{r}^{*} = 1} - 2c_{j}^{*} \sum\limits_{r \in I}\frac{p_{r}^{*}}{\mu(D_{r})} \int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \sum\limits_{r \in I}\frac{p_{r}^{*}}{\mu(D_{r})} \int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right)
+=\sum\limits_{j=1}^{m} \left( \sum\limits_{r \in I} \frac{p_{r}^{*}}{\mu(D_{r})} \left[ (c_{j}^{*})^{2} \mu(D_{r})-2c_{j}^{*} \int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right] \right)\\ 
+=\sum\limits_{j=1}^{m} \left( (c_{j}^{*})^{2} \cancel{\mu(D_{r})} \underbrace{\sum\limits_{r \in I} \frac{p_{r}^{*}}{\cancel{\mu(D_{r})}}}_{\sum\limits_{r \in I}p_{r}^{*} = 1} - 2c_{j}^{*} \sum\limits_{r \in I}\frac{p_{r}^{*}}{\mu(D_{r})} \int\limits_{D_{r}} c_{j} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} + \sum\limits_{r \in I}\frac{p_{r}^{*}}{\mu(D_{r})} \int\limits_{D_{r}} c_{j}^{2} \  \mathrm{d}c_{1}\mathrm{d}c_{2}\dots \mathrm{d}c_{m} \right)
 \end{gather}
 And finally:
 \begin{equation}
@@ -446,7 +476,46 @@ where
 \end{equation}
 
 \section{Algorithm trials}
+\begin{table}[h!]
+\centering
+\caption{Average results of 5 algorithm trials. Each group of 5 calculated with a increasing standard deviation $\sigma$ of error $\xi_{i}$. Proximity function used (\vref{rho1}~) is taken from LAD in order to compare the derived method with LAD.}
+\label{my-label}
+\bgroup
+\def\arraystretch{1.3}
+\begin{tabular}{|c|r|r|r|r|r|r|r|}
+\hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Intensity\\ of error\end{tabular}} & \multicolumn{4}{c|}{My method}                                                                                                                                                                                                     & \multicolumn{3}{c|}{LAD}                                                                                                                           \\ \cline{2-8} 
+                                                                              & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{*}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Expected\\ error\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{*}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} \\ \hline
+$\sigma = 0.1$                                                                & 2.027                            & 0.497                            & 0.269                                                                         & 0.192                                                                        & 2.051                            & 0.459                            & 0.100                                                                        \\ \cline{1-1}
+$\sigma = 0.3$                                                                & 2.049                            & 0.517                            & 0.468                                                                         & 0.302                                                                        & 2.146                            & 0.388                            & 0.288                                                                        \\ \cline{1-1}
+$\sigma = 1.0$                                                                & 2.218                            & 0.459                            & 0.655                                                                         & 0.354                                                                        & 2.411                            & 0.297                            & 0.697                                                                        \\ \hline
+\end{tabular}
+\egroup
+\end{table}
 
+\begin{figure}[h!]
+\includegraphics[scale=0.35]{updated/table-1c0.1}
+\centering
+\caption{THING}
+\end{figure}
+\begin{table}[!h]
+\centering
+\caption{One algorithm run with 5 trials (each trial has randomized errors $\xi_{i}$). Proximity function used (\vref{rho2}~) is taken from LSM in order to compare the derived method to LSM.}
+\bgroup
+\def\arraystretch{1.3}
+\begin{tabular}{c|r|r|r|r|r|r|r}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Trial}} & \multicolumn{4}{c|}{My method}                                                                                                                                                                                                     & \multicolumn{3}{c|}{LSM}                                                                                                                           \\ \cline{2-8} 
+\multicolumn{1}{|c|}{}                       & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{*}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Expected\\ error\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{ *}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} \\ \hline
+1                                            & 2.065                            & 0.404                            & 0.199                                                                         & 0.013                                                                        & 2.593                            & -0.217                           & 0.866                                                                        \\
+2                                            & 2.136                            & 0.556                            & 0.157                                                                         & 0.021                                                                        & 2.416                            & 0.438                            & 0.177                                                                        \\
+3                                            & 1.844                            & 0.707                            & 0.161                                                                         & 0.067                                                                        & 2.470                            & 0.223                            & 0.298                                                                        \\
+4                                            & 2.156                            & 0.495                            & 0.150                                                                         & 0.024                                                                        & 2.693                            & -0.281                           & 1.091                                                                        \\
+5                                            & 2.156                            & 0.343                            & 0.161                                                                         & 0.049                                                                        & 2.550                            & 0.075                            & 0.483                                                                        \\
+Average                                      & 2.071                            & 0.501                            & 0.165                                                                         & 0.035                                                                        & 2.544                            & 0.047                            & 0.583                                                                       
+\end{tabular}
+\egroup
+\end{table}
 \newpage
 \section{Conclusion}
 
@@ -549,7 +618,7 @@ c_{j}^{*} = \sum\limits_{r \in I} \frac{p_{r}^{*}}{\left| J_{r} \right|} \sum\li
 This equation (\vref{eq-final}~) is the one used in calculations of approximate values of the optimised vector $\vecc^{*}$ in my custom software, the trails of which are earlier  in this document.\\
 \\
 Now, let's compare previousy suggested in "\cite{balk_2010}" equations (\vref{eq-solutions-to-cj*}~) and (\vref{eq-cbar}~) with the suggested equation (\vref{eq-final}~). The superiority of the later is shown in that: 1. it does not require the direct construction of sub-sets $D_{r}$
-, which in fact are quite complex convex polyhedrons in $\boldsymbol{R}^{m}$. Therefore 2. this equation does not require the expansive calculation of multiple integrals found in (\vref{eq-solutions-to-cj*}~) and (\vref{eq-cbar}~).  In "\cite{balk_2010}" there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this IA to estimate the optimal parameters $\vecc^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence (\vref{sequence}~).
+, which in fact are quite complex convex polyhedrons in $\boldsymbol{R}^{m}$. Therefore 2. this equation does not require the expansive calculation of multiple integrals found in (\vref{eq-solutions-to-cj*}~) and (\vref{eq-cbar}~).  In "\cite{balk_2010}" there is one more problem at hand: even a polygon, not to mention a polyhedron, can not be defined only by its vertexes (those could be connected with line segments in not just one way). The algorithm proposed in this exploration to estimate the optimal parameters $\vecc^{*}$, only requires the regular (evenly distributed) surface of set $D$, for the nodes of which the only thing left to do is evaluate the elements of the sequence (\vref{sequence}~).
 
 \newpage
 

@@ -1,14 +1,14 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.30)  18 SEP 2016 15:07
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016/W32TeX) (preloaded format=xelatex 2016.8.31)  8 JAN 2017 04:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ACCENTS.tex
+**./ACCENTS.tex
 (./ACCENTS.tex
-LaTeX2e <2016/03/31>
+LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+(c:/texlive/2016/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo
+(c:/texlive/2016/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,33 +23,20 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/unicode-math/unicode-math.sty
+(c:/texlive/2016/texmf-dist/tex/latex/unicode-math/unicode-math.sty
 Package: unicode-math 2015/09/24 v0.8c Unicode maths in XeLaTeX and LuaLaTeX
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(c:/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(c:/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-
-! Package unicode-math Error: Cannot be run with pdfLaTeX!
-(unicode-math)                Use XeLaTeX or LuaLaTeX instead..
-
-See the unicode-math package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42   }\@ehd
-             
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3.sty
+(c:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2016/05/18 v6512 L3 programming layer (loader) 
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+(c:/texlive/2016/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2016/05/18 v6512 L3 programming layer (code)
 L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
 L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
@@ -156,72 +143,1132 @@ L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
 \l__coffin_scaled_width_dim=\dimen133
 L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
-File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count109
+(c:/texlive/2016/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def
+File: l3xdvidpfmx.def 2016/03/26 v6465 L3 Experimental driver: xdvipdfmx
 \l__driver_tmp_box=\box41
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/ucharcat/ucharcat.sty
+(c:/texlive/2016/texmf-dist/tex/latex/ucharcat/ucharcat.sty
 Package: ucharcat 2015/11/19 v0.03 ucharcat for luaLaTeX (DPC)
-
-
-! Package ucharcat Error: \Ucharcat may only be used with xetex and luatex.
-
-See the ucharcat package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.22 {skipping package}
-                       
-skipping package
-
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count110
-\l__xparse_m_args_int=\count111
-\l__xparse_mandatory_args_int=\count112
-\l__xparse_processor_int=\count113
-\l__xparse_v_nesting_int=\count114
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(c:/texlive/2016/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count109
+\l__xparse_m_args_int=\count110
+\l__xparse_mandatory_args_int=\count111
+\l__xparse_processor_int=\count112
+\l__xparse_v_nesting_int=\count113
+)
+(c:/texlive/2016/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.sty
+)
+(c:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.sty
 Package: fontspec 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTeX
 
+(c:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2016/02/01 v2.5a Font selection for XeLaTeX and LuaLaTe
+X
+\l_fontspec_script_int=\count114
+\l_fontspec_language_int=\count115
+\l_fontspec_strnum_int=\count116
+\l__fontspec_tmpa_dim=\dimen134
+\l__fontspec_tmpb_dim=\dimen135
+\l__fontspec_tmpc_dim=\dimen136
+\g__file_internal_ior=\read1
+
+(c:/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
+
+(c:/texlive/2016/texmf-dist/tex/latex/euenc/eu1enc.def
+File: eu1enc.def 2010/05/27 v0.1h Experimental Unicode font encodings
+)
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 105.
+
+
+(c:/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+(c:/texlive/2016/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+
+(c:/texlive/2016/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+LaTeX Font Info:    Try loading font information for EU1+lmss on input line 357
+.
+
+(c:/texlive/2016/texmf-dist/tex/latex/euenc/eu1lmss.fd
+File: eu1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+\tipaTiiicode=\count117
+\tipasavetokens=\toks14
+\tipachecktokens=\toks15
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2016/07/11 v4.10 LaTeX color/graphics driver for XeTeX (L3/RRM/
+JK)
+))
+\Gin@req@height=\dimen137
+\Gin@req@width=\dimen138
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \__fontspec_post_arg:w with sig. 'mmO{}' on line 353.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'om' on line 355.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'om' on line 365.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'om' on line 375.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'om' on line 385.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'om' on line 399.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'om' on line 407.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'om' on line 415.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'om' on line 423.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mom' on line 437.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mom' on line 453.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 467.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 529.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 540.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 548.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 556.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 577.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 586.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 590.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 594.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontsExtensions with sig. 'm' on line 599.
+.................................................
+\l__fontspec_tmp_int=\count118
+
+(c:/texlive/2016/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 2705.
+LaTeX Info: Redefining \slshape on input line 2710.
+LaTeX Info: Redefining \scshape on input line 2715.
+LaTeX Info: Redefining \upshape on input line 2720.
+\l__fontspec_em_int=\count119
+\l__fontspec_emdef_int=\count120
+LaTeX Info: Redefining \em on input line 2736.
+LaTeX Info: Redefining \emph on input line 2742.
+LaTeX Info: Redefining \- on input line 2746.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 2841.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 2845.
+.................................................
+))
+(c:/texlive/2016/texmf-dist/tex/latex/base/fix-cm.sty
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+
+(c:/texlive/2016/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+))
+(c:/texlive/2016/texmf-dist/tex/latex/filehook/filehook.sty
+Package: filehook 2011/10/12 v0.5d Hooks for input files
+)
+\g__um_fam_int=\count121
+\g__um_primekern_muskip=\muskip16
+\l__um_primecount_int=\count122
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \unimathsetup with sig. 'm' on line 168.
+.................................................
+
+(c:/texlive/2016/texmf-dist/tex/latex/unicode-math/unicode-math-xetex.sty
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathfontface with sig. 'mO{}mO{}' on line 165.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setoperatorfont with sig. 'm' on line 169.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathfont with sig. 'O{}mO{}' on line 278.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addnolimits with sig. 'm' on line 520.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \removenolimits with sig. 'm' on line 524.
+.................................................
+
+(c:/texlive/2016/texmf-dist/tex/latex/unicode-math/unicode-math-table.tex)))
+(c:/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+
+(c:/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count123
+\calc@Bcount=\count124
+\calc@Adimen=\dimen139
+\calc@Bdimen=\dimen140
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count125
+\calc@Cskip=\skip51
+)
+(c:/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+(c:/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(c:/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen141
+))
+(c:/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen142
+)
+(c:/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count126
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count127
+\leftroot@=\count128
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count129
+\DOTSCASE@=\count130
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box42
+\strutbox@=\box43
+\big@size=\dimen143
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+
+
+Package amsmath Warning: Unable to redefine math accent \mathring.
+
+\macc@depth=\count131
+\c@MaxMatrixCols=\count132
+\dotsspace@=\muskip17
+\c@parentequation=\count133
+\dspbrk@lvl=\count134
+\tag@help=\toks18
+\row@=\count135
+\column@=\count136
+\maxfields@=\count137
+\andhelp@=\toks19
+\eqnshift@=\dimen144
+\alignsep@=\dimen145
+\tagshift@=\dimen146
+\tagwidth@=\dimen147
+\totwidth@=\dimen148
+\lineht@=\dimen149
+\@envbody=\toks20
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+.................................................
+. unicode-math info: "patch-macro"
+. 
+. I'm going to patch macro \subarray.
+.................................................
+.................................................
+. unicode-math info: "patch-macro"
+. 
+. I'm going to patch macro \r@@t.
+.................................................
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count138
+\l_MT_multwidth_dim=\dimen150
+\origjot=\skip55
+\l_MT_shortvdotswithinadjustabove_dim=\dimen151
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen152
+\l_MT_above_intertext_sep=\dimen153
+\l_MT_below_intertext_sep=\dimen154
+\l_MT_above_shortintertext_sep=\dimen155
+\l_MT_below_shortintertext_sep=\dimen156
+)
+\g__um_empty_fam=\mathgroup4
+.................................................
+. unicode-math info: "patch-macro"
+. 
+. I'm going to patch macro \MT_cramped_internal:Nn.
+.................................................
+
+*************************************************
+* unicode-math warning: "mathtools-colon"
+* 
+* I'm going to overwrite the following commands from the `mathtools' package:
+* 
+*     \dblcolon, \coloneqq, \Coloneqq, \eqqcolon.
+* 
+* Note that since I won't overwrite the other colon-like commands, using them
+* will lead to inconsistencies.
+*************************************************
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \dblcolon with sig. '' on line 6.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \coloneqq with sig. '' on line 6.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \Coloneqq with sig. '' on line 6.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \eqqcolon with sig. '' on line 6.
+.................................................
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !
-! Fatal fontspec error: "cannot-use-pdftex"
+! fontspec error: "font-not-found"
 ! 
-! The fontspec package requires either XeTeX or LuaTeX.
-! 
-! You must change your typesetting engine to, e.g., "xelatex" or
-! "lualatex"instead of plain "latex" or "pdflatex".
+! The font "XITS math" cannot be found.
 ! 
 ! See the fontspec documentation for further information.
 ! 
 ! For immediate help type H <return>.
 !...............................................  
                                                   
-l.28 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
-                                                 
+l.6 \setmathfont{XITS math}
+                           
 |'''''''''''''''''''''''''''''''''''''''''''''''
-| This is a fatal error: LaTeX will abort.
+| A font might not be found for many reasons.
+| Check the spelling, where the font is installed etc. etc.
+| 
+| When in doubt, ask someone for help!
 |...............................................
 
- ) ) ) 
+*************************************************
+* fontspec warning: "script-not-exist"
+* 
+* Font 'XITS math' does not contain script 'Math'.
+*************************************************
+\g__fontspec_family_XITSmath_int=\count139
+.................................................
+. fontspec info: "no-font-shape"
+. 
+. Could not resolve font XITS math/B (it probably doesn't exist).
+.................................................
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! fontspec error: "font-not-found"
+! 
+! The font "XITS math" cannot be found.
+! 
+! See the fontspec documentation for further information.
+! 
+! For immediate help type H <return>.
+!...............................................  
+                                                  
+l.6 \setmathfont{XITS math}
+                           
+|'''''''''''''''''''''''''''''''''''''''''''''''
+| A font might not be found for many reasons.
+| Check the spelling, where the font is installed etc. etc.
+| 
+| When in doubt, ask someone for help!
+|...............................................
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! fontspec error: "font-not-found"
+! 
+! The font "XITS math" cannot be found.
+! 
+! See the fontspec documentation for further information.
+! 
+! For immediate help type H <return>.
+!...............................................  
+                                                  
+l.6 \setmathfont{XITS math}
+                           
+|'''''''''''''''''''''''''''''''''''''''''''''''
+| A font might not be found for many reasons.
+| Check the spelling, where the font is installed etc. etc.
+| 
+| When in doubt, ask someone for help!
+|...............................................
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! fontspec error: "font-not-found"
+! 
+! The font "XITS math" cannot be found.
+! 
+! See the fontspec documentation for further information.
+! 
+! For immediate help type H <return>.
+!...............................................  
+                                                  
+l.6 \setmathfont{XITS math}
+                           
+|'''''''''''''''''''''''''''''''''''''''''''''''
+| A font might not be found for many reasons.
+| Check the spelling, where the font is installed etc. etc.
+| 
+| When in doubt, ask someone for help!
+|...............................................
+
+! Cannot use \XeTeXOTcountfeatures with nullfont; not an OpenType Layout font.
+<argument> \XeTeXOTcountfeatures \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \l_fontspec_script_int 
+l.6 \setmathfont{XITS math}
+                           
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Cannot use \XeTeXOTfeaturetag with nullfont; not an OpenType Layout font.
+<argument> ...\XeTeXOTfeaturetag \l_fontspec_font 
+                                                  \l_fontspec_script_int \l_...
+l.6 \setmathfont{XITS math}
+                           
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 7219 strings out of 493014
- 146697 string characters out of 6133351
- 160381 words of memory out of 5000000
- 10812 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 34i,1n,42p,10380b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 18107 strings out of 493589
+ 337143 string characters out of 6146760
+ 351162 words of memory out of 5000000
+ 21466 multiletter control sequences out of 15000+600000
+ 3680 words of font info for 19 fonts, out of 8000000 for 9000
+ 1347 hyphenation exceptions out of 8191
+ 52i,0n,63p,10382b,235s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 No pages of output.
-PDF statistics:
- 0 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
