@@ -152,6 +152,7 @@
 \usepackage{multirow}
 \usepackage{varioref}
 \usepackage{mathtools}
+\usepackage{amssymb}
 \usepackage[utf8]{inputenc}
 
 \numberwithin{equation}{subsection}
@@ -243,16 +244,18 @@ In mathematical analysis, a measure on a set, is the assignment of a number to a
 \\
 If there is a set $K$ in $\boldsymbol{R}^m$, then the Lebesgue measure of $K$ will be denoted as $\mu(K)$. For example, if $K$ is in $\boldsymbol{R}^1$, and is the interval $[0,1]$, its Lebesgue measure $\mu([0,1])$ is its length, i.e. 1. Similarly, if $K$ is in $\boldsymbol{R}^3$, and is a cube with sides 2, its Lebesgue measure $\mu(K)$ is its volume, i.e. $2^3$ or 8. This principal may be applied to any set in $\boldsymbol{R}^m$ euclidean space.
 
-\section{Formulation of the Problem}
+\section{Formulation of the Problem} \label{formulation}
 
 A function is one of the most known mathematical notions. An important task which has practical applications, is the approximation of a function or relationship based on some information known about the function or relationship in question. This information may either be determinate or statistical. An example of a determinate piece of information about function $f(x)$ is its range (or the possible values this function may have) on a given interval $[\alpha,\beta]$. Example of a statistical information may be the law of distribution of random errors $\xi_{i}$ in approximate values $\tilde{y}_{i} = f(x_{i})+\xi_{i}$ of the function, which in turn can describe a certain physical process (change of temperature over time, for example). In practice,  $n$ number of points $x_{i}$ can be obtained as results of some kind of physical experiment. Where in this case, the approximation of function $f(x)$ only makes sense if this function is described by a finite number $m<n$ of parameters (coefficients) $c_{j}$, where the true values of said parameters will be denoted as $\dot{c}_{j}, \ j=1,2,\dots,m.$ For the sake of convenience, these parameters will be written as an $m$-dimensional vector; $\vecc$ storing the possible parameters and $\dot{\vecc}$ storing the true parameters. \\
 \\
 This Internal Assessment will focus on the estimation of the parameters of a function 
+\usetagform{fn}
 \begin{equation} 
-y = f(\dot{\vecc},x),\quad \dot{\vecc} \in \boldsymbol{R}^{m},\quad x \in [\alpha,\beta],\quad \dot{\vecc} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m}) \label{301} \tag*{(\theequation)\protect\footnotemark}
+y = f(\dot{\vecc},x),\quad \dot{\vecc} \in \boldsymbol{R}^{m},\quad x \in [\alpha,\beta],\quad \dot{\vecc} = (\dot{c}_{1}, \dot{c}_{2},\dots,\dot{c}_{m}) \label{301}
 \end{equation}
 \footnotetext{Here, because the vector $\dot{\vecc}$ has $m$ parameters (components), it will also be in $m$-dimensional space.}
-based on its approximate values
+based on its approximate (i.e containing error) values
+\usetagform{default}
 \begin{equation}
 \tilde{y}_{i} = f(x_{i})+\xi_{i}, \quad i=1,2,\dots,n ,
 \end{equation}
@@ -283,7 +286,7 @@ Med(\xi)=0
 \end{equation}
 specifically when the approximation method of the parameters of the function is based on ideas of the \textit{LSM}. \\
 \\
-In a measurement containing an error $\xi$, that error $\xi$ is considered positive if the measurement itself differs from the true function by a positive value, and negative that measurement differs by a negative value. I justify my interest to the condition $Med(\xi)=0$ by the case when the traditional condition $E(\xi)=0$ is unachievable. This happens when measurements are taken close to one of the natural limits of the physical relationship being measured. An example of such natural limit is the inability of some magnitude, such as weight, to be negative. In this case, large errors $\xi$ (relative to others) may only occur in such errors $\xi$ that have the same sign, either positive or negative, i.e. in a given case, only positive errors $\xi$ are large or only negative errors $\xi$ are large, depending on the natural limit. Figure \ref{fig:graph-nl} shows an example of this graphically. Here the natural limit is 0 (measurements can not be negative), so large errors $\xi$ only occur while they're positive.
+In a measurement containing an error $\xi$, that error $\xi$ is considered positive if the measurement itself differs from the true function (like \vref{301}) by a positive value, and negative if that measurement differs by a negative value. I justify my interest to the condition $Med(\xi)=0$ by the case when the traditional condition $E(\xi)=0$ is unachievable. This happens when measurements are taken close to one of the natural limits of the physical relationship being measured. An example of such natural limit is the inability of some magnitude, such as weight, to be negative. In this case, large errors $\xi$ (relative to others) may only occur in such errors $\xi$ that have the same sign, either positive or negative, i.e. in a given case, only positive errors $\xi$ are large or only negative errors $\xi$ are large, depending on the natural limit. Figure \ref{fig:graph-nl} shows an example of this graphically. Here the natural limit is 0 (measurements can not be negative), so large errors $\xi$ only occur while they're positive.
 \begin{figure}[h!]
 \includegraphics[scale=0.35]{updated/fig1}
 \centering
@@ -476,6 +479,13 @@ where
 \end{equation}
 
 \section{Algorithm trials}
+Let us look at a model function, the parameters (coefficients) of which will have to be approximated by the method derived in this exploration and the known, conventional methods LAD and LSM. This function $f(\dot{\vecc},x) = \dot{c}_1 + \dot{c}_2x$ has two parameters which will be $\dot{c}_1=2$ and $\dot{c}_2=0.5$ respectively. The approximation of these parameters $\dot{c}_1$ and $\dot{c}_2$ will be carried out from $n=20$ values (containing random errors $\xi_i$) $\tilde{y}_{i} = f(\dot{\vecc},x)+\xi_{i}, \quad i=1,2,\dots,n$. The errors $\xi_i$ are random normally distributed values with mean 0 and standard deviation $\sigma$.\\
+\\
+Due to a the technical requirement (described in Appendix A: section \vref{apendix}) (and also theoretically explained in section \vref{formulation}) it is also necessary that the true vector $\dot{\vecc}$ be limited to a set $D$. Therefore we define this set $D$ such that
+\begin{equation}
+\dot{\vecc} =  (\dot{c}_1 ,\dot{c}_2) \in D = \{ (c_1 ,c_2) : \quad 1 \leqslant c_1 \leqslant 3; \quad 0 \leqslant c_2 \leqslant 1 \}.
+\end{equation}
+
 \begin{table}[h!]
 \centering
 \caption{Average results of 5 algorithm trials. Each group of 5 calculated with a increasing standard deviation $\sigma$ of error $\xi_{i}$. Proximity function used (\vref{rho1}~) is taken from LAD in order to compare the derived method with LAD.}
@@ -493,27 +503,37 @@ $\sigma = 1.0$                                                                & 
 \egroup
 \end{table}
 
-\begin{figure}[h!]
-\includegraphics[scale=0.35]{updated/table-1c0.1}
-\centering
-\caption{THING}
-\end{figure}
 \begin{table}[!h]
 \centering
 \caption{One algorithm run with 5 trials (each trial has randomized errors $\xi_{i}$). Proximity function used (\vref{rho2}~) is taken from LSM in order to compare the derived method to LSM.}
 \bgroup
 \def\arraystretch{1.3}
-\begin{tabular}{c|r|r|r|r|r|r|r}
+\begin{tabular}{|c|r|r|r|r|r|r|r|}
 \hline
-\multicolumn{1}{|c|}{\multirow{2}{*}{Trial}} & \multicolumn{4}{c|}{My method}                                                                                                                                                                                                     & \multicolumn{3}{c|}{LSM}                                                                                                                           \\ \cline{2-8} 
-\multicolumn{1}{|c|}{}                       & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{*}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Expected\\ error\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{ *}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} \\ \hline
-1                                            & 2.065                            & 0.404                            & 0.199                                                                         & 0.013                                                                        & 2.593                            & -0.217                           & 0.866                                                                        \\
-2                                            & 2.136                            & 0.556                            & 0.157                                                                         & 0.021                                                                        & 2.416                            & 0.438                            & 0.177                                                                        \\
-3                                            & 1.844                            & 0.707                            & 0.161                                                                         & 0.067                                                                        & 2.470                            & 0.223                            & 0.298                                                                        \\
-4                                            & 2.156                            & 0.495                            & 0.150                                                                         & 0.024                                                                        & 2.693                            & -0.281                           & 1.091                                                                        \\
-5                                            & 2.156                            & 0.343                            & 0.161                                                                         & 0.049                                                                        & 2.550                            & 0.075                            & 0.483                                                                        \\
-Average                                      & 2.071                            & 0.501                            & 0.165                                                                         & 0.035                                                                        & 2.544                            & 0.047                            & 0.583                                                                       
+\multirow{2}{*}{Trial} & \multicolumn{4}{c|}{My method}                                                                                                                                                                                                     & \multicolumn{3}{c|}{LSM}                                                                                                                           \\ \cline{2-8} 
+                       & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{*}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Expected\\ error\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} & \multicolumn{1}{c|}{$c_{1}^{*}$} & \multicolumn{1}{c|}{$c_{2}^{*}$} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Factual\\ error\end{tabular}} \\ \hline
+1                      & 2.065                            & 0.404                            & 0.199                                                                         & 0.013                                                                        & 2.593                            & -0.217                           & 0.866                                                                        \\ \cline{1-1}
+2                      & 2.136                            & 0.556                            & 0.157                                                                         & 0.021                                                                        & 2.416                            & 0.438                            & 0.177                                                                        \\ \cline{1-1}
+3                      & 1.844                            & 0.707                            & 0.161                                                                         & 0.067                                                                        & 2.470                            & 0.223                            & 0.298                                                                        \\ \cline{1-1}
+4                      & 2.156                            & 0.495                            & 0.150                                                                         & 0.024                                                                        & 2.693                            & -0.281                           & 1.091                                                                        \\ \cline{1-1}
+5                      & 2.156                            & 0.343                            & 0.161                                                                         & 0.049                                                                        & 2.550                            & 0.075                            & 0.483                                                                        \\ \cline{1-1}
+Average                & 2.071                            & 0.501                            & 0.165                                                                         & 0.035                                                                        & 2.544                            & 0.047                            & 0.583                                                                        \\ \hline
 \end{tabular}
+\egroup
+\end{table}
+
+\begin{table}[!h]
+\centering
+\caption{My caption}
+\label{my-label}
+\bgroup
+\def\arraystretch{1.3}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Average & $n=6$  & $n=10$ & $n=20$ & $n=30$ \\ \hline
+$c_1^*$ & 2.089  & 2.025  & 1.999  & 1.993  \\ \cline{1-1}
+$c_2^*$ & 0.3877 & 0.4759 & 0.4816 & 0.4824 \\ \hline
+\end{tabular} 
 \egroup
 \end{table}
 \newpage
@@ -522,7 +542,7 @@ Average                                      & 2.071                            
 
 \newpage
 
-\section{Appendix A}
+\section{Appendix A} \label{apendix}
 \subsection{Method Description of Computation of Theoretical Algorithm}
 
 Here I will make use of the product notation:
