@@ -153,6 +153,7 @@
 \usepackage{varioref}
 \usepackage{mathtools}
 \usepackage{amssymb}
+\usepackage[margin=2cm]{caption}
 \usepackage[utf8]{inputenc}
 
 \numberwithin{equation}{subsection}
@@ -316,7 +317,7 @@ E(\rho(\vecc^{*},\dot{\vecc}))= \int\limits_{D}P(\vecc)\rho(\vecc^{*},\dot{\vecc
 of proximity (distance) $\rho(\vecc^{*},\dot{\vecc})$ of function $f(\vecc^{*},x)$ from $f(\dot{\vecc},x)$ where in the role of distance $\rho(\vecc^{*},\dot{\vecc})$, one could take on of the functions
 \usetagform{default}
 \begin{eqnarray}
-\rho_{1}(\vecc^{*},\vecc) &=& \sum\limits_{j=1}^{m} \left| c{j}^{*}-c_{j} \right| \label{rho1} \qquad \text{( taken from LAD )}\\
+\rho_{1}(\vecc^{*},\vecc) &=& \sum\limits_{j=1}^{m} \left| c_{j}^{*}-c_{j} \right| \label{rho1} \qquad \text{( taken from LAD )}\\
 \rho_{2}(\vecc^{*},\vecc) &=& \sum\limits_{j=1}^{m} \left( c_{j}^{*}-c_{j} \right)^{2} \label{rho2} \qquad \text{( taken from LSM ).}
 \end{eqnarray}
 During my research I've found that formula (\vref{Erho}~) was considered in the article \textit{'Reggression-type Problems under Zero Median Noise'} by Peter Balk (referenced earlier as \citep{balk_2010}). There, Balk used a proximity function that is not considered in this exploration. The reason for me using the proximity functions (\vref{rho1}~) and (\vref{rho2}~) instead of the one used in \citep{balk_2010}, is that I will be comparing the method derived here to the already established methods: LSM and LAD. Using a different proximity function, to the ones in those methods, will lead to faulty results. Looking ahead, I say that I will suggest a more constructive algorithm than the one occurring in \citep{balk_2010}.\\
@@ -485,11 +486,13 @@ Due to a the technical requirement (described in Appendix A: section \vref{apend
 \begin{equation}
 \dot{\vecc} =  (\dot{c}_1 ,\dot{c}_2) \in D = \{ (c_1 ,c_2) : \quad 1 \leqslant c_1 \leqslant 3; \quad 0 \leqslant c_2 \leqslant 1 \}.
 \end{equation}
-
+\subsection{Trial 1: Comparison of derived method vs. LAD}
+Patterns in the derived algorithm will not show in individual solutions, because of that we will look at the averages of 5 solutions each with a different randomized set of errors $\xi_i$ an therefore different values $\tilde{y}_i$.\\
+\\
 \begin{table}[h!]
 \centering
 \caption{Average results of 5 algorithm trials. Each group of 5 calculated with a increasing standard deviation $\sigma$ of error $\xi_{i}$. Proximity function used (\vref{rho1}~) is taken from LAD in order to compare the derived method with LAD.}
-\label{my-label}
+\label{table2}
 \bgroup
 \def\arraystretch{1.3}
 \begin{tabular}{|c|r|r|r|r|r|r|r|}
@@ -502,10 +505,14 @@ $\sigma = 1.0$                                                                & 
 \end{tabular}
 \egroup
 \end{table}
-
+We can notice a concrete pattern in these values (~shown in Table \vref{table2}). For the solutions of the derived method, as the standard deviation $\sigma$ of error $\xi$ increases (i.e. the error values spread to a larger range.) we also see an increase in both the expected error proposed by the derived method and the factual error it made. This is not surprising as this is the expected result of the increase of $\sigma$ of $\xi$. There is also nothing special in that LAD is generally better than the derived method at giving the parameters of the function, other than the case where $\sigma = 1.0$, there (I presume) some values $\xi$ were slanted to be large in the positive sign, skewing LAD's solution up. The reason why the derived method gives a better result there is because it is less responsive to such large peaks in $\xi$ as it weighs them the same way as the rest of the values of $\xi$. This will be important in the second trial.
+\subsection{Trial 2: Comparison of derived method vs. LSM}
+Clearly, the derived method will have advantage over the LSM if the condition $E(\xi)=0$ is not fulfilled. To show this, I calculated 5 algorithm trails using the same description as stated above with $\sigma=0.3$ while using the proximity function used in LSM, but with one big difference. Two of the largest values of $\xi$ are increased by a factor of 5. Table \vref{table3} illustrates the solutions given by the derived method and LSM with these conditions in mind.\\
+\\
 \begin{table}[!h]
 \centering
 \caption{One algorithm run with 5 trials (each trial has randomized errors $\xi_{i}$). Proximity function used (\vref{rho2}~) is taken from LSM in order to compare the derived method to LSM.}
+\label{table3}
 \bgroup
 \def\arraystretch{1.3}
 \begin{tabular}{|c|r|r|r|r|r|r|r|}
@@ -521,11 +528,21 @@ Average                & 2.071                            & 0.501               
 \end{tabular}
 \egroup
 \end{table}
-
+The factual errors made by the derived method is tens times smaller than the ones made by LSM. This is semi-misleading, as the LSM proximity (factual error in $c_1=(\dot{c_1}-c_1)^2$ or the difference between true and approximated value all squared.) function was used to calculate the factual error for both methods, and as the difference between the true and approximated components by the derived method are themselves quite small and less than 1, their squares will resemble the factual error displayed in the table.\\
+\\
+\begin{figure}[h!]
+\caption{Graph of trial number 4 from Table 3. LSM's solution is definitively worse.}
+\label{vsLSM}
+\includegraphics[scale=0.35]{updated/table-2}
+\centering
+\end{figure}
+To visually represent in what ways the derived method is superior to LSM, I graphed the 4th trail from the previous table in Figure \vref{vsLSM}. Here, due to the two enlarged values of errors $\xi$ (which are weighted more by the LSM) LSM provides a solution linear function with a negative gradient, completely misrepresenting the true function that has a positive gradient. 
+\subsection{Trial 3: Comparison of Solutions of Derived Method with Increasing $n$.}
+To show the pattern here, 4 series of algorithm runs were calculated using an increasing number of point $n$. Each series contains 25 individual trials, where each trial used differing a randomized set of normally distributed values of $\xi_i$ with $\sigma=0.3$. Table \vref{table4} contains the average values of the parameters $c^*_1$ and $c^*_2$.
 \begin{table}[!h]
 \centering
-\caption{My caption}
-\label{my-label}
+\caption{Average values of $c^*_1$ and $c^*_2$ with an increasing number of points $n$ used.}
+\label{table4}
 \bgroup
 \def\arraystretch{1.3}
 \begin{tabular}{|l|l|l|l|l|}
@@ -536,10 +553,35 @@ $c_2^*$ & 0.3877 & 0.4759 & 0.4816 & 0.4824 \\ \hline
 \end{tabular} 
 \egroup
 \end{table}
+\\
+Yet again there is a concrete pattern: with the increase of the number of point $n$ (i.e. with the increase of information known about the true function), the accuracy of the method derived also increases.
+
+\subsection{Trial 4: Approximation of a Cubic Function with the Derived Method.}
+The Figures \vref{cubic1} and \vref{cubic2} show the solutions calculated by the derived method when the true function is a 3rd degree polynomial. Figure \vref{cubic1} shows the solution when $\sigma=0.3$ and Figure \vref{cubic2} shows the solution when $\sigma=1.0$. Also, similarly to Trial 2, 3 of the largest values of $\xi_i$ have been increase by a  factor of 5.
+ 
+\begin{figure}[h!]
+\caption{Graph of a 3rd degree polynomial and its approximation using the derived method with $\sigma=0.3$}
+\label{cubic1}
+\includegraphics[scale=0.35]{updated/cubic1}
+\centering
+\end{figure}
+
+\begin{figure}[h!]
+\caption{Graph of a 3rd degree polynomial and its approximation using the derived method with $\sigma=0.1$}
+\label{cubic2}
+\includegraphics[scale=0.35]{updated/cubic2}
+\centering
+\end{figure}
+
+
+
+
+
+
+
+
 \newpage
 \section{Conclusion}
-
-
 \newpage
 
 \section{Appendix A} \label{apendix}
