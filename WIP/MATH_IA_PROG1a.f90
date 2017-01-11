@@ -28,7 +28,7 @@ PROGRAM MAIN
     C = 0.3                                           !The quantitive multiplier for exaduration of error
 
     M = 200                                           !The number of sub-regions in the horrizoltal
-    K = 100                                           !The number of sub-regions in the vertical
+    K = 100                                            !The number of sub-regions in the vertical
 
     N = 20                                            !Number of descrete data points
 
@@ -430,6 +430,8 @@ PROGRAM MAIN
 
     DO 14 I = 1,N                                     !Generating values with error for given data points
     Y1(I) = Y(I) + STR1(I) * C
+    WRITE(*,*) X(I)
+    WRITE(*,*)',',Y1(I)
 14  CONTINUE
 
     DO 30 I = 1,N                                     !Nullifying array NN
